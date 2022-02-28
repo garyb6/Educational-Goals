@@ -223,5 +223,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceElectric);
 
+        Question scienceMetal = new Question (science, "What is the lightest metal?");
+        questionRepository.save(scienceMetal);
+
+        Option lithium  = new Option("Lithium", scienceMetal, true);
+        optionRespository.save(lithium);
+        scienceBones.addOption(lithium);
+
+        Option aluminium  = new Option("Aluminium ", scienceMetal);
+        optionRespository.save(aluminium);
+        scienceBones.addOption(aluminium);
+
+        Option magnesium = new Option("Magnesium", scienceMetal);
+        optionRespository.save(magnesium);
+        romanRiver.addOption(magnesium);
+
+        Option potassium = new Option("Potassium", scienceMetal);
+        optionRespository.save(potassium);
+        scienceBones.addOption(potassium);
+
+        science.addQuestion(scienceMetal);
+
     }
 }
