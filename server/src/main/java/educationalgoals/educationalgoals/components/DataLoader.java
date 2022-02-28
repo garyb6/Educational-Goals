@@ -83,7 +83,7 @@ public class DataLoader implements ApplicationRunner {
 
         Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper");
         questionRepository.save(toiletPaper);
-        Option cowTongue = new Option("Cow tongue", toiletPaper);
+        Option cowTongue = new Option("Cow tongues", toiletPaper);
         optionRespository.save(cowTongue);
         toiletPaper.addOption(cowTongue);
         Option spongeOnStick = new Option("A wet sponge on a stick", toiletPaper, true);
@@ -193,9 +193,9 @@ public class DataLoader implements ApplicationRunner {
         Option nero = new Option("Nero", colosseum);
         optionRespository.save(nero);
         colosseum.addOption(nero);
-        Option caracalla = new Option("Caracalla", colosseum);
-        optionRespository.save(caracalla);
-        colosseum.addOption(caracalla);
+        Option caligula = new Option("Caligula", colosseum);
+        optionRespository.save(caligula);
+        colosseum.addOption(caligula);
 
         roman.addQuestion(colosseum);
 
@@ -269,5 +269,90 @@ public class DataLoader implements ApplicationRunner {
         unesco.addOption(bridge);
 
         scotland.addQuestion(unesco);
+
+        Question cave = new Question (scotland, "Robert the Bruce spent several months hiding out in a cave from the glorious English, where he was inspired by which animal?");
+        questionRepository.save(cave);
+        Option bear = new Option("Bear", cave);
+        optionRespository.save(bear);
+        cave.addOption(bear);
+        Option mouse = new Option("Mouse", cave);
+        optionRespository.save(mouse);
+        cave.addOption(mouse);
+        Option spider = new Option("Spider", cave, true);
+        optionRespository.save(spider);
+        cave.addOption(spider);
+        Option crow = new Option("Crow", cave);
+        optionRespository.save(crow);
+        cave.addOption(crow);
+
+        scotland.addQuestion(cave);
+
+        Question islands = new Question (scotland, "How many islands are there in Scotland?");
+        questionRepository.save(islands);
+        Option twentyOne = new Option("21", islands);
+        optionRespository.save(twentyOne);
+        islands.addOption(twentyOne);
+        Option fiftySeven = new Option("57", islands);
+        optionRespository.save(fiftySeven);
+        islands.addOption(fiftySeven);
+        Option twoHundred = new Option("200+", islands);
+        optionRespository.save(twoHundred);
+        islands.addOption(twoHundred);
+        Option nineHundred = new Option("900+", islands, true);
+        optionRespository.save(nineHundred);
+        islands.addOption(nineHundred);
+
+        scotland.addQuestion(islands);
+
+        Question munro = new Question (scotland, "What makes a Munro a Munro?");
+        questionRepository.save(munro);
+        Option hughMunro = new Option("Sir Hugh Munro climbed it during his life", munro);
+        optionRespository.save(hughMunro);
+        munro.addOption(hughMunro);
+        Option drop = new Option("There must be a 500ft drop on every side", munro);
+        optionRespository.save(drop);
+        munro.addOption(drop);
+        Option tall = new Option("Must be over 3000ft tall", munro, true);
+        optionRespository.save(tall);
+        munro.addOption(tall);
+        Option noRule = new Option("There is no special rule", munro);
+        optionRespository.save(noRule);
+        munro.addOption(noRule);
+
+        scotland.addQuestion(munro);
+
+        Question loch = new Question (scotland, "Which Loch has the deepest point in Scotland?");
+        questionRepository.save(loch);
+        Option ness = new Option("Loch Ness", loch);
+        optionRespository.save(ness);
+        loch.addOption(ness);
+        Option morar = new Option("Loch Morar", loch, true);
+        optionRespository.save(morar);
+        loch.addOption(morar);
+        Option tay = new Option("Loch Tay", loch);
+        optionRespository.save(tay);
+        loch.addOption(tay);
+        Option lomond = new Option("Loch Lomond", loch);
+        optionRespository.save(lomond);
+        loch.addOption(lomond);
+
+        scotland.addQuestion(loch);
+
+        Question loch = new Question (scotland, "Which Loch has the deepest point in Scotland?");
+        questionRepository.save(loch);
+        Option ness = new Option("Loch Ness", loch);
+        optionRespository.save(ness);
+        loch.addOption(ness);
+        Option morar = new Option("Loch Morar", loch, true);
+        optionRespository.save(morar);
+        loch.addOption(morar);
+        Option tay = new Option("Loch Tay", loch);
+        optionRespository.save(tay);
+        loch.addOption(tay);
+        Option lomond = new Option("Loch Lomond", loch);
+        optionRespository.save(lomond);
+        loch.addOption(lomond);
+
+        scotland.addQuestion(loch);
     }
 }
