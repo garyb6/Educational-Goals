@@ -98,21 +98,38 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(toiletPaper);
 
-        Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper");
-        questionRepository.save(toiletPaper);
-        Option cowTongue = new Option("Cow tongue", toiletPaper);
-        optionRespository.save(cowTongue);
-        toiletPaper.addOption(cowTongue);
-        Option spongeOnStick = new Option("A wet sponge on a stick", toiletPaper, true);
-        optionRespository.save(spongeOnStick);
-        toiletPaper.addOption(spongeOnStick);
-        Option oakLeaves = new Option("Oak leaves", toiletPaper);
-        optionRespository.save(oakLeaves);
-        toiletPaper.addOption(oakLeaves);
-        Option horseTails = new Option("Horse tails", toiletPaper);
-        optionRespository.save(horseTails);
-        toiletPaper.addOption(horseTails);
+        Question armyAuxiliary = new Question (roman, "For how many years did auxiliary soldiers in the Roman army have to fight for before becoming Roman citizens?");
+        questionRepository.save(armyAuxiliary);
+        Option ten = new Option("10 years", armyAuxiliary);
+        optionRespository.save(ten);
+        armyAuxiliary.addOption(ten);
+        Option fifteen = new Option("15 years", armyAuxiliary);
+        optionRespository.save(fifteen);
+        armyAuxiliary.addOption(fifteen);
+        Option twenty = new Option("20 years", armyAuxiliary);
+        optionRespository.save(twenty);
+        armyAuxiliary.addOption(twenty);
+        Option twentyFive = new Option("25 years", armyAuxiliary, true);
+        optionRespository.save(twentyFive);
+        armyAuxiliary.addOption(twentyFive);
 
-        roman.addQuestion(toiletPaper);
+        roman.addQuestion(armyAuxiliary);
+
+        Question armyAuxiliary = new Question (roman, "For how many years did auxiliary soldiers in the Roman army have to fight for before becoming Roman citizens?");
+        questionRepository.save(armyAuxiliary);
+        Option ten = new Option("10 years", armyAuxiliary);
+        optionRespository.save(ten);
+        armyAuxiliary.addOption(ten);
+        Option fifteen = new Option("15 years", armyAuxiliary);
+        optionRespository.save(fifteen);
+        armyAuxiliary.addOption(fifteen);
+        Option twenty = new Option("20 years", armyAuxiliary);
+        optionRespository.save(twenty);
+        armyAuxiliary.addOption(twenty);
+        Option twentyFive = new Option("25 years", armyAuxiliary, true);
+        optionRespository.save(twentyFive);
+        armyAuxiliary.addOption(twentyFive);
+
+        roman.addQuestion(armyAuxiliary);
     }
 }
