@@ -68,6 +68,10 @@ public class Question {
         this.options = options;
     }
 
+    public int optionsAmount(){
+        return this.options.size();
+    }
+
     public void addOption(Option option){
         this.options.add(option);
     }
