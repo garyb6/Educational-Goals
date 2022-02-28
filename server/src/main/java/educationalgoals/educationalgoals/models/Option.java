@@ -1,6 +1,7 @@
 package educationalgoals.educationalgoals.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -16,7 +17,7 @@ public class Option {
     private String expression;
 
     @ManyToOne
-    @JoinColumn(name = "question_id", nullable = false)
+    @JoinColumn(name = "question_id", nullable = true)
     @JsonIgnoreProperties({"options"})
     private Question question;
 

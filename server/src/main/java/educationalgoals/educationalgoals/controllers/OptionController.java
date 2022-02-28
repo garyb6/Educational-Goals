@@ -1,8 +1,6 @@
 package educationalgoals.educationalgoals.controllers;
 
-import educationalgoals.educationalgoals.models.Answer;
 import educationalgoals.educationalgoals.models.Option;
-import educationalgoals.educationalgoals.repositories.AnswerRepository;
 import educationalgoals.educationalgoals.repositories.OptionRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

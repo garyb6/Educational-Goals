@@ -1,9 +1,8 @@
 package educationalgoals.educationalgoals.components;
 
-import educationalgoals.educationalgoals.models.Answer;
+import educationalgoals.educationalgoals.models.Option;
 import educationalgoals.educationalgoals.models.Question;
 import educationalgoals.educationalgoals.models.Quiz;
-import educationalgoals.educationalgoals.repositories.AnswerRepository;
 import educationalgoals.educationalgoals.repositories.OptionRespository;
 import educationalgoals.educationalgoals.repositories.QuestionRepository;
 import educationalgoals.educationalgoals.repositories.QuizRepository;
@@ -30,7 +29,18 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         Quiz roman = new Quiz("Roman");
         quizRepository.save(roman);
-
         Question romanRiver = new Question (roman, "Which river was the city of Rome built next to?");
+        Option tiber = new Option("The Tiber", romanRiver, true);
+        optionRespository.save(tiber);
+        romanRiver.addOption(tiber);
+        Option po = new Option("The Po", romanRiver);
+        optionRespository.save(po);
+        Option arno = new Option("The Arno", romanRiver);
+        optionRespository.save(arno);
+        romanRiver.addOption(arno);
+        Option rhine = new Option("The Rhine", romanRiver);
+        optionRespository.save(rhine);
+        romanRiver.addOption(rhine);
+        roman.addQuestion(romanRiver);
     }
 }
