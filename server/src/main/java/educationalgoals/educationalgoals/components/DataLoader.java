@@ -30,6 +30,7 @@ public class DataLoader implements ApplicationRunner {
         Quiz roman = new Quiz("Roman");
         quizRepository.save(roman);
         Question romanRiver = new Question (roman, "Which river was the city of Rome built next to?");
+        questionRepository.save(romanRiver);
         Option tiber = new Option("The Tiber", romanRiver, true);
         optionRespository.save(tiber);
         romanRiver.addOption(tiber);
