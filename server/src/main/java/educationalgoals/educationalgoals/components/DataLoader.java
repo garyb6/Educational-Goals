@@ -181,5 +181,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceCountry);
 
+        Question sciencePhysician = new Question (science, "Which oath of ethics taken by doctors is named after an Ancient Greek physician?");
+        questionRepository.save(sciencePhysician);
+
+        Option hippocratic  = new Option("Hippocratic ", sciencePhysician, true);
+        optionRespository.save(hippocratic);
+        scienceBones.addOption(hippocratic);
+
+        Option autocratic = new Option("Autocratic", sciencePhysician);
+        optionRespository.save(autocratic);
+        scienceBones.addOption(autocratic);
+
+        Option mesocratic = new Option("Mesocratic", sciencePhysician);
+        optionRespository.save(mesocratic);
+        romanRiver.addOption(mesocratic);
+
+        Option theocratic = new Option("Theocratic", sciencePhysician);
+        optionRespository.save(theocratic);
+        scienceBones.addOption(theocratic);
+
+        science.addQuestion(sciencePhysician);
+
     }
 }
