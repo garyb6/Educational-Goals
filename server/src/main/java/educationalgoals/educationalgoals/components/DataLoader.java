@@ -134,9 +134,12 @@ public class DataLoader implements ApplicationRunner {
 
         Question wall = new Question (roman, "Which emperor built a great wall in the north of England to keep the celts out");
         questionRepository.save(wall);
-        //using two emperors already created
-        wall.addOption(claudius);
-        wall.addOption(tiberius);
+        Option marcus = new Option("Marcus Aurelius", wall);
+        optionRespository.save(marcus);
+        firstEmperor.addOption(marcus);
+        Option valerian = new Option("Valerian", wall);
+        optionRespository.save(valerian);
+        firstEmperor.addOption(valerian);
         Option hadrian = new Option("Hadrian", wall, true);
         optionRespository.save(hadrian);
         wall.addOption(hadrian);
@@ -148,8 +151,8 @@ public class DataLoader implements ApplicationRunner {
 
         Question plasters = new Question (roman, "What did the Romans use as plasters for small cuts?");
         questionRepository.save(plasters);
-        //using option already created
-        plasters.addOption(oakLeaves);
+        Option porridge = new Option("Porridge", plasters);
+        optionRespository.save(porridge);
         Option mice = new Option("Mice", plasters);
         optionRespository.save(mice);
         plasters.addOption(mice);
@@ -163,7 +166,7 @@ public class DataLoader implements ApplicationRunner {
         roman.addQuestion(plasters);
 
         Question cleanClothes = new Question (roman, "What did the Romans use to clean their clothes?");
-        questionRepository.save(armyAuxiliary);
+        questionRepository.save(cleanClothes);
         Option sweat = new Option("Sweat", cleanClothes);
         optionRespository.save(sweat);
         cleanClothes.addOption(sweat);
@@ -178,5 +181,22 @@ public class DataLoader implements ApplicationRunner {
         cleanClothes.addOption(cowBrains);
 
         roman.addQuestion(cleanClothes);
+
+        Question colosseum = new Question (roman, "Which emperor started building the Colosseum but died before it was fully built?");
+        questionRepository.save(colosseum);
+        Option jovian = new Option("Jovian", colosseum);
+        optionRespository.save(jovian);
+        colosseum.addOption(jovian);
+        Option vespasian = new Option("Vespasian", colosseum, true);
+        optionRespository.save(vespasian);
+        colosseum.addOption(vespasian);
+        Option nero = new Option("Nero", colosseum);
+        optionRespository.save(nero);
+        colosseum.addOption(nero);
+        Option caracalla = new Option("Caracalla", colosseum);
+        optionRespository.save(caracalla);
+        colosseum.addOption(caracalla);
+
+        roman.addQuestion(colosseum);
     }
 }
