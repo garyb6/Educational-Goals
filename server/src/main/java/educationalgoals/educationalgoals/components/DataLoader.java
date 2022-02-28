@@ -55,9 +55,9 @@ public class DataLoader implements ApplicationRunner {
         Option claudius = new Option("Claudius", firstEmperor);
         optionRespository.save(claudius);
         firstEmperor.addOption(claudius);
-        Option vespasian = new Option("Vespasian", firstEmperor);
-        optionRespository.save(vespasian);
-        firstEmperor.addOption(vespasian);
+        Option titus = new Option("Titus", firstEmperor);
+        optionRespository.save(titus);
+        firstEmperor.addOption(titus);
         Option augustus = new Option("Augustus", firstEmperor, true);
         optionRespository.save(augustus);
         firstEmperor.addOption(augustus);
@@ -198,5 +198,44 @@ public class DataLoader implements ApplicationRunner {
         colosseum.addOption(caracalla);
 
         roman.addQuestion(colosseum);
+
+        Quiz scotland = new Quiz("Scotland");
+        quizRepository.save(scotland);
+
+        Question nationalAnimal = new Question (scotland, "What is Scotland’s national animal?");
+        questionRepository.save(nationalAnimal);
+        Option unicorn = new Option("Unicorn", nationalAnimal, true);
+        optionRespository.save(unicorn);
+        nationalAnimal.addOption(unicorn);
+        Option lochNessMonster = new Option("Loch Ness Monster", nationalAnimal);
+        optionRespository.save(lochNessMonster);
+        nationalAnimal.addOption(lochNessMonster);
+        Option lion = new Option("Lion", nationalAnimal);
+        optionRespository.save(lion);
+        nationalAnimal.addOption(lion);
+        Option stag = new Option("Stag", nationalAnimal);
+        optionRespository.save(stag);
+        nationalAnimal.addOption(stag);
+
+        scotland.addQuestion(nationalAnimal);
+
+        Question kingJames = new Question (scotland, "What is Scotland’s national animal?");
+        questionRepository.save(kingJames);
+        Option sixth = new Option("James VI", kingJames, true);
+        optionRespository.save(sixth);
+        kingJames.addOption(sixth);
+        Option fourth = new Option("James IV", kingJames);
+        optionRespository.save(fourth);
+        kingJames.addOption(fourth);
+        Option seventh = new Option("James VII", kingJames);
+        optionRespository.save(seventh);
+        kingJames.addOption(seventh);
+        Option third = new Option("James III", kingJames);
+        optionRespository.save(third);
+        kingJames.addOption(third);
+
+        scotland.addQuestion(kingJames);
+
+
     }
 }
