@@ -244,5 +244,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceMetal);
 
+        Question sciencePound = new Question (science, "How much does a British £2 coin weigh?");
+        questionRepository.save(sciencePound);
+
+        Option zeroZeroTwoPounds  = new Option("0.02 pounds", sciencePound, true);
+        optionRespository.save(zeroZeroTwoPounds);
+        scienceBones.addOption(zeroZeroTwoPounds);
+
+        Option twoPounds  = new Option("2 pounds", sciencePound);
+        optionRespository.save(twoPounds);
+        scienceBones.addOption(twoPounds);
+
+        Option twoPointTwoPounds = new Option("2.2 pounds", sciencePound);
+        optionRespository.save(twoPointTwoPounds);
+        romanRiver.addOption(twoPointTwoPounds);
+
+        Option zeroPointTwoPounds = new Option("0.2 pounds", sciencePound);
+        optionRespository.save(zeroPointTwoPounds);
+        scienceBones.addOption(zeroPointTwoPounds);
+
+        science.addQuestion(sciencePound);
+
     }
 }
