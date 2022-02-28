@@ -131,5 +131,18 @@ public class DataLoader implements ApplicationRunner {
         toothpaste.addOption(pigEars);
 
         roman.addQuestion(toothpaste);
+        Question wall = new Question (roman, "What did some Romans use as toothpaste?");
+        questionRepository.save(wall);
+        //using two emperors already created
+        wall.addOption(claudius);
+        wall.addOption(augustus);
+        Option hadrian = new Option("Hadrian", wall, true);
+        optionRespository.save(hadrian);
+        wall.addOption(hadrian);
+        Option commodus = new Option("Commodus", wall);
+        optionRespository.save(commodus);
+        wall.addOption(commodus);
+
+        roman.addQuestion(wall);
     }
 }
