@@ -27,7 +27,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        Quiz roman = new Quiz("Roman");
+        Quiz roman = new Quiz("Romans");
         quizRepository.save(roman);
 
         Question romanRiver = new Question (roman, "Which river was the city of Rome built next to?");
