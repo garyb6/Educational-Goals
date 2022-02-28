@@ -131,11 +131,12 @@ public class DataLoader implements ApplicationRunner {
         toothpaste.addOption(pigEars);
 
         roman.addQuestion(toothpaste);
-        Question wall = new Question (roman, "What did some Romans use as toothpaste?");
+
+        Question wall = new Question (roman, "Which emperor built a great wall in the north of England to keep the celts out");
         questionRepository.save(wall);
         //using two emperors already created
         wall.addOption(claudius);
-        wall.addOption(augustus);
+        wall.addOption(tiberius);
         Option hadrian = new Option("Hadrian", wall, true);
         optionRespository.save(hadrian);
         wall.addOption(hadrian);
@@ -144,5 +145,23 @@ public class DataLoader implements ApplicationRunner {
         wall.addOption(commodus);
 
         roman.addQuestion(wall);
+
+        Question plasters = new Question (roman, "What did the Romans use as plasters for small cuts?");
+        questionRepository.save(plasters);
+        //using option already created
+        plasters.addOption(oakLeaves);
+        Option mice = new Option("Mice", plasters);
+        optionRespository.save(mice);
+        plasters.addOption(mice);
+        Option snakeskin = new Option("Snakeskin", plasters);
+        optionRespository.save(snakeskin);
+        plasters.addOption(snakeskin);
+        Option cobwebs = new Option("Cobwebs", plasters, true);
+        optionRespository.save(cobwebs);
+        plasters.addOption(cobwebs);
+
+        roman.addQuestion(plasters);
+
+        
     }
 }
