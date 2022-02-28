@@ -76,5 +76,47 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceBones);
 
+        Question scienceEarth = new Question (science, "What is the hardest natural substance on Earth?");
+        questionRepository.save(scienceEarth);
+
+        Option diamond = new Option("Diamond", scienceEarth, true);
+        optionRespository.save(diamond);
+        scienceBones.addOption(diamond);
+
+        Option lonsdaleite = new Option("Lonsdaleite", scienceEarth);
+        optionRespository.save(lonsdaleite);
+        scienceBones.addOption(lonsdaleite);
+
+        Option graphene = new Option("Graphene", scienceEarth);
+        optionRespository.save(graphene);
+        romanRiver.addOption(graphene);
+
+        Option siliconCarbide = new Option("Silicon carbide", scienceEarth);
+        optionRespository.save(siliconCarbide);
+        scienceBones.addOption(siliconCarbide);
+
+        science.addQuestion(scienceEarth);
+
+        Question scienceTemperature = new Question (science, "At what temperature are Celsius and Fahrenheit equal?");
+        questionRepository.save(scienceTemperature);
+
+        Option minusFourZero = new Option("-40", scienceTemperature, true);
+        optionRespository.save(minusFourZero);
+        scienceBones.addOption(minusFourZero);
+
+        Option sevenEight = new Option("78", scienceTemperature);
+        optionRespository.save(sevenEight);
+        scienceBones.addOption(sevenEight);
+
+        Option minusTwoNine = new Option("-29", scienceTemperature);
+        optionRespository.save(minusTwoNine);
+        romanRiver.addOption(minusTwoNine);
+
+        Option siliconCarbide = new Option("Silicon carbide", scienceEarth);
+        optionRespository.save(siliconCarbide);
+        scienceBones.addOption(siliconCarbide);
+
+        science.addQuestion(scienceEarth);
+
     }
 }
