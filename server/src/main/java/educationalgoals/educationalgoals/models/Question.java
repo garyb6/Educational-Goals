@@ -21,20 +21,15 @@ public class Question {
     @JsonIgnoreProperties({"question"})
     private List<Option> options;
 
-    @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"question"})
-    private Answer correctAnswer;
-
     @ManyToOne
     @JoinColumn(name = "quiz_id", nullable = false)
     @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
 
-    public Question(String ask, Answer correctAnswer, Quiz quiz) {
+    public Question(Quiz quiz, String ask) {
+        this.quiz = quiz;
         this.ask = ask;
         this.options = new ArrayList<>();
-        this.correctAnswer = correctAnswer;
-        this.quiz = quiz;
     }
 
     public Question() {
@@ -48,30 +43,6 @@ public class Question {
         this.id = id;
     }
 
-    public String getAsk() {
-        return ask;
-    }
-
-    public void setAsk(String ask) {
-        this.ask = ask;
-    }
-
-    public List<Answer> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
-    }
-
-    public Answer getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setCorrectAnswer(Answer correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
     public Quiz getQuiz() {
         return quiz;
     }
@@ -80,11 +51,47 @@ public class Question {
         this.quiz = quiz;
     }
 
-    public void addAnswer(Answer answer){
-        this.answers.add(answer);
+    public String getAsk() {
+        return ask;
     }
 
-    public void removeAnswer(Answer answer){
-        this.answers.remove(answer);
+    public void setAsk(String ask) {
+        this.ask = ask;
+    }
+
+    public List<Option> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<Option> options) {
+        this.options = options;
+    }
+
+    public void addOption(Option option){
+        this.options.add(option);
+    }
+
+    public void removeOption(Option option){
+        this.options.remove(option);
     }
 }
+
+//    @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
+//    @JsonIgnoreProperties({"question"})
+//    private Answer correctAnswer;
+
+//    public List<Answer> getAnswers() {
+//        return answers;
+//    }
+//
+//    public void setAnswers(List<Answer> answers) {
+//        this.answers = answers;
+//    }
+//
+//    public Answer getCorrectAnswer() {
+//        return correctAnswer;
+//    }
+//
+//    public void setCorrectAnswer(Answer correctAnswer) {
+//        this.correctAnswer = correctAnswer;
+//    }

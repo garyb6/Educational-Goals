@@ -20,10 +20,23 @@ public class Option {
     @JsonIgnoreProperties({"options"})
     private Question question;
 
+    @Column(name = "correct")
+    private Boolean correct;
+
+
     public Option(String expression, Question question) {
         this.expression = expression;
         this.question = question;
+        this.correct = false;
     }
+
+    public Option(String expression, Question question, Boolean correct) {
+        this.expression = expression;
+        this.question = question;
+        this.correct = correct;
+    }
+
+    public Option(){};
 
     public Long getId() {
         return id;
@@ -48,4 +61,21 @@ public class Option {
     public void setQuestion(Question question) {
         this.question = question;
     }
+
+    public Boolean getCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(Boolean correct) {
+        this.correct = correct;
+    }
 }
+
+
+//    public boolean isCorrect() {
+//        return correct;
+//    }
+//
+//    public void setCorrect(boolean correct) {
+//        this.correct = correct;
+//    }

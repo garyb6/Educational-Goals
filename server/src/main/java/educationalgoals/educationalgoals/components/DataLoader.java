@@ -4,6 +4,7 @@ import educationalgoals.educationalgoals.models.Answer;
 import educationalgoals.educationalgoals.models.Question;
 import educationalgoals.educationalgoals.models.Quiz;
 import educationalgoals.educationalgoals.repositories.AnswerRepository;
+import educationalgoals.educationalgoals.repositories.OptionRespository;
 import educationalgoals.educationalgoals.repositories.QuestionRepository;
 import educationalgoals.educationalgoals.repositories.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class DataLoader implements ApplicationRunner {
     QuizRepository quizRepository;
 
     @Autowired
-    AnswerRepository answerRepository;
+    OptionRespository optionRespository;
 
     @Autowired
     QuestionRepository questionRepository;
@@ -29,9 +30,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         Quiz roman = new Quiz("Roman");
         quizRepository.save(roman);
-        Answer tiber = new Answer("The Tiber", romanRiver);
-        Question romanRiver = new Question ("Which river was the city of Rome built next to?", tiber, roman );
-        Answer tiber = new Answer("The Tiber", romanRiver);
-        answerRepository.save(tiber);
+
+        Question romanRiver = new Question (roman, "Which river was the city of Rome built next to?");
     }
 }
