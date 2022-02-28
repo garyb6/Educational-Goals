@@ -68,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
 
         Option threeSevenThree = new Option("373", scienceBones);
         optionRespository.save(threeSevenThree);
-        romanRiver.addOption(threeSevenThree);
+        scienceBones.addOption(threeSevenThree);
 
         Option fiveFiveThree = new Option("553", scienceBones);
         optionRespository.save(fiveFiveThree);
@@ -81,19 +81,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option diamond = new Option("Diamond", scienceEarth, true);
         optionRespository.save(diamond);
-        scienceBones.addOption(diamond);
+        scienceEarth.addOption(diamond);
 
         Option lonsdaleite = new Option("Lonsdaleite", scienceEarth);
         optionRespository.save(lonsdaleite);
-        scienceBones.addOption(lonsdaleite);
+        scienceEarth.addOption(lonsdaleite);
 
         Option graphene = new Option("Graphene", scienceEarth);
         optionRespository.save(graphene);
-        romanRiver.addOption(graphene);
+        scienceEarth.addOption(graphene);
 
         Option siliconCarbide = new Option("Silicon carbide", scienceEarth);
         optionRespository.save(siliconCarbide);
-        scienceBones.addOption(siliconCarbide);
+        scienceEarth.addOption(siliconCarbide);
 
         science.addQuestion(scienceEarth);
 
@@ -102,19 +102,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option minusFourZero = new Option("-40", scienceTemperature, true);
         optionRespository.save(minusFourZero);
-        scienceBones.addOption(minusFourZero);
+        scienceTemperature.addOption(minusFourZero);
 
         Option sevenEight = new Option("78", scienceTemperature);
         optionRespository.save(sevenEight);
-        scienceBones.addOption(sevenEight);
+        scienceTemperature.addOption(sevenEight);
 
         Option minusTwoNine = new Option("-29", scienceTemperature);
         optionRespository.save(minusTwoNine);
-        romanRiver.addOption(minusTwoNine);
+        scienceTemperature.addOption(minusTwoNine);
 
         Option fourThree = new Option("43", scienceTemperature);
         optionRespository.save(fourThree);
-        scienceBones.addOption(fourThree);
+        scienceTemperature.addOption(fourThree);
 
         science.addQuestion(scienceTemperature);
 
@@ -123,19 +123,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option eightMinutes = new Option("8 minutes", scienceSun, true);
         optionRespository.save(eightMinutes);
-        scienceBones.addOption(eightMinutes);
+        scienceSun.addOption(eightMinutes);
 
         Option eightSeconds = new Option("8 seconds", scienceSun);
         optionRespository.save(eightSeconds);
-        scienceBones.addOption(eightSeconds);
+        scienceSun.addOption(eightSeconds);
 
         Option eightHours = new Option("8 hours", scienceSun);
         optionRespository.save(eightHours);
-        romanRiver.addOption(eightHours);
+        scienceSun.addOption(eightHours);
 
         Option eightDays = new Option("8 days", scienceSun);
         optionRespository.save(eightDays);
-        scienceBones.addOption(eightDays);
+        scienceSun.addOption(eightDays);
 
         science.addQuestion(scienceSun);
 
@@ -144,19 +144,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option mycology = new Option("Mycology", scienceMushrooms, true);
         optionRespository.save(mycology);
-        scienceBones.addOption(mycology);
+        scienceMushrooms.addOption(mycology);
 
         Option fungology = new Option("Fungology", scienceMushrooms);
         optionRespository.save(fungology);
-        scienceBones.addOption(fungology);
+        scienceMushrooms.addOption(fungology);
 
         Option nephology = new Option("Nephology", scienceMushrooms);
         optionRespository.save(nephology);
-        romanRiver.addOption(nephology);
+        scienceMushrooms.addOption(nephology);
 
         Option pomology = new Option("Pomology", scienceMushrooms);
         optionRespository.save(pomology);
-        scienceBones.addOption(pomology);
+        scienceMushrooms.addOption(pomology);
 
         science.addQuestion(scienceMushrooms);
 
@@ -165,19 +165,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option poland = new Option("Poland", scienceCountry, true);
         optionRespository.save(poland);
-        scienceBones.addOption(poland);
+        scienceCountry.addOption(poland);
 
         Option netherlands = new Option("Netherlands", scienceCountry);
         optionRespository.save(netherlands);
-        scienceBones.addOption(netherlands);
+        scienceCountry.addOption(netherlands);
 
         Option slovenia = new Option("Slovenia", scienceCountry);
         optionRespository.save(slovenia);
-        romanRiver.addOption(slovenia);
+        scienceCountry.addOption(slovenia);
 
         Option uk = new Option("UK", scienceCountry);
         optionRespository.save(uk);
-        scienceBones.addOption(uk);
+        scienceCountry.addOption(uk);
 
         science.addQuestion(scienceCountry);
 
@@ -186,19 +186,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option hippocratic  = new Option("Hippocratic ", sciencePhysician, true);
         optionRespository.save(hippocratic);
-        scienceBones.addOption(hippocratic);
+        sciencePhysician.addOption(hippocratic);
 
         Option autocratic = new Option("Autocratic", sciencePhysician);
         optionRespository.save(autocratic);
-        scienceBones.addOption(autocratic);
+        sciencePhysician.addOption(autocratic);
 
         Option mesocratic = new Option("Mesocratic", sciencePhysician);
         optionRespository.save(mesocratic);
-        romanRiver.addOption(mesocratic);
+        sciencePhysician.addOption(mesocratic);
 
         Option theocratic = new Option("Theocratic", sciencePhysician);
         optionRespository.save(theocratic);
-        scienceBones.addOption(theocratic);
+        sciencePhysician.addOption(theocratic);
 
         science.addQuestion(sciencePhysician);
 
@@ -207,19 +207,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option insulator  = new Option("Insulator", scienceElectric, true);
         optionRespository.save(insulator);
-        scienceBones.addOption(insulator);
+        scienceElectric.addOption(insulator);
 
         Option dense = new Option("Dense", scienceElectric);
         optionRespository.save(dense);
-        scienceBones.addOption(dense);
+        scienceElectric.addOption(dense);
 
         Option liquid = new Option("Liquid", scienceElectric);
         optionRespository.save(liquid);
-        romanRiver.addOption(liquid);
+        scienceElectric.addOption(liquid);
 
         Option vulcanised = new Option("Vulcanised", scienceElectric);
         optionRespository.save(vulcanised);
-        scienceBones.addOption(vulcanised);
+        scienceElectric.addOption(vulcanised);
 
         science.addQuestion(scienceElectric);
 
@@ -228,19 +228,19 @@ public class DataLoader implements ApplicationRunner {
 
         Option lithium  = new Option("Lithium", scienceMetal, true);
         optionRespository.save(lithium);
-        scienceBones.addOption(lithium);
+        scienceMetal.addOption(lithium);
 
         Option aluminium  = new Option("Aluminium ", scienceMetal);
         optionRespository.save(aluminium);
-        scienceBones.addOption(aluminium);
+        scienceMetal.addOption(aluminium);
 
         Option magnesium = new Option("Magnesium", scienceMetal);
         optionRespository.save(magnesium);
-        romanRiver.addOption(magnesium);
+        scienceMetal.addOption(magnesium);
 
         Option potassium = new Option("Potassium", scienceMetal);
         optionRespository.save(potassium);
-        scienceBones.addOption(potassium);
+        scienceMetal.addOption(potassium);
 
         science.addQuestion(scienceMetal);
 
@@ -249,42 +249,66 @@ public class DataLoader implements ApplicationRunner {
 
         Option zeroZeroTwoPounds  = new Option("0.02 pounds", sciencePound, true);
         optionRespository.save(zeroZeroTwoPounds);
-        scienceBones.addOption(zeroZeroTwoPounds);
+        sciencePound.addOption(zeroZeroTwoPounds);
 
         Option twoPounds  = new Option("2 pounds", sciencePound);
         optionRespository.save(twoPounds);
-        scienceBones.addOption(twoPounds);
+        sciencePound.addOption(twoPounds);
 
         Option twoPointTwoPounds = new Option("2.2 pounds", sciencePound);
         optionRespository.save(twoPointTwoPounds);
-        romanRiver.addOption(twoPointTwoPounds);
+        sciencePound.addOption(twoPointTwoPounds);
 
         Option zeroPointTwoPounds = new Option("0.2 pounds", sciencePound);
         optionRespository.save(zeroPointTwoPounds);
-        scienceBones.addOption(zeroPointTwoPounds);
+        sciencePound.addOption(zeroPointTwoPounds);
 
         science.addQuestion(sciencePound);
+
+        Quiz grammar = new Quiz("Grammar");
+        quizRepository.save(grammar);
 
         Question grammarLottery = new Question (grammar, "If I won the lottery...");
         questionRepository.save(grammarLottery);
 
         Option mansion  = new Option("I would buy a mansion", grammarLottery, true);
         optionRespository.save(mansion);
-        scienceBones.addOption(mansion);
+        grammarLottery.addOption(mansion);
 
         Option car  = new Option("I will buy a car", grammarLottery);
         optionRespository.save(car);
-        scienceBones.addOption(car);
+        grammarLottery.addOption(car);
 
         Option computer = new Option("I buy a computer", grammarLottery);
         optionRespository.save(computer);
-        romanRiver.addOption(computer);
+        grammarLottery.addOption(computer);
 
         Option ps5 = new Option("I would have bought a PS5", grammarLottery);
         optionRespository.save(ps5);
-        scienceBones.addOption(ps5);
+        grammarLottery.addOption(ps5);
 
         science.addQuestion(grammarLottery);
+
+        Question grammarRain = new Question (grammar, "If it rains tomorrow...");
+        questionRepository.save(grammarRain);
+
+        Option rain  = new Option("I will bring an umbrella", grammarRain, true);
+        optionRespository.save(rain);
+        grammarRain.addOption(rain);
+
+        Option inside  = new Option("I would stay inside", grammarRain);
+        optionRespository.save(inside);
+        grammarRain.addOption(inside);
+
+        Option jacket = new Option("I would have bought a jacket", grammarRain);
+        optionRespository.save(jacket);
+        grammarRain.addOption(jacket);
+
+        Option ps5 = new Option("I wear a coat", grammarRain);
+        optionRespository.save(ps5);
+        grammarRain.addOption(ps5);
+
+        science.addQuestion(grammarRain);
 
     }
 }
