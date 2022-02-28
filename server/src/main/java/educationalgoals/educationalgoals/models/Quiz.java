@@ -3,6 +3,7 @@ package educationalgoals.educationalgoals.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,13 +14,17 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
+    private String title;
+
     @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"quiz"})
     private List<Question> questions;
 
 
-    public Quiz(List<Question> questions) {
-        this.questions = questions;
+    public Quiz(String title) {
+        this.title = title;
+        this.questions = new ArrayList<>();
     }
 
     public Quiz() {
@@ -31,6 +36,14 @@ public class Quiz {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<Question> getQuestions() {

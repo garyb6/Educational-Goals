@@ -3,6 +3,7 @@ package educationalgoals.educationalgoals.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Question {
 
     @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"question"})
-    private List<Answer> answers;
+    private List<Option> options;
 
     @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"question"})
@@ -29,9 +30,9 @@ public class Question {
     @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
 
-    public Question(String ask, List<Answer> answers, Answer correctAnswer, Quiz quiz) {
+    public Question(String ask, Answer correctAnswer, Quiz quiz) {
         this.ask = ask;
-        this.answers = answers;
+        this.options = new ArrayList<>();
         this.correctAnswer = correctAnswer;
         this.quiz = quiz;
     }
