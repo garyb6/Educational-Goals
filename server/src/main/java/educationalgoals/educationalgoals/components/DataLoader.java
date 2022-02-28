@@ -202,5 +202,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(sciencePhysician);
 
+        Question scienceElectric = new Question (science, "What is a material that will not carry an electric charge called?");
+        questionRepository.save(scienceElectric);
+
+        Option insulator  = new Option("Insulator", scienceElectric, true);
+        optionRespository.save(insulator);
+        scienceBones.addOption(insulator);
+
+        Option dense = new Option("Dense", scienceElectric);
+        optionRespository.save(dense);
+        scienceBones.addOption(dense);
+
+        Option liquid = new Option("Liquid", scienceElectric);
+        optionRespository.save(liquid);
+        romanRiver.addOption(liquid);
+
+        Option vulcanised = new Option("Vulcanised", scienceElectric);
+        optionRespository.save(vulcanised);
+        scienceBones.addOption(vulcanised);
+
+        science.addQuestion(scienceElectric);
+
     }
 }
