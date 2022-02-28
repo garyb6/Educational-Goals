@@ -162,6 +162,21 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(plasters);
 
-        
+        Question cleanClothes = new Question (roman, "What did the Romans use to clean their clothes?");
+        questionRepository.save(armyAuxiliary);
+        Option sweat = new Option("Sweat", cleanClothes);
+        optionRespository.save(sweat);
+        cleanClothes.addOption(sweat);
+        Option urine = new Option("Urine", cleanClothes, true);
+        optionRespository.save(urine);
+        cleanClothes.addOption(urine);
+        Option honey = new Option("Honey", cleanClothes);
+        optionRespository.save(honey);
+        cleanClothes.addOption(honey);
+        Option cowBrains = new Option("Cow brains", cleanClothes);
+        optionRespository.save(cowBrains);
+        cleanClothes.addOption(cowBrains);
+
+        roman.addQuestion(cleanClothes);
     }
 }
