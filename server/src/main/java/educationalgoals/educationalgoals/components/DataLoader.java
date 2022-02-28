@@ -236,6 +236,38 @@ public class DataLoader implements ApplicationRunner {
 
         scotland.addQuestion(kingJames);
 
+        Question darienColony = new Question (scotland, "In which modern day Central American country was the ill-fated Darien colony located?");
+        questionRepository.save(kingJames);
+        Option guatemala = new Option("Guatemala", darienColony);
+        optionRespository.save(guatemala);
+        darienColony.addOption(guatemala);
+        Option panama = new Option("Panama", darienColony, true);
+        optionRespository.save(panama);
+        darienColony.addOption(panama);
+        Option costaRica = new Option("Costa Rica", darienColony);
+        optionRespository.save(costaRica);
+        darienColony.addOption(costaRica);
+        Option nicaragua = new Option("Nicaragua", darienColony);
+        optionRespository.save(nicaragua);
+        darienColony.addOption(nicaragua);
 
+        scotland.addQuestion(darienColony);
+
+        Question unesco = new Question (scotland, "Which of these options is NOT one of the UNESCO world heritage sites in Scotland?");
+        questionRepository.save(kingJames);
+        Option castle = new Option("Edinburgh Castle", unesco, true);
+        optionRespository.save(castle);
+        unesco.addOption(castle);
+        Option newLanark = new Option("New Lanark", unesco);
+        optionRespository.save(newLanark);
+        unesco.addOption(newLanark);
+        Option orkney = new Option("Neolithic Heart of Orkney", unesco);
+        optionRespository.save(orkney);
+        unesco.addOption(orkney);
+        Option bridge = new Option("Forth Bridge", unesco);
+        optionRespository.save(bridge);
+        unesco.addOption(bridge);
+
+        scotland.addQuestion(unesco);
     }
 }
