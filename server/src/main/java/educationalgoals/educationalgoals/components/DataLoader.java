@@ -338,21 +338,38 @@ public class DataLoader implements ApplicationRunner {
 
         scotland.addQuestion(loch);
 
-        Question loch = new Question (scotland, "Which Loch has the deepest point in Scotland?");
-        questionRepository.save(loch);
-        Option ness = new Option("Loch Ness", loch);
-        optionRespository.save(ness);
-        loch.addOption(ness);
-        Option morar = new Option("Loch Morar", loch, true);
-        optionRespository.save(morar);
-        loch.addOption(morar);
-        Option tay = new Option("Loch Tay", loch);
-        optionRespository.save(tay);
-        loch.addOption(tay);
-        Option lomond = new Option("Loch Lomond", loch);
-        optionRespository.save(lomond);
-        loch.addOption(lomond);
+        Question irnBru = new Question (scotland, "Irn Bru is made from girders, but in which year was it first introduced?");
+        questionRepository.save(irnBru);
+        Option nineteen01 = new Option("1901", irnBru, true);
+        optionRespository.save(nineteen01);
+        irnBru.addOption(nineteen01);
+        Option nineteen31 = new Option("1931", irnBru);
+        optionRespository.save(nineteen31);
+        irnBru.addOption(nineteen31);
+        Option nineteen61 = new Option("1961", irnBru);
+        optionRespository.save(nineteen61);
+        irnBru.addOption(nineteen61);
+        Option nineteen11 = new Option("1911", irnBru);
+        optionRespository.save(nineteen11);
+        irnBru.addOption(nineteen11);
 
-        scotland.addQuestion(loch);
+        scotland.addQuestion(irnBru);
+
+        Question capital = new Question (scotland, "Edinburgh is the current capital city, but where did it replace?");
+        questionRepository.save(capital);
+        Option glasgow = new Option("Glasgow", capital);
+        optionRespository.save(glasgow);
+        capital.addOption(glasgow);
+        Option dumbarton = new Option("Dumbarton", capital);
+        optionRespository.save(dumbarton);
+        capital.addOption(dumbarton);
+        Option inverness = new Option("Inverness", capital);
+        optionRespository.save(inverness);
+        capital.addOption(nineteen61);
+        Option scone = new Option("Scone", capital);
+        optionRespository.save(scone);
+        capital.addOption(scone);
+
+        scotland.addQuestion(capital);
     }
 }
