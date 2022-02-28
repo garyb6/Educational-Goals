@@ -139,5 +139,28 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceSun);
 
+        Question scienceMushrooms = new Question (science, "What is the study of mushrooms called?");
+        questionRepository.save(scienceMushrooms);
+
+        Option mycology = new Option("Mycology", scienceMushrooms, true);
+        optionRespository.save(mycology);
+        scienceBones.addOption(mycology);
+
+        Option fungology = new Option("Fungology", scienceMushrooms);
+        optionRespository.save(fungology);
+        scienceBones.addOption(fungology);
+
+        Option nephology = new Option("Nephology", scienceMushrooms);
+        optionRespository.save(nephology);
+        romanRiver.addOption(nephology);
+
+        Option pomology = new Option("Pomology", scienceMushrooms);
+        optionRespository.save(pomology);
+        scienceBones.addOption(pomology);
+
+        science.addQuestion(scienceMushrooms);
+
+        
+
     }
 }
