@@ -115,21 +115,21 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(armyAuxiliary);
 
-        Question armyAuxiliary = new Question (roman, "For how many years did auxiliary soldiers in the Roman army have to fight for before becoming Roman citizens?");
-        questionRepository.save(armyAuxiliary);
-        Option ten = new Option("10 years", armyAuxiliary);
-        optionRespository.save(ten);
-        armyAuxiliary.addOption(ten);
-        Option fifteen = new Option("15 years", armyAuxiliary);
-        optionRespository.save(fifteen);
-        armyAuxiliary.addOption(fifteen);
-        Option twenty = new Option("20 years", armyAuxiliary);
-        optionRespository.save(twenty);
-        armyAuxiliary.addOption(twenty);
-        Option twentyFive = new Option("25 years", armyAuxiliary, true);
-        optionRespository.save(twentyFive);
-        armyAuxiliary.addOption(twentyFive);
+        Question toothpaste = new Question (roman, "What did some Romans use as toothpaste?");
+        questionRepository.save(toothpaste);
+        Option garlic = new Option("Garlic", toothpaste);
+        optionRespository.save(garlic);
+        toothpaste.addOption(garlic);
+        Option mouseBrains = new Option("Mouse brains", toothpaste, true);
+        optionRespository.save(mouseBrains);
+        toothpaste.addOption(mouseBrains);
+        Option duckLivers = new Option("Duck livers", toothpaste);
+        optionRespository.save(duckLivers);
+        toothpaste.addOption(duckLivers);
+        Option pigEars = new Option("Mushed pig ears", toothpaste);
+        optionRespository.save(pigEars);
+        toothpaste.addOption(pigEars);
 
-        roman.addQuestion(armyAuxiliary);
+        roman.addQuestion(toothpaste);
     }
 }
