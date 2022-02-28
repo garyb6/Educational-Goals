@@ -112,11 +112,32 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(minusTwoNine);
         romanRiver.addOption(minusTwoNine);
 
-        Option siliconCarbide = new Option("Silicon carbide", scienceEarth);
-        optionRespository.save(siliconCarbide);
-        scienceBones.addOption(siliconCarbide);
+        Option fourThree = new Option("43", scienceTemperature);
+        optionRespository.save(fourThree);
+        scienceBones.addOption(fourThree);
 
-        science.addQuestion(scienceEarth);
+        science.addQuestion(scienceTemperature);
+
+        Question scienceSun = new Question (science, "Roughly how long does it take for the sun’s light to reach earth?");
+        questionRepository.save(scienceSun);
+
+        Option eightMinutes = new Option("8 minutes", scienceSun, true);
+        optionRespository.save(eightMinutes);
+        scienceBones.addOption(eightMinutes);
+
+        Option eightSeconds = new Option("8 seconds", scienceSun);
+        optionRespository.save(eightSeconds);
+        scienceBones.addOption(eightSeconds);
+
+        Option eightHours = new Option("8 hours", scienceSun);
+        optionRespository.save(eightHours);
+        romanRiver.addOption(eightHours);
+
+        Option eightDays = new Option("8 days", scienceSun);
+        optionRespository.save(eightDays);
+        scienceBones.addOption(eightDays);
+
+        science.addQuestion(scienceSun);
 
     }
 }
