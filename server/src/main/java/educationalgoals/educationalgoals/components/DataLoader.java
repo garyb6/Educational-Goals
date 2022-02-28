@@ -160,7 +160,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(scienceMushrooms);
 
-        
+        Question scienceCountry = new Question (science, "What modern day country was Marie Curie born in?");
+        questionRepository.save(scienceCountry);
+
+        Option poland = new Option("Poland", scienceCountry, true);
+        optionRespository.save(poland);
+        scienceBones.addOption(poland);
+
+        Option netherlands = new Option("Netherlands", scienceCountry);
+        optionRespository.save(netherlands);
+        scienceBones.addOption(netherlands);
+
+        Option slovenia = new Option("Slovenia", scienceCountry);
+        optionRespository.save(slovenia);
+        romanRiver.addOption(slovenia);
+
+        Option uk = new Option("UK", scienceCountry);
+        optionRespository.save(uk);
+        scienceBones.addOption(uk);
+
+        science.addQuestion(scienceCountry);
 
     }
 }
