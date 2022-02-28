@@ -64,6 +64,55 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(firstEmperor);
 
-        
+        Question venusGoddess = new Question (roman, "Who was Venus the Roman goddess of?");
+        questionRepository.save(venusGoddess);
+        Option loveAndBeauty = new Option("Love and beauty", venusGoddess, true);
+        optionRespository.save(loveAndBeauty);
+        venusGoddess.addOption(loveAndBeauty);
+        Option time = new Option("Time", venusGoddess);
+        optionRespository.save(time);
+        venusGoddess.addOption(time);
+        Option war = new Option("War", venusGoddess);
+        optionRespository.save(war);
+        venusGoddess.addOption(war);
+        Option romance = new Option("Romance", venusGoddess);
+        optionRespository.save(romance);
+        venusGoddess.addOption(romance);
+
+        roman.addQuestion(venusGoddess);
+
+        Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper");
+        questionRepository.save(toiletPaper);
+        Option cowTongue = new Option("Cow tongue", toiletPaper);
+        optionRespository.save(cowTongue);
+        toiletPaper.addOption(cowTongue);
+        Option spongeOnStick = new Option("A wet sponge on a stick", toiletPaper, true);
+        optionRespository.save(spongeOnStick);
+        toiletPaper.addOption(spongeOnStick);
+        Option oakLeaves = new Option("Oak leaves", toiletPaper);
+        optionRespository.save(oakLeaves);
+        toiletPaper.addOption(oakLeaves);
+        Option horseTails = new Option("Horse tails", toiletPaper);
+        optionRespository.save(horseTails);
+        toiletPaper.addOption(horseTails);
+
+        roman.addQuestion(toiletPaper);
+
+        Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper");
+        questionRepository.save(toiletPaper);
+        Option cowTongue = new Option("Cow tongue", toiletPaper);
+        optionRespository.save(cowTongue);
+        toiletPaper.addOption(cowTongue);
+        Option spongeOnStick = new Option("A wet sponge on a stick", toiletPaper, true);
+        optionRespository.save(spongeOnStick);
+        toiletPaper.addOption(spongeOnStick);
+        Option oakLeaves = new Option("Oak leaves", toiletPaper);
+        optionRespository.save(oakLeaves);
+        toiletPaper.addOption(oakLeaves);
+        Option horseTails = new Option("Horse tails", toiletPaper);
+        optionRespository.save(horseTails);
+        toiletPaper.addOption(horseTails);
+
+        roman.addQuestion(toiletPaper);
     }
 }
