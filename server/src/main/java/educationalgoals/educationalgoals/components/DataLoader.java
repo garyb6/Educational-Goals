@@ -265,5 +265,26 @@ public class DataLoader implements ApplicationRunner {
 
         science.addQuestion(sciencePound);
 
+        Question grammarLottery = new Question (grammar, "If I won the lottery...");
+        questionRepository.save(grammarLottery);
+
+        Option mansion  = new Option("I would buy a mansion", grammarLottery, true);
+        optionRespository.save(mansion);
+        scienceBones.addOption(mansion);
+
+        Option car  = new Option("I will buy a car", grammarLottery);
+        optionRespository.save(car);
+        scienceBones.addOption(car);
+
+        Option computer = new Option("I buy a computer", grammarLottery);
+        optionRespository.save(computer);
+        romanRiver.addOption(computer);
+
+        Option ps5 = new Option("I would have bought a PS5", grammarLottery);
+        optionRespository.save(ps5);
+        scienceBones.addOption(ps5);
+
+        science.addQuestion(grammarLottery);
+
     }
 }
