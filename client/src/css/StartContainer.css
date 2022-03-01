@@ -1,3 +1,12 @@
+/* .startContainer{}
+.playerNameBoxes{} */
+
+.playerNameBoxes{
+display: flex;
+}
+.colourSelector{
+    display: flex;
+}
 
 .carousel{
     margin: 2%;
@@ -9,4 +18,8 @@
     padding: 25%;
     justify-content: center;
     /* filter: invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%); */
+}
+
+.quizSelector{
+    display: flex;
 }
