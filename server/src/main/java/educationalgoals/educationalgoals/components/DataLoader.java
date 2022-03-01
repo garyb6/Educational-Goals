@@ -287,7 +287,7 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(ps5);
         grammarLottery.addOption(ps5);
 
-        science.addQuestion(grammarLottery);
+        grammar.addQuestion(grammarLottery);
 
         Question grammarRain = new Question (grammar, "If it rains tomorrow...");
         questionRepository.save(grammarRain);
@@ -304,11 +304,179 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(jacket);
         grammarRain.addOption(jacket);
 
-        Option ps5 = new Option("I wear a coat", grammarRain);
-        optionRespository.save(ps5);
-        grammarRain.addOption(ps5);
+        Option coat = new Option("I wear a coat", grammarRain);
+        optionRespository.save(coat);
+        grammarRain.addOption(coat);
 
-        science.addQuestion(grammarRain);
- 
+        grammar.addQuestion(grammarRain);
+
+        Question grammarStudied = new Question (grammar, "If I had studied more...");
+        questionRepository.save(grammarStudied);
+
+        Option passed  = new Option("I would have passed the exam.", grammarStudied, true);
+        optionRespository.save(passed);
+        grammarStudied.addOption(passed);
+
+        Option smart  = new Option("I would be very smart.", grammarStudied);
+        optionRespository.save(smart);
+        grammarStudied.addOption(smart);
+
+        Option things = new Option("I will know more things", grammarStudied);
+        optionRespository.save(things);
+        grammarStudied.addOption(things);
+
+        Option exam = new Option("I fail the exam", grammarStudied);
+        optionRespository.save(exam);
+        grammarStudied.addOption(exam);
+
+        grammar.addQuestion(grammarStudied);
+
+        Question grammarFood = new Question (grammar, "If I could only eat one food for the rest of my life...");
+        questionRepository.save(grammarFood);
+
+        Option pizza = new Option("It would be pizza", grammarFood, true);
+        optionRespository.save(pizza);
+        grammarFood.addOption(pizza);
+
+        Option pasta  = new Option("It will be pasta", grammarFood);
+        optionRespository.save(pasta);
+        grammarFood.addOption(pasta);
+
+        Option tacos = new Option("It is tacos", grammarFood);
+        optionRespository.save(tacos);
+        grammarFood.addOption(tacos);
+
+        Option burgers = new Option("It would have been burgers", grammarFood);
+        optionRespository.save(burgers);
+        grammarFood.addOption(burgers);
+
+        grammar.addQuestion(grammarFood);
+
+        Question grammarWeather = new Question (grammar, "If it is sunny tomorrow...");
+        questionRepository.save(grammarWeather);
+
+        Option glasses = new Option("I will wear sunglasses", grammarWeather, true);
+        optionRespository.save(glasses);
+        grammarWeather.addOption(glasses);
+
+        Option miracle1  = new Option("It would be a miracle", grammarWeather);
+        optionRespository.save(miracle1);
+        grammarWeather.addOption(miracle1);
+
+        Option cream = new Option("I would have put on sun cream", grammarWeather);
+        optionRespository.save(cream);
+        grammarWeather.addOption(cream);
+
+        Option cap = new Option("I wear a cap", grammarWeather);
+        optionRespository.save(cap);
+        grammarWeather.addOption(cap);
+
+        grammar.addQuestion(grammarWeather);
+
+        Question grammarFood1 = new Question (grammar, "If I had eaten more...");
+        questionRepository.save(grammarFood1);
+
+        Option sick = new Option("I would have been sick", grammarFood1, true);
+        optionRespository.save(sick);
+        grammarFood1.addOption(sick);
+
+        Option hungry  = new Option("I won’t be hungry", grammarFood1);
+        optionRespository.save(hungry);
+        grammarFood1.addOption(hungry);
+
+        Option full = new Option("I will be full", grammarFood1);
+        optionRespository.save(full);
+        grammarFood1.addOption(full);
+
+        Option pizza2 = new Option("I choose the pizza", grammarFood1);
+        optionRespository.save(pizza2);
+        grammarFood1.addOption(pizza2);
+
+        grammar.addQuestion(grammarFood1);
+
+        Question grammarGame = new Question (grammar, "If I lose this game...");
+        questionRepository.save(grammarGame);
+
+        Option sad1 = new Option("I will be sad", grammarGame, true);
+        optionRespository.save(sad1);
+        grammarGame.addOption(sad1);
+
+        Option angry2  = new Option("I would be angry", grammarGame);
+        optionRespository.save(angry2);
+        grammarGame.addOption(angry2);
+
+        Option studied = new Option("I would have studied more", grammarGame);
+        optionRespository.save(studied);
+        grammarGame.addOption(studied);
+
+        Option lose = new Option("I lose", grammarGame);
+        optionRespository.save(lose);
+        grammarGame.addOption(lose);
+
+        grammar.addQuestion(grammarGame);
+
+        Question grammarEarlier = new Question (grammar, "If you had told me earlier...");
+        questionRepository.save(grammarEarlier);
+
+        Option helped = new Option("I would have helped you", grammarEarlier, true);
+        optionRespository.save(helped);
+        grammarEarlier.addOption(helped);
+
+        Option would  = new Option("I would help you", grammarEarlier);
+        optionRespository.save(would);
+        grammarEarlier.addOption(would);
+
+        Option will = new Option("I will help you", grammarEarlier);
+        optionRespository.save(will);
+        grammarEarlier.addOption(will);
+
+        Option help = new Option("I help you", grammarEarlier);
+        optionRespository.save(help);
+        grammarEarlier.addOption(help);
+
+        grammar.addQuestion(grammarEarlier);
+
+        Question grammarCelebrity = new Question (grammar, "If I met a celebrity...");
+        questionRepository.save(grammarCelebrity);
+
+        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
+        optionRespository.save(selfie);
+        grammarCelebrity.addOption(selfie);
+
+        Option autograph  = new Option("I will ask for an autograph", grammarCelebrity);
+        optionRespository.save(autograph);
+        grammarCelebrity.addOption(autograph);
+
+        Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
+        optionRespository.save(hello3);
+        grammarCelebrity.addOption(hello3);
+
+        Option photo2 = new Option("I take a photo", grammarCelebrity);
+        optionRespository.save(photo2);
+        grammarCelebrity.addOption(photo2);
+
+        grammar.addQuestion(grammarCelebrity);
+
+        Question grammarGame1 = new Question (grammar, "If I win this game...");
+        questionRepository.save(grammarGame1);
+
+        Option happy = new Option("I will be very happy", grammarGame1, true);
+        optionRespository.save(happy);
+        grammarGame1.addOption(happy);
+
+        Option lost  = new Option("I would have lost this game", grammarGame1);
+        optionRespository.save(lost);
+        grammarGame1.addOption(lost);
+
+        Option celebrate = new Option("I would celebrate”", grammarGame1);
+        optionRespository.save(celebrate);
+        grammarGame1.addOption(celebrate);
+
+        Option study3 = new Option("I study more", grammarGame1);
+        optionRespository.save(study3);
+        grammarGame1.addOption(study3);
+
+        grammar.addQuestion(grammarGame1);
+
     }
 }
