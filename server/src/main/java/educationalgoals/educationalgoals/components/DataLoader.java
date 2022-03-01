@@ -223,7 +223,7 @@ public class DataLoader implements ApplicationRunner {
 
         scotland.addQuestion(nationalAnimal);
 
-        Question kingJames = new Question (scotland, "What is Scotland’s national animal?");
+        Question kingJames = new Question (scotland, "In 1603 the Union of the Crowns occurred when King James became James 1st of England. But which number James of Scotland was he?");
         questionRepository.save(kingJames);
         Option sixth = new Option("James VI", kingJames, true);
         optionRespository.save(sixth);
@@ -241,7 +241,7 @@ public class DataLoader implements ApplicationRunner {
         scotland.addQuestion(kingJames);
 
         Question darienColony = new Question (scotland, "In which modern day Central American country was the ill-fated Darien colony located?");
-        questionRepository.save(kingJames);
+        questionRepository.save(darienColony);
         Option guatemala = new Option("Guatemala", darienColony);
         optionRespository.save(guatemala);
         darienColony.addOption(guatemala);
@@ -258,7 +258,7 @@ public class DataLoader implements ApplicationRunner {
         scotland.addQuestion(darienColony);
 
         Question unesco = new Question (scotland, "Which of these options is NOT one of the UNESCO world heritage sites in Scotland?");
-        questionRepository.save(kingJames);
+        questionRepository.save(unesco);
         Option castle = new Option("Edinburgh Castle", unesco, true);
         optionRespository.save(castle);
         unesco.addOption(castle);
