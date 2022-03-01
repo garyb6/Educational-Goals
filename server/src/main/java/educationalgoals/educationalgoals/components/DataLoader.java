@@ -352,26 +352,26 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarFood);
 
-        Question grammarFood = new Question (grammar, "If I could only eat one food for the rest of my life...");
-        questionRepository.save(grammarFood);
+        Question grammarWeather = new Question (grammar, "If it is sunny tomorrow...");
+        questionRepository.save(grammarWeather);
 
-        Option pizza = new Option("It would be pizza", grammarFood, true);
-        optionRespository.save(pizza);
-        grammarFood.addOption(pizza);
+        Option glasses = new Option("I will wear sunglasses", grammarWeather, true);
+        optionRespository.save(glasses);
+        grammarWeather.addOption(glasses);
 
-        Option pasta  = new Option("It will be pasta", grammarFood);
-        optionRespository.save(pasta);
-        grammarFood.addOption(pasta);
+        Option miracle  = new Option("It would be a miracle", grammarWeather);
+        optionRespository.save(miracle);
+        grammarWeather.addOption(miracle);
 
-        Option tacos = new Option("It is tacos", grammarFood);
-        optionRespository.save(tacos);
-        grammarFood.addOption(tacos);
+        Option cream = new Option("I would have put on sun cream", grammarWeather);
+        optionRespository.save(cream);
+        grammarWeather.addOption(cream);
 
-        Option burgers = new Option("It would have been burgers", grammarFood);
-        optionRespository.save(burgers);
-        grammarFood.addOption(burgers);
+        Option cap = new Option("I wear a cap", grammarWeather);
+        optionRespository.save(cap);
+        grammarWeather.addOption(cap);
 
-        grammar.addQuestion(grammarFood);
+        grammar.addQuestion(grammarWeather);
 
     }
 }
