@@ -436,5 +436,47 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarEarlier);
 
+        Question grammarCelebrity = new Question (grammar, "If I met a celebrity...");
+        questionRepository.save(grammarCelebrity);
+
+        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
+        optionRespository.save(selfie);
+        grammarCelebrity.addOption(selfie);
+
+        Option autograph  = new Option("I will ask for an autograph", grammarCelebrity);
+        optionRespository.save(autograph);
+        grammarCelebrity.addOption(autograph);
+
+        Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
+        optionRespository.save(hello3);
+        grammarCelebrity.addOption(hello3);
+
+        Option photo2 = new Option("I take a photo", grammarCelebrity);
+        optionRespository.save(photo2);
+        grammarCelebrity.addOption(photo2);
+
+        grammar.addQuestion(grammarCelebrity);
+
+        Question grammarCelebrity = new Question (grammar, "If I met a celebrity...");
+        questionRepository.save(grammarCelebrity);
+
+        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
+        optionRespository.save(selfie);
+        grammarCelebrity.addOption(selfie);
+
+        Option autograph  = new Option("I will ask for an autograph", grammarCelebrity);
+        optionRespository.save(autograph);
+        grammarCelebrity.addOption(autograph);
+
+        Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
+        optionRespository.save(hello3);
+        grammarCelebrity.addOption(hello3);
+
+        Option photo2 = new Option("I take a photo", grammarCelebrity);
+        optionRespository.save(photo2);
+        grammarCelebrity.addOption(photo2);
+
+        grammar.addQuestion(grammarCelebrity);
+
     }
 }
