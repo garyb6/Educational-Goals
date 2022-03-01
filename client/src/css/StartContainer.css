@@ -1,0 +1,83 @@
+.startContainer{
+    height: 100vh;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    justify-content: center;
+}
+
+h1{
+    /* grid-area: h1; */
+    border: 2px solid black;
+}
+
+.players{
+    display: flex;
+    border: 2px solid black;
+
+}
+
+.playerNameBoxes{
+/* grid-area: input; */
+border: 2px solid black;
+}
+
+.colourSelector{
+    /* grid-area: carousel; */
+    border: 2px solid black;
+}
+
+.carousel{
+    margin: 2%;
+    height: 20%;
+    width: 20%;
+    border: 2px solid black;
+}
+.carousel-inner{
+    padding: 25%;
+    justify-content: center;
+    /* filter: invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%); */
+}
+
+.carousel-inner > .item{
+    height: 350px;
+    object-fit: contain;
+}
+
+.quizSelector{
+    /* grid-area: quiz; */
+    display: flex;
+    border: 2px solid black;
+
+
+}
+
+/* .startContainer{
+    height: 100vh;
+    border: 2px solid black;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    gap: 40px, 40px;
+    grid-template-areas: 
+    "h1 h1 h1 h1"
+    "input input input input"
+    "carousel carousel carousel carousel"
+    "quiz quiz quiz quiz";
+    } */
+
+    /* .grid {
+        display:grid;
+        justify-items: center;
+        grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
+        grid-template-rows: auto;
+        gap: 40px 40px;
+        grid-template-areas: 
+        ". . . . . ."
+        ". hh hh hh hh ."
+        ". . hp hp . ."
+        ". B1 B2 B3 B4 ."
+        ". B5 B6 B7 B8 ."
+        ". . . . . ."
+    } */
