@@ -1,0 +1,12 @@
+
+.carousel{
+    margin: 2%;
+    height: 20%;
+    width: 20%;
+    border: 2px solid black;
+}
+.carousel-inner{
+    padding: 25%;
+    justify-content: center;
+    /* filter: invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%); */
+}

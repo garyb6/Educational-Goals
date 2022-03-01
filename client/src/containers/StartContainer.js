@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-
-
+import Crouch from "./../images/Crouch.png";
+import Stand from "./../images/Stand.png";
+import JumpL from "./../images/Jump_left.png";
+import "./../css/StartContainer.css"
 
 const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
     
@@ -27,31 +29,32 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
     <Carousel.Item>
         <img
         className="d-block w-100"
-        src="holder.js/800x400?text=First slide&bg=f5f5f5"
-        alt="First slide"
+        src= {Crouch}
+        alt="Goalkeeper"
         />
         <Carousel.Caption>
-        <h5>First slide label</h5>
+        <h5>Goalkeeper</h5>
         </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
         <img
         className="d-block w-100"
-        src="holder.js/800x400?text=Second slide&bg=eee"
-        alt="Second slide"
+        src={Stand}
+        alt="Striker"
+        style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
         />
         <Carousel.Caption>
-        <h5>Second slide label</h5>
+        <h5>Striker</h5>
         </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
         <img
         className="d-block w-100"
-        src="holder.js/800x400?text=Third slide&bg=e5e5e5"
-        alt="Third slide"
+        src={JumpL}
+        alt="Diving Goalkeeper"
         />
         <Carousel.Caption>
-        <h5>Third slide label</h5>
+        <h5>Diving Goalkeeper</h5>
         </Carousel.Caption>
     </Carousel.Item>
 </Carousel>
