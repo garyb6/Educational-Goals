@@ -457,26 +457,26 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarCelebrity);
 
-        Question grammarCelebrity = new Question (grammar, "If I met a celebrity...");
-        questionRepository.save(grammarCelebrity);
+        Question grammarGame1 = new Question (grammar, "If I win this game...");
+        questionRepository.save(grammarGame1);
 
-        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
-        optionRespository.save(selfie);
-        grammarCelebrity.addOption(selfie);
+        Option happy = new Option("I will be very happy", grammarGame1, true);
+        optionRespository.save(happy);
+        grammarGame1.addOption(happy);
 
-        Option autograph  = new Option("I will ask for an autograph", grammarCelebrity);
-        optionRespository.save(autograph);
-        grammarCelebrity.addOption(autograph);
+        Option lost  = new Option("I would have lost this game", grammarGame1);
+        optionRespository.save(lost);
+        grammarGame1.addOption(lost);
 
-        Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
-        optionRespository.save(hello3);
-        grammarCelebrity.addOption(hello3);
+        Option celebrate = new Option("I would celebrate”", grammarGame1);
+        optionRespository.save(celebrate);
+        grammarGame1.addOption(celebrate);
 
-        Option photo2 = new Option("I take a photo", grammarCelebrity);
-        optionRespository.save(photo2);
-        grammarCelebrity.addOption(photo2);
+        Option study3 = new Option("I study more", grammarGame1);
+        optionRespository.save(study3);
+        grammarGame1.addOption(study3);
 
-        grammar.addQuestion(grammarCelebrity);
+        grammar.addQuestion(grammarGame1);
 
     }
 }
