@@ -375,6 +375,7 @@ public class DataLoader implements ApplicationRunner {
         capital.addOption(scone);
 
         scotland.addQuestion(capital);
+
         Quiz science = new Quiz("Science");
         quizRepository.save(science);
 
@@ -385,9 +386,9 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(twoZeroSix);
         scienceBones.addOption(twoZeroSix);
 
-        Option onceTwoZeroNine = new Option("1209", scienceBones);
-        optionRespository.save(onceTwoZeroNine);
-        scienceBones.addOption(onceTwoZeroNine);
+        Option oneTwoZeroNine = new Option("1209", scienceBones);
+        optionRespository.save(oneTwoZeroNine);
+        scienceBones.addOption(oneTwoZeroNine);
 
 
         Option threeSevenThree = new Option("373", scienceBones);
@@ -637,11 +638,11 @@ public class DataLoader implements ApplicationRunner {
         Question grammarStudied = new Question (grammar, "If I had studied more...");
         questionRepository.save(grammarStudied);
 
-        Option passed  = new Option("I would have passed the exam.", grammarStudied, true);
+        Option passed  = new Option("I would have passed the exam", grammarStudied, true);
         optionRespository.save(passed);
         grammarStudied.addOption(passed);
 
-        Option smart  = new Option("I would be very smart.", grammarStudied);
+        Option smart  = new Option("I would be very smart", grammarStudied);
         optionRespository.save(smart);
         grammarStudied.addOption(smart);
 
