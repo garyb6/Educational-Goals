@@ -415,5 +415,26 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarGame);
 
+        Question grammarEarlier = new Question (grammar, "If you had told me earlier...");
+        questionRepository.save(grammarEarlier);
+
+        Option helped = new Option("I would have helped you", grammarEarlier, true);
+        optionRespository.save(helped);
+        grammarEarlier.addOption(helped);
+
+        Option would  = new Option("I would help you", grammarEarlier);
+        optionRespository.save(would);
+        grammarEarlier.addOption(would);
+
+        Option will = new Option("I will help you", grammarEarlier);
+        optionRespository.save(will);
+        grammarEarlier.addOption(will);
+
+        Option help = new Option("I help you", grammarEarlier);
+        optionRespository.save(help);
+        grammarEarlier.addOption(help);
+
+        grammar.addQuestion(grammarEarlier);
+
     }
 }
