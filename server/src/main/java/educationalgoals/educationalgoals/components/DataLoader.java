@@ -359,9 +359,9 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(glasses);
         grammarWeather.addOption(glasses);
 
-        Option miracle  = new Option("It would be a miracle", grammarWeather);
-        optionRespository.save(miracle);
-        grammarWeather.addOption(miracle);
+        Option miracle1  = new Option("It would be a miracle", grammarWeather);
+        optionRespository.save(miracle1);
+        grammarWeather.addOption(miracle1);
 
         Option cream = new Option("I would have put on sun cream", grammarWeather);
         optionRespository.save(cream);
@@ -372,6 +372,27 @@ public class DataLoader implements ApplicationRunner {
         grammarWeather.addOption(cap);
 
         grammar.addQuestion(grammarWeather);
+
+        Question grammarFood1 = new Question (grammar, "If I had eaten more...");
+        questionRepository.save(grammarFood1);
+
+        Option sick = new Option("I would have been sick", grammarFood1, true);
+        optionRespository.save(sick);
+        grammarFood1.addOption(sick);
+
+        Option hungry  = new Option("I won’t be hungry", grammarFood1);
+        optionRespository.save(hungry);
+        grammarFood1.addOption(hungry);
+
+        Option full = new Option("I will be full", grammarFood1);
+        optionRespository.save(full);
+        grammarFood1.addOption(full);
+
+        Option pizza2 = new Option("I choose the pizza", grammarFood1);
+        optionRespository.save(pizza2);
+        grammarFood1.addOption(pizza2);
+
+        grammar.addQuestion(grammarFood1);
 
     }
 }
