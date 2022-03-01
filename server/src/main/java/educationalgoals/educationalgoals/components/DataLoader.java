@@ -287,7 +287,7 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(ps5);
         grammarLottery.addOption(ps5);
 
-        science.addQuestion(grammarLottery);
+        grammar.addQuestion(grammarLottery);
 
         Question grammarRain = new Question (grammar, "If it rains tomorrow...");
         questionRepository.save(grammarRain);
@@ -304,11 +304,53 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(jacket);
         grammarRain.addOption(jacket);
 
-        Option ps5 = new Option("I wear a coat", grammarRain);
-        optionRespository.save(ps5);
-        grammarRain.addOption(ps5);
+        Option coat = new Option("I wear a coat", grammarRain);
+        optionRespository.save(coat);
+        grammarRain.addOption(coat);
 
-        science.addQuestion(grammarRain);
- 
+        grammar.addQuestion(grammarRain);
+
+        Question grammarStudied = new Question (grammar, "If I had studied more...");
+        questionRepository.save(grammarStudied);
+
+        Option passed  = new Option("I would have passed the exam.", grammarStudied, true);
+        optionRespository.save(passed);
+        grammarStudied.addOption(passed);
+
+        Option smart  = new Option("I would be very smart.", grammarStudied);
+        optionRespository.save(smart);
+        grammarStudied.addOption(smart);
+
+        Option things = new Option("I will know more things", grammarStudied);
+        optionRespository.save(things);
+        grammarStudied.addOption(things);
+
+        Option exam = new Option("I fail the exam", grammarStudied);
+        optionRespository.save(exam);
+        grammarStudied.addOption(exam);
+
+        grammar.addQuestion(grammarStudied);
+
+        Question grammarStudied = new Question (grammar, "If I had studied more...");
+        questionRepository.save(grammarStudied);
+
+        Option passed  = new Option("I would have passed the exam.", grammarStudied, true);
+        optionRespository.save(passed);
+        grammarStudied.addOption(passed);
+
+        Option smart  = new Option("I would be very smart.", grammarStudied);
+        optionRespository.save(smart);
+        grammarStudied.addOption(smart);
+
+        Option things = new Option("I will know more things", grammarStudied);
+        optionRespository.save(things);
+        grammarStudied.addOption(things);
+
+        Option exam = new Option("I fail the exam", grammarStudied);
+        optionRespository.save(exam);
+        grammarStudied.addOption(exam);
+
+        grammar.addQuestion(grammarStudied);
+
     }
 }
