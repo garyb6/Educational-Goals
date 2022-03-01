@@ -331,26 +331,47 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarStudied);
 
-        Question grammarStudied = new Question (grammar, "If I had studied more...");
-        questionRepository.save(grammarStudied);
+        Question grammarFood = new Question (grammar, "If I could only eat one food for the rest of my life...");
+        questionRepository.save(grammarFood);
 
-        Option passed  = new Option("I would have passed the exam.", grammarStudied, true);
-        optionRespository.save(passed);
-        grammarStudied.addOption(passed);
+        Option pizza = new Option("It would be pizza", grammarFood, true);
+        optionRespository.save(pizza);
+        grammarFood.addOption(pizza);
 
-        Option smart  = new Option("I would be very smart.", grammarStudied);
-        optionRespository.save(smart);
-        grammarStudied.addOption(smart);
+        Option pasta  = new Option("It will be pasta", grammarFood);
+        optionRespository.save(pasta);
+        grammarFood.addOption(pasta);
 
-        Option things = new Option("I will know more things", grammarStudied);
-        optionRespository.save(things);
-        grammarStudied.addOption(things);
+        Option tacos = new Option("It is tacos", grammarFood);
+        optionRespository.save(tacos);
+        grammarFood.addOption(tacos);
 
-        Option exam = new Option("I fail the exam", grammarStudied);
-        optionRespository.save(exam);
-        grammarStudied.addOption(exam);
+        Option burgers = new Option("It would have been burgers", grammarFood);
+        optionRespository.save(burgers);
+        grammarFood.addOption(burgers);
 
-        grammar.addQuestion(grammarStudied);
+        grammar.addQuestion(grammarFood);
+
+        Question grammarFood = new Question (grammar, "If I could only eat one food for the rest of my life...");
+        questionRepository.save(grammarFood);
+
+        Option pizza = new Option("It would be pizza", grammarFood, true);
+        optionRespository.save(pizza);
+        grammarFood.addOption(pizza);
+
+        Option pasta  = new Option("It will be pasta", grammarFood);
+        optionRespository.save(pasta);
+        grammarFood.addOption(pasta);
+
+        Option tacos = new Option("It is tacos", grammarFood);
+        optionRespository.save(tacos);
+        grammarFood.addOption(tacos);
+
+        Option burgers = new Option("It would have been burgers", grammarFood);
+        optionRespository.save(burgers);
+        grammarFood.addOption(burgers);
+
+        grammar.addQuestion(grammarFood);
 
     }
 }
