@@ -18,13 +18,13 @@ public class Question {
     @Column(name = "ask")
     private String ask;
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"question"})
+    @JsonIgnoreProperties(value= "question")
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
     private List<Option> options;
 
     @ManyToOne
     @JoinColumn(name = "quiz_id", nullable = false)
-    @JsonIgnoreProperties({"questions"})
+    @JsonIgnoreProperties(value = "questions")
     private Quiz quiz;
 
     public Question(Quiz quiz, String ask) {
@@ -68,6 +68,10 @@ public class Question {
         this.options = options;
     }
 
+    public int optionsAmount(){
+        return this.options.size();
+    }
+
     public void addOption(Option option){
         this.options.add(option);
     }
@@ -96,3 +100,5 @@ public class Question {
 //    public void setCorrectAnswer(Answer correctAnswer) {
 //        this.correctAnswer = correctAnswer;
 //    }
+
+//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)

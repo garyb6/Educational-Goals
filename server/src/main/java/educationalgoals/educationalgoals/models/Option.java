@@ -17,8 +17,8 @@ public class Option {
     private String expression;
 
     @ManyToOne
-    @JoinColumn(name = "question_id", nullable = true)
-    @JsonIgnoreProperties({"options"})
+    @JoinColumn(name = "question_id", nullable = false)
+    @JsonIgnoreProperties(value = "options")
     private Question question;
 
     @Column(name = "correct")
@@ -80,3 +80,5 @@ public class Option {
 //    public void setCorrect(boolean correct) {
 //        this.correct = correct;
 //    }
+
+//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
