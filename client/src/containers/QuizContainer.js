@@ -1,9 +1,24 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-
-
+import React, {useState, useEffect} from 'react';
+import {Link, Routes, Router, Route} from 'react-router-dom';
+import Request from '../helpers/request';
 const QuizContainer = ({playerOne, playerTwo}) => {
-    
+    const [quizzes, setQuizzes] = useState([]);
+    useEffect(()=>{
+        requestAll()
+    }, [])
+    const requestAll = function(){
+        const request = new Request();
+        request.get('http://localhost:8080/quizzes')
+        .then((data) => setQuizzes(data))
+    }
+    const findQuizById = function(id){
+        return quizzes.find((quiz) => {
+            return quiz.id === parseInt(id);
+        })
+    }
+    if(!quizzes){
+        return null
+    }
     return (
         <>
         <h1>This is the quiz page</h1>
@@ -18,7 +33,5 @@ const QuizContainer = ({playerOne, playerTwo}) => {
         <Link to = "/game">Answer 4</Link>
         </>
     )
-    
 }
-
 export default QuizContainer;
