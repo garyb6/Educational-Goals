@@ -394,5 +394,26 @@ public class DataLoader implements ApplicationRunner {
 
         grammar.addQuestion(grammarFood1);
 
+        Question grammarGame = new Question (grammar, "If I lose this game...");
+        questionRepository.save(grammarGame);
+
+        Option sad1 = new Option("I will be sad", grammarGame, true);
+        optionRespository.save(sad1);
+        grammarGame.addOption(sad1);
+
+        Option angry2  = new Option("I would be angry", grammarGame);
+        optionRespository.save(angry2);
+        grammarGame.addOption(angry2);
+
+        Option studied = new Option("I would have studied more", grammarGame);
+        optionRespository.save(studied);
+        grammarGame.addOption(studied);
+
+        Option lose = new Option("I lose", grammarGame);
+        optionRespository.save(lose);
+        grammarGame.addOption(lose);
+
+        grammar.addQuestion(grammarGame);
+
     }
 }
