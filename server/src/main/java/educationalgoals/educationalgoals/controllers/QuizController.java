@@ -20,7 +20,7 @@ public class QuizController {
         return new ResponseEntity<>(quizRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/quiz/{id}")
+    @GetMapping(value = "/quizzes/{id}")
     public ResponseEntity getQuiz(@PathVariable Long id){
         return new ResponseEntity(quizRepository.findById(id), HttpStatus.OK);
     }

@@ -6,20 +6,29 @@ import Stand from "./../images/Stand.png";
 import JumpL from "./../images/Jump_left.png";
 import "./../css/StartContainer.css"
 
-const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
+const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz}) => {
     
     const handleChangePlayerOne = (event) => {
 
         setPlayerOne(event.target.value);
 
-        console.log(playerOne);
     }
     const handleChangePlayerTwo = (event) => {
 
         setPlayerTwo(event.target.value);
 
-        console.log(playerTwo);
     }
+
+    const handleChangeQuizChoice = (event) => {
+
+        setSelectedQuiz(parseInt(event.target.value));
+    }
+
+    const listOfQuizzes = quizzes.map((quiz, index) => {
+        return <option key = {index} value = {quiz.id}> {quiz.title} </option>
+    });
+
+
 
     return (
     <>  
@@ -36,7 +45,7 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
                                 className="d-block"
                                 src= {Stand}
                                 alt="Goalkeeper"
-                                style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
+                                // style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
                                 />
                                 {/* <Carousel.Caption>
                                 <h5>Goalkeeper</h5>
@@ -47,7 +56,7 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
                                 className="d-block"
                                 src={Stand}
                                 alt="Striker"
-                                style={{filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)"}}
+                                // style={{filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)"}}
                                 />
                                 {/* <Carousel.Caption>
                                 <h5>Striker</h5>
@@ -58,7 +67,7 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
                                 className="d-block"
                                 src={Stand}
                                 alt="Diving Goalkeeper"
-                                style={{filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)"}}
+                                // style={{filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)"}}
                                 />
                                 {/* <Carousel.Caption>
                                 <h5>Diving Goalkeeper</h5>
@@ -112,11 +121,9 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
             <div className="quizSelector">
                 <form>
                     <label> Choose Quiz: </label>
-                    <select>
-                    <option value = ""> Jamie's Quiz </option>
-                    <option value = ""> Fraser's Quiz </option>
-                    <option value = ""> Andrew's Quiz </option>
-                    <option value = ""> Gary's Quiz </option>
+                    <select onChange = {handleChangeQuizChoice} defaultValue = {1}>
+
+                        {listOfQuizzes}
                     </select>
                 </form>
                 <Link to = "/quiz">Start</Link>
