@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Routes, Router, Route} from 'react-router-dom';
-import "./../css/MainContainer.css"
+import "./../css/QuizContainer.css"
 
 
 const QuizContainer = ({playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber}) => {
@@ -46,15 +46,13 @@ const QuizContainer = ({playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQ
                 </div>
             </div>
             <div id="quizBoard">
-                <div id="question">
+                <div className= "Q">
                     <h2>{chosenQuiz.questions[questionNumber-1].ask}</h2>
                 </div>
-                <div className="answers">
-                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[0].expression}</Link></button>
-                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[1].expression}</Link></button>
-                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[2].expression}</Link></button>
-                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[3].expression}</Link></button>
-                </div>
+                    <button className="A1 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[0].expression}</Link></button>
+                    <button className="A2 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[1].expression}</Link></button>
+                    <button className="A3 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[2].expression}</Link></button>
+                    <button className="A4 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[3].expression}</Link></button>
             </div>
         </div> 
         </>
