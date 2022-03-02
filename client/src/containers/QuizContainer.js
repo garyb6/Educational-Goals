@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Routes, Router, Route} from 'react-router-dom';
+import "./../css/MainContainer.css"
+
 
 const QuizContainer = ({playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber}) => {
     
@@ -31,25 +33,30 @@ const QuizContainer = ({playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQ
 
     return (
         <>
-        <div className="nav">
-            <h2> {playerOne} is player one </h2>
-            <h3> This is the score counter</h3>
-            <h1>This is a question counter, the count is {questionNumber}</h1>
-            <h2> {playerTwo} is player two </h2>
-            <h3> This is the score counter</h3>
-        <div className="playerAllocation">
-        {(questionNumber%2 !==0) ? <h4>{playerOne}'s Turn</h4> : <h4>{playerTwo}'s Turn</h4>}
-        </div>    
-        </div>
-        <div className="question">
-            <h2>{chosenQuiz.questions[questionNumber-1].ask}</h2>
-        </div>
-        <div className="answers">
-            <Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[0].expression}</Link>
-            <Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[1].expression}</Link>
-            <Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[2].expression}</Link>
-            <Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[3].expression}</Link>
-        </div>
+        <div id="whiteboard">
+            <div id="scoreboard">
+                <div className="playerScore">
+                    <h2> {playerOne} </h2>
+                </div>
+                <div id="playerAllocation">
+                    {(questionNumber%2 !==0) ? <h4>{playerOne}'s Turn</h4> : <h4>{playerTwo}'s Turn</h4>}
+                </div>    
+                <div className="playerScore">
+                    <h2> {playerTwo} </h2>
+                </div>
+            </div>
+            <div id="quizBoard">
+                <div id="question">
+                    <h2>{chosenQuiz.questions[questionNumber-1].ask}</h2>
+                </div>
+                <div className="answers">
+                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[0].expression}</Link></button>
+                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[1].expression}</Link></button>
+                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[2].expression}</Link></button>
+                    <button className="answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[3].expression}</Link></button>
+                </div>
+            </div>
+        </div> 
         </>
     )
 }
