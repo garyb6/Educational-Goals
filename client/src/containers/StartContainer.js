@@ -37,7 +37,7 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizz
             <div className="players">
                 <div className="player1Select">
                     <label for="player1Box">Player 1:</label>
-                    <input id = "player1Box" type = "text" onChange={handleChangePlayerOne} id = "Player 1 input" />
+                    <input id = "player1Box" type = "text" onChange={handleChangePlayerOne}/>
                     <div className="colourSelector">
                         <Carousel variant="dark">
                             <Carousel.Item>
