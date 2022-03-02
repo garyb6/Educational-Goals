@@ -36,31 +36,33 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
                                 className="d-block"
                                 src= {Stand}
                                 alt="Goalkeeper"
+                                style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
                                 />
-                                <Carousel.Caption>
+                                {/* <Carousel.Caption>
                                 <h5>Goalkeeper</h5>
-                                </Carousel.Caption>
+                                </Carousel.Caption> */}
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                 className="d-block"
                                 src={Stand}
                                 alt="Striker"
-                                style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
+                                style={{filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)"}}
                                 />
-                                <Carousel.Caption>
+                                {/* <Carousel.Caption>
                                 <h5>Striker</h5>
-                                </Carousel.Caption>
+                                </Carousel.Caption> */}
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                 className="d-block"
                                 src={Stand}
                                 alt="Diving Goalkeeper"
+                                style={{filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)"}}
                                 />
-                                <Carousel.Caption>
+                                {/* <Carousel.Caption>
                                 <h5>Diving Goalkeeper</h5>
-                                </Carousel.Caption>
+                                </Carousel.Caption> */}
                             </Carousel.Item>
                         </Carousel>
                     </div>
@@ -75,31 +77,33 @@ const StartContainer = ({playerOne, playerTwo, setPlayerOne, setPlayerTwo}) => {
                                 className="d-block"
                                 src= {Stand}
                                 alt="Goalkeeper"
+                                style={{filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%);"}}
                                 />
-                                <Carousel.Caption>
+                                {/* <Carousel.Caption>
                                 <p>Goalkeeper</p>
-                                </Carousel.Caption>
+                                </Carousel.Caption> */}
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                 className="d-block"
                                 src={Stand}
                                 alt="Striker"
-                                style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
+                                style={{filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)"}}
                                 />
-                                <Carousel.Caption>
+                                {/* <Carousel.Caption>
                                 <h5>Striker</h5>
-                                </Carousel.Caption>
+                                </Carousel.Caption> */}
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                 className="d-block"
                                 src={Stand}
                                 alt="Diving Goalkeeper"
+                                style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
                                 />
-                            <Carousel.Caption>
+                            {/* <Carousel.Caption>
                                 <h5>Diving Goalkeeper</h5>
-                            </Carousel.Caption>
+                            </Carousel.Caption> */}
                             </Carousel.Item>
                         </Carousel>
                         </div>
