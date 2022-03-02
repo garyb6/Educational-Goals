@@ -1,36 +1,60 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Routes, Router, Route} from 'react-router-dom';
-import Request from '../helpers/request';
-const QuizContainer = ({playerOne, playerTwo}) => {
-    const [quizzes, setQuizzes] = useState([]);
-    useEffect(()=>{
-        requestAll()
-    }, [])
-    const requestAll = function(){
-        const request = new Request();
-        request.get('http://localhost:8080/quizzes')
-        .then((data) => setQuizzes(data))
+import "./../css/QuizContainer.css"
+
+
+const QuizContainer = ({playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber}) => {
+    
+    useEffect(() => {requestQuiz(selectedQuiz)}, [])
+
+    if (chosenQuiz === null){
+        return (<h1>Quiz not loaded</h1>)
     }
-    const findQuizById = function(id){
-        return quizzes.find((quiz) => {
-            return quiz.id === parseInt(id);
-        })
+
+    // const activePlayer = () => {
+    //     if(questionNumber%2 !=0){
+    //         return <h4>{playerOne}'s Turn</h4>
+    //     }
+    //     else {return <h4>{playerTwo}'s Turn</h4>}
+    // }
+
+    const activePlayer = () => {
+        if(questionNumber%2 !=0){
+            return <h4>{playerOne}'s Turn</h4>
+        }
+        else {return <h4>{playerTwo}'s Turn</h4>}
     }
-    if(!quizzes){
-        return null
+
+    const handleClick = (event) => {
+        console.log(event);
+        setQuestionNumber(questionNumber+1);
     }
+
+
     return (
         <>
-        <h1>This is the quiz page</h1>
-        <h2> {playerOne} is player one </h2>
-        <h3> This is the score counter</h3>
-        <h2> {playerTwo} is player two </h2>
-        <h3> This is the score counter</h3>
-        <h2> This is the question </h2>
-        <Link to = "/game">Answer 1</Link>
-        <Link to = "/game">Answer 2</Link>
-        <Link to = "/game">Answer 3</Link>
-        <Link to = "/game">Answer 4</Link>
+        <div id="whiteboard">
+            <div id="scoreboard">
+                <div className="playerScore">
+                    <h2> {playerOne} </h2>
+                </div>
+                <div id="playerAllocation">
+                    {(questionNumber%2 !==0) ? <h4>{playerOne}'s Turn</h4> : <h4>{playerTwo}'s Turn</h4>}
+                </div>    
+                <div className="playerScore">
+                    <h2> {playerTwo} </h2>
+                </div>
+            </div>
+            <div id="quizBoard">
+                <div className= "Q">
+                    <h2>{chosenQuiz.questions[questionNumber-1].ask}</h2>
+                </div>
+                    <button className="A1 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[0].expression}</Link></button>
+                    <button className="A2 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[1].expression}</Link></button>
+                    <button className="A3 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[2].expression}</Link></button>
+                    <button className="A4 answer"><Link onClick = {handleClick} to = "/game">{chosenQuiz.questions[questionNumber-1].options[3].expression}</Link></button>
+            </div>
+        </div> 
         </>
     )
 }
