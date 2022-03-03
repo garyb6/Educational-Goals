@@ -8,8 +8,8 @@ import Request from '../helpers/request';
 
 const MainContainer = () => {
 
-    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: 0 });
-    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: 0 });
+    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: [x, x, x, x, x] });
+    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: [x, x, x, x, x] });
     const [selectedQuiz, setSelectedQuiz] = useState(0);
     const [chosenQuiz, setChosenQuiz] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1)
