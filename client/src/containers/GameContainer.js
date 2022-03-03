@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Game from '../components/Game';
 
 
 const GameContainer = ({playerOne, playerTwo}) => {
@@ -14,6 +15,7 @@ const GameContainer = ({playerOne, playerTwo}) => {
         <h3> This is the score counter</h3>
         <h4> This is direction selector</h4>
         <h1> This is the penalty</h1>
+        <Game/>
         <Link to = "/quiz">Next question</Link>
         </>
     )
