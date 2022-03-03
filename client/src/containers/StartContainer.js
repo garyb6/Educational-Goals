@@ -41,7 +41,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <h1>Educational Goals</h1>
                 <div className="players">
                     <div className="player1Select">
-                        <label for="player1Box">Player 1:</label>
+                        <label htmlFor="player1Box">Player 1:</label>
                         <input id="player1Box" type="text" onChange={handleChangePlayerOne} />
                         <div className="colourSelector">
                             <Carousel variant="dark">
@@ -82,7 +82,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                         </div>
                     </div>
                     <div className="player2Select">
-                        <label for="player2Box">Player 2:</label>
+                        <label htmlFor="player2Box">Player 2:</label>
                         <input id="player2Box" type="text" onChange={handleChangePlayerTwo} id="Player 2 input" />
                         <div className="colourSelector">
                             <Carousel variant="dark">
@@ -91,7 +91,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Goalkeeper"
-                                        style={{ filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%);" }}
+                                        style={{ filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)" }}
                                     />
                                     {/* <Carousel.Caption>
                                 <p>Goalkeeper</p>
