@@ -1,45 +1,46 @@
+import { typeImplementation } from '@testing-library/user-event/dist/type/typeImplementation';
 import React from 'react';
 
 
-const Game = () => {
+const Game = ({ setPlayerOne, setPlayerTwo, questionNumber, playerOne, playerTwo }) => {
 
   const playerOneInput = []
   const playerTwoInput = []
 
   const playerDirection = (event) => {
 
-    if (event.key === "d"){
+    if (event.key === "d") {
 
-    playerOneInput.push("d")
+      playerOneInput.push("d")
 
-    console.log('p1 right', event.keyCode);
+      console.log('p1 right', event.keyCode);
     }
 
-    else if (event.key === "s"){
+    else if (event.key === "s") {
 
       playerOneInput.push("s")
       console.log('p1 middle', event.keyCode)
     }
 
-    else if (event.key === "a"){
+    else if (event.key === "a") {
       playerOneInput.push("a")
       console.log('p1 left', event.keyCode)
     }
 
-    else if (event.key === "l"){
+    else if (event.key === "l") {
       playerTwoInput.push("l")
       console.log('p2 right', event.keyCode);
-  }
+    }
 
-  else if (event.key === "k"){
-    playerTwoInput.push("k")
-    console.log('p2 middle', event.keyCode)
-  }
+    else if (event.key === "k") {
+      playerTwoInput.push("k")
+      console.log('p2 middle', event.keyCode)
+    }
 
-  else if (event.key === "j"){
-    playerTwoInput.push("j")
-    console.log('p2 left', event.keyCode)
-  }
+    else if (event.key === "j") {
+      playerTwoInput.push("j")
+      console.log('p2 left', event.keyCode)
+    }
   };
 
 
@@ -56,35 +57,44 @@ const Game = () => {
 
     };
 
-   
+
 
   }, []);
 
   const checkGoal = () => {
-    
+
     const combinedInput = playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0])
 
     console.log(combinedInput);
-    
-    if (combinedInput == ["dl"]){
-      return console.log("SAVE")
-    } 
-    
-    else if (combinedInput == ["sk"]){
+
+    if (combinedInput == ["dl"]) {
       return console.log("SAVE")
     }
 
-    else if (combinedInput == ["aj"]){
+    else if (combinedInput == ["sk"]) {
+      return console.log("SAVE")
+    }
+
+    else if (combinedInput == ["aj"]) {
       return console.log("SAVE")
     }
 
     else {
+      if (questionNumber % 2 !== 0) {
+        let tempPlayer = playerOne
+        tempPlayer.score += 1
+        setPlayerOne(tempPlayer)
+      } else {
+        let tempPlayer = playerTwo
+        tempPlayer.score += 1
+        setPlayerTwo(tempPlayer)
+      }
       return console.log("GOOOOOOOOOL")
     }
 
   }
 
-  return(null);
+  return (null);
 };
 
 export default Game;
