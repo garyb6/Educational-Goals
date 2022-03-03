@@ -53,14 +53,16 @@ const Game = () => {
 
       window.removeEventListener('keydown', playerDirection);
 
+
     };
+
+    setTimeout(checkGoal, 5000)
 
   }, []);
 
   const checkGoal = () => {
-    const playerOneFinalInput = playerOneInput.slice(-1)[0]
-    const playerTwoFinalInput = playerTwoInput.slice(-1)[0]
-    const combinedInput = playerOneFinalInput.concat(playerTwoFinalInput)
+    
+    const combinedInput = playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0])
 
     
     if (combinedInput == ["d", "l"]){
