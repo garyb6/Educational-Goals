@@ -10,9 +10,10 @@ const MainContainer = () => {
 
     const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: 0 });
     const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: 0 });
-    const [selectedQuiz, setSelectedQuiz] = useState(1);
+    const [selectedQuiz, setSelectedQuiz] = useState(0);
     const [chosenQuiz, setChosenQuiz] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1)
+    const [chosenAnswer, setChosenAnswer] = useState(null)
 
 
     const [quizzes, setQuizzes] = useState([]);
@@ -37,8 +38,8 @@ const MainContainer = () => {
         <Router>
             <Routes>
                 <Route path="/start" element={<StartContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} quizzes={quizzes} setSelectedQuiz={setSelectedQuiz} />} />
-                <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} requestQuiz={requestQuiz} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} />} />
-                <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/>} />
+                <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} requestQuiz={requestQuiz} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
+                <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} chosenAnswer={chosenAnswer} setChosenAnswer={setChosenAnswer}/>} />
             </Routes>
         </Router>
 

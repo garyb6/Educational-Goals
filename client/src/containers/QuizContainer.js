@@ -3,7 +3,7 @@ import { Link, Routes, Router, Route } from 'react-router-dom';
 import "./../css/QuizContainer.css"
 
 
-const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber }) => {
+const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
@@ -20,11 +20,12 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
         } else {
             return (<h1> It's a draw!</h1>)
         }
-
     }
 
-    const handleClick = (event) => {
-        console.log(event);
+    const handleClick = (number) => {
+        console.log("This is the answer we picked", chosenQuiz.questions[questionNumber - 1].options[number].correct)
+        console.log("this is our number", number)
+        setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
     }
 
     return (
@@ -45,10 +46,10 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
                     <div className="Q">
                         <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
                     </div>
-                    <button className="A1 answer"><Link onClick={handleClick} to="/game">{chosenQuiz.questions[questionNumber - 1].options[0].expression}</Link></button>
-                    <button className="A2 answer"><Link onClick={handleClick} to="/game">{chosenQuiz.questions[questionNumber - 1].options[1].expression}</Link></button>
-                    <button className="A3 answer"><Link onClick={handleClick} to="/game">{chosenQuiz.questions[questionNumber - 1].options[2].expression}</Link></button>
-                    <button className="A4 answer"><Link onClick={handleClick} to="/game">{chosenQuiz.questions[questionNumber - 1].options[3].expression}</Link></button>
+                    <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[0].expression}</Link></button>
+                    <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[1].expression}</Link></button>
+                    <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[2].expression}</Link></button>
+                    <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[3].expression}</Link></button>
                 </div>
             </div>
         </>

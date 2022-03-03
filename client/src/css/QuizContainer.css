@@ -45,17 +45,3 @@
     ". A3 A4 ."
 }
 
-/* .grid {
-    display:grid;
-    justify-items: center;
-    grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
-    grid-template-rows: auto;
-    gap: 40px 40px;
-    grid-template-areas: 
-    ". . . . . ."
-    ". hh hh hh hh ."
-    ". . hp hp . ."
-    ". B1 B2 B3 B4 ."
-    ". B5 B6 B7 B8 ."
-    ". . . . . ."
-} */
