@@ -47,7 +47,7 @@ const Game = () => {
 
     window.addEventListener('keydown', playerDirection);
 
-
+    setTimeout(checkGoal, 5000)
 
     return () => {
 
@@ -56,7 +56,7 @@ const Game = () => {
 
     };
 
-    setTimeout(checkGoal, 5000)
+   
 
   }, []);
 
@@ -64,16 +64,17 @@ const Game = () => {
     
     const combinedInput = playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0])
 
+    console.log(combinedInput);
     
-    if (combinedInput == ["d", "l"]){
+    if (combinedInput == ["dl"]){
       return console.log("SAVE")
     } 
     
-    else if (combinedInput == ["s","k"]){
+    else if (combinedInput == ["sk"]){
       return console.log("SAVE")
     }
 
-    else if (combinedInput == ["a", "j"]){
+    else if (combinedInput == ["aj"]){
       return console.log("SAVE")
     }
 
@@ -82,4 +83,8 @@ const Game = () => {
     }
 
   }
+
+  return(null);
 };
+
+export default Game;
