@@ -8,12 +8,12 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
     if (chosenQuiz === null) {
-        return (<h1>Quiz not loaded</h1>)
+        return (<h1>Quiz not loaded!</h1>)
     }
 
     if (questionNumber > 10) {
 
-        if (playerOne.score > playerTwo.score){
+        if (playerOne.score.reduce((a, b) => a + b, 0) > playerTwo.score.reduce((a, b) => a + b, 0)){
             return (<h1> {playerOne.name} is the winner!</h1>)
         } else if (playerTwo.score > playerOne.score) {
             return (<h1> {playerTwo.name} is the winner!</h1>)
