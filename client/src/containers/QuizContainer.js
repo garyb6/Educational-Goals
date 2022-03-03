@@ -11,38 +11,34 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
         return (<h1>Quiz not loaded</h1>)
     }
 
-    // const activePlayer = () => {
-    //     if(questionNumber%2 !=0){
-    //         return <h4>{playerOne}'s Turn</h4>
-    //     }
-    //     else {return <h4>{playerTwo}'s Turn</h4>}
-    // }
+    if (questionNumber > 10) {
 
-    const activePlayer = () => {
-        if (questionNumber % 2 != 0) {
-            return <h4>{playerOne.name}'s Turn</h4>
+        if (playerOne.score > playerTwo.score){
+            return (<h1> {playerOne.name} is the winner!</h1>)
+        } else if (playerTwo.score > playerOne.score) {
+            return (<h1> {playerTwo.name} is the winner!</h1>)
+        } else {
+            return (<h1> It's a draw!</h1>)
         }
-        else { return <h4>{playerTwo.name}'s Turn</h4> }
+
     }
 
     const handleClick = (event) => {
         console.log(event);
-        setQuestionNumber(questionNumber + 1);
     }
-
 
     return (
         <>
             <div id="whiteboard">
                 <div id="scoreboard">
                     <div className="playerScore">
-                        <h2> {playerOne.name} </h2>
+                        <h2> {playerOne.name} {playerOne.score}</h2>
                     </div>
                     <div id="playerAllocation">
                         {(questionNumber % 2 !== 0) ? <h4>{playerOne.name}'s Turn</h4> : <h4>{playerTwo.name}'s Turn</h4>}
                     </div>
                     <div className="playerScore">
-                        <h2> {playerTwo.name} </h2>
+                        <h2> {playerTwo.name} {playerTwo.score}</h2>
                     </div>
                 </div>
                 <div id="quizBoard">
