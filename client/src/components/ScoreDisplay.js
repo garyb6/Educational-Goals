@@ -1,4 +1,5 @@
 import React from 'react';
+import "./../css/ScoreDisplay.css";
 
 const ScoreDisplay = ({playerOne, playerTwo, questionNumber}) => {
 
@@ -7,13 +8,13 @@ const ScoreDisplay = ({playerOne, playerTwo, questionNumber}) => {
     const playerScore = (player) => {
 
         return (
-            player.score.map((value) => {
+            player.score.map((value, index) => {
                 if(value === 'x'){
-                    return <i className="shotNotTaken" class="far fa-circle"/>
+                    return <i id="shotNotTaken" className="far fa-circle" key = {index}/>
                 } else if (value === 0) {
-                    return <i className="shotNoPoint" class="fas fa-futbol"/>
+                    return <i id="shotNoPoint" className="fas fa-futbol" key = {index}/>
                 } else {
-                    return <i className="shotPointScore" class="fas fa-futbol"/>
+                    return <i id="shotPointScore" className="fas fa-futbol" key = {index}/>
                 }
             }) 
         )
