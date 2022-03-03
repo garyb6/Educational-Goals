@@ -51,25 +51,33 @@ const checkGoal = () => {
     const combinedInput = playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0])
     console.log(combinedInput);
 
-    if (combinedInput == ["dl"]) {
-        return console.log("SAVE")
-    } else if (combinedInput == ["sk"]) {
-        return console.log("SAVE")
-    } else if (combinedInput == ["aj"]) {
-        return console.log("SAVE")
+    const scoreIndex = Math.floor(questionNumber / 2);
+    const playerGo = (questionNumber % 2 !== 0);
+
+    
+
+    if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
+        if (playerGo) {
+            let tempPlayer = playerOne
+            tempPlayer.score[scoreIndex] = 0
+            setPlayerOne(tempPlayer)
+        } else {
+            let tempPlayer = playerTwo
+            tempPlayer.score[scoreIndex - 1] = 0
+            setPlayerTwo(tempPlayer)
+        }
     } else {
-        if (questionNumber % 2 !== 0) {
-        let tempPlayer = playerOne
-        tempPlayer.score += 1
-        setPlayerOne(tempPlayer)
-    } else {
-        let tempPlayer = playerTwo
-        tempPlayer.score += 1
-        setPlayerTwo(tempPlayer)
+        if (playerGo) {
+            let tempPlayer = playerOne
+            tempPlayer.score[scoreIndex] = 1
+            setPlayerOne(tempPlayer)
+        } else {
+            let tempPlayer = playerTwo
+            tempPlayer.score[scoreIndex - 1] = 1
+            setPlayerTwo(tempPlayer)
+        }
     }
-        return console.log("GOOOOOOOOOAL")
-    }
-    }
+}
 
         
     if (chosenAnswer === false){
