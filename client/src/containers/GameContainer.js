@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Game from '../components/Game';
+import ScoreDisplay from '../components/ScoreDisplay';
 
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
@@ -90,11 +91,9 @@ const checkGoal = () => {
 
     return (
         <>
-            <h2> P1 {playerOne.name} {playerOne.score} </h2>
-            <div id="playerAllocation">
-                        {(questionNumber % 2 !== 0) ? <h4>{playerOne.name}'s Turn</h4> : <h4>{playerTwo.name}'s Turn</h4>}
-                    </div>
-            <h2> P2 {playerTwo.name} {playerTwo.score} </h2>
+            <div id="scoreboard">
+                        <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
+            </div>
             
             <Link to="/quiz" onClick={handleClick}>Next question</Link>
         </>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Routes, Router, Route } from 'react-router-dom';
+import ScoreDisplay from '../components/ScoreDisplay';
 import "./../css/QuizContainer.css"
 
 
@@ -32,15 +33,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
         <>
             <div id="whiteboard">
                 <div id="scoreboard">
-                    <div className="playerScore">
-                        <h2> {playerOne.name} {playerOne.score}</h2>
-                    </div>
-                    <div id="playerAllocation">
-                        {(questionNumber % 2 !== 0) ? <h4>{playerOne.name}'s Turn</h4> : <h4>{playerTwo.name}'s Turn</h4>}
-                    </div>
-                    <div className="playerScore">
-                        <h2> {playerTwo.name} {playerTwo.score}</h2>
-                    </div>
+                        <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
                 </div>
                 <div id="quizBoard">
                     <div className="Q">
