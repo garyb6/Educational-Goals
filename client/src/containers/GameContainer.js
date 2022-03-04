@@ -87,9 +87,8 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             <div id="scoreboard">
                         <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
-            
-            <Link to="/quiz" onClick={handleClick}>Next question</Link>
             <Animation/>
+            <Link to="/quiz" onClick={handleClick}>Next question</Link>
         </>
     )
 

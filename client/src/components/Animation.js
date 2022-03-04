@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { motion } from 'framer-motion'
 import Jump_left from "../images/Jump_left.png"
 import Football from "../images/Football.png"
+import "../css/Animation.css"
 
 function Animation() {
 
@@ -10,6 +11,13 @@ function Animation() {
 
     return(
         <>
+
+            <div className="background-container">
+                
+
+
+            
+
             <div className="crouch-container">
                  <motion.img className='crouch'
                 src={Jump_left}
@@ -17,7 +25,7 @@ function Animation() {
 
                 animate={{
                     // y: isAnimating ? 300 : 0,
-                    x: isAnimating ? 0 : "50vw",
+                    x: isAnimating ? "50vw" : 0,
                     // opacity: isAnimating ? 1 : 0.5,
                     // rotate: isAnimating ? 90:180,
                 }}
@@ -39,10 +47,10 @@ function Animation() {
                     src={Football}
                     animate={{
                         y: isAnimating ? 300 : 0,
-                        x: isAnimating ? 0 : 200,
+                        x: isAnimating ? 400 : 0,
                         // opacity: isAnimating ? 1 : 0.5,
                         rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? -0.5 : -0.2,
+                        scale: isAnimating ? 0.25 : 0.1,
                     }}
                     initial={{
                         // opacity:0.1
@@ -54,6 +62,7 @@ function Animation() {
                     onClick={() => setIsAnimating(!isAnimating)}
                 >
                 </motion.img>
+            </div>
             </div>
         </>
     )
