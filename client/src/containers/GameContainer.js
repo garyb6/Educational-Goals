@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Game from '../components/Game';
 import ScoreDisplay from '../components/ScoreDisplay';
+import Animation from '../components/Animation';
 
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
@@ -86,7 +87,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             <div id="scoreboard">
                         <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
-            
+            <Animation/>
             <Link to="/quiz" onClick={handleClick}>Next question</Link>
         </>
     )
