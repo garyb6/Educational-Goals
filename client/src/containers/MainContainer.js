@@ -4,6 +4,9 @@ import StartContainer from './StartContainer';
 import GameContainer from './GameContainer';
 import QuizContainer from './QuizContainer';
 import Request from '../helpers/request';
+import CreateQuiz from '../components/CreateQuiz';
+import StartPage from '../components/StartPage';
+import NotFound from '../components/NotFound';
 
 
 const MainContainer = () => {
@@ -37,9 +40,12 @@ const MainContainer = () => {
 
         <Router>
             <Routes>
+                <Route path="/" element={<StartPage/>}/>
                 <Route path="/start" element={<StartContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} quizzes={quizzes} setSelectedQuiz={setSelectedQuiz} />} />
+                <Route path="/quiz/create" element={<CreateQuiz/>}/>
                 <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} requestQuiz={requestQuiz} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
                 <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} chosenAnswer={chosenAnswer} setChosenAnswer={setChosenAnswer}/>} />
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
         </Router>
 
