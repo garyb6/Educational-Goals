@@ -5,8 +5,17 @@ import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
 import JumpL from "./../images/Jump_left.png";
 import "./../css/StartContainer.css"
+import useSound from 'use-sound';
+import gameMusic from '../sounds/MOTD.mp3'
+import {Howl, Howler} from 'howler';
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz }) => {
+
+    // const [playGameMusic] = useSound(gameMusic)
+    // const gameMusic = new Howl({
+    //     src: ['../sounds/Game_music.wav']
+    // });
+    const playGameMusic = () => new Audio(gameMusic).play()
 
     const handleChangePlayerOne = (event) => {
 
@@ -83,7 +92,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     </div>
                     <div className="player2Select">
                         <label htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo} id="Player 2 input" />
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo}/>
                         <div className="colourSelector">
                             <Carousel variant="dark">
                                 <Carousel.Item>
@@ -131,7 +140,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <Link to="/quiz">Start</Link>
+                    <button onClick={playGameMusic}><Link to="/quiz">Start</Link></button>
                 </div>
             </div>
         </>
