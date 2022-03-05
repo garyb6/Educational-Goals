@@ -9,13 +9,25 @@ import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import {Howl, Howler} from 'howler';
 
-const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz }) => {
+const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz}) => {
 
     // const [playGameMusic] = useSound(gameMusic)
     // const gameMusic = new Howl({
     //     src: ['../sounds/Game_music.wav']
     // });
-    const playGameMusic = () => new Audio(gameMusic).play()
+
+    const playGameMusic = () => (new Audio(gameMusic).play())
+    const muteGameMusic = () => this.playGameMusic.pause()
+
+    // const pauseGameMusic = (gameMusic) => {
+
+    //     gameMusic.pla;
+    //     gameMusic.currentTime = 0;
+
+    // }
+
+    // let myControls = video.controls;
+    // audio.controls = true;
 
     const handleChangePlayerOne = (event) => {
 
@@ -50,83 +62,83 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <h1>Educational Goals</h1>
                 <div className="players">
                     <div className="player1Select">
-                        <label htmlFor="player1Box">Player 1:</label>
-                        <input id="player1Box" type="text" onChange={handleChangePlayerOne} />
+                        <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
+                        <input id="player1Box" type="text" onChange={handleChangePlayerOne} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel variant="dark">
+                            <Carousel interval = {null}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Goalkeeper"
-                                    // style={{filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)"}}
+                                        alt="Red Player"
+                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <h5>Goalkeeper</h5>
-                                </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Red Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Striker"
-                                    // style={{filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)"}}
+                                        alt="Green Player"
+                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <h5>Striker</h5>
-                                </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Green Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Diving Goalkeeper"
-                                    // style={{filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)"}}
+                                        alt="Blue Player"
+                                        style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <h5>Diving Goalkeeper</h5>
-                                </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Blue Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
                         </div>
                     </div>
                     <div className="player2Select">
-                        <label htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo}/>
+                        <label className="playerLabel" htmlFor="player2Box">Player 2:</label>
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel variant="dark">
+                            <Carousel interval = {null}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Goalkeeper"
-                                        style={{ filter: "invert(16%) sepia(96%) saturate(6992%) hue-rotate(357deg) brightness(93%) contrast(118%)" }}
+                                        alt="Red Player"
+                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <p>Goalkeeper</p>
-                                </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Red Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Striker"
-                                        style={{ filter: "invert(53%) sepia(28%) saturate(5622%) hue-rotate(88deg) brightness(123%) contrast(122%)" }}
+                                        alt="Green Player"
+                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <h5>Striker</h5>
-                                </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Green Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
-                                        alt="Diving Goalkeeper"
+                                        alt="Blue Player"
                                         style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
                                     />
-                                    {/* <Carousel.Caption>
-                                <h5>Diving Goalkeeper</h5>
-                            </Carousel.Caption> */}
+                                    <Carousel.Caption>
+                                        <h5>Pick the Blue Player</h5>
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
                         </div>
@@ -143,6 +155,8 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     <button onClick={playGameMusic}><Link to="/quiz">Start</Link></button>
                 </div>
             </div>
+            <footer><button onClick={muteGameMusic}>Mute</button></footer>
+
         </>
     )
 }

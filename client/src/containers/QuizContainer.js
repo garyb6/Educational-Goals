@@ -2,9 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link, Routes, Router, Route } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import "./../css/QuizContainer.css"
-
+import gameMusic from '../sounds/MOTD.mp3'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
+
+    // const muteAllSounds = () => {
+    //     window.soundManager.muteAll();
+    // }
+
+    const pauseGameMusic = () => {
+        (new Audio(gameMusic).pause())
+        console.log(pauseGameMusic)
+    }
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
