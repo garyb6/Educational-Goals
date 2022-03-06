@@ -42,7 +42,7 @@ const MainContainer = () => {
             <Routes>
                 <Route path="/" element={<StartPage/>}/>
                 <Route path="/start" element={<StartContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} quizzes={quizzes} setSelectedQuiz={setSelectedQuiz} />} />
-                <Route path="/quiz/create" element={<CreateQuiz/>}/>
+                <Route path="/quizzes/create" element={<CreateQuiz/>}/>
                 <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} requestQuiz={requestQuiz} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
                 <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} chosenAnswer={chosenAnswer} setChosenAnswer={setChosenAnswer}/>} />
                 <Route path="*" element={<NotFound/>}/>
