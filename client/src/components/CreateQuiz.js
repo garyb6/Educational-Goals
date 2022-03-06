@@ -30,13 +30,20 @@ const CreateQuiz = () => {
     return (
         <>
         <h1>This is the create quiz</h1>
+
+        {newQuiz.hasOwnProperty("id") ? 
+        <h4>Creating the {newQuiz.title} quiz</h4>
+        :
         <form onSubmit={handleSubmit}>
         <label htmlFor="quizName">Quiz Name:</label>
         <input id="quizName" type="text" onChange={handleChange}/>
         <button type='submit'>Create quiz</button>
         </form>
+        }
 
-        {newQuiz.hasOwnProperty("id") ? <CreateQuestion quizID={newQuiz.id}/> : <h3>Enter a quiz name above!</h3>}
+        {newQuiz.hasOwnProperty("id") ? 
+        <CreateQuestion newQuiz={newQuiz}/> 
+        : <h3>Enter a quiz name above!</h3>}
         </>
     )
 
