@@ -16,18 +16,8 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
     //     src: ['../sounds/Game_music.wav']
     // });
 
-    const playGameMusic = () => (new Audio(gameMusic).play())
-    const muteGameMusic = () => this.playGameMusic.pause()
+    // const playGameMusic = () => (new Audio (gameMusic).play())
 
-    // const pauseGameMusic = (gameMusic) => {
-
-    //     gameMusic.pla;
-    //     gameMusic.currentTime = 0;
-
-    // }
-
-    // let myControls = video.controls;
-    // audio.controls = true;
 
     const handleChangePlayerOne = (event) => {
 
@@ -146,19 +136,22 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 </div>
                 <div className="quizSelector">
                     <form>
-                        <label> Choose Quiz: </label>
+                        <label className="quizSelectText"> Choose Quiz: </label>
                         <select defaultValue="" onChange={handleChangeQuizChoice} required>
-                            <option value="" disabled >Choose a Quiz</option>
+                            <option value="" disabled ></option>
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <button onClick={playGameMusic}><Link to="/quiz">Start</Link></button>
+                    <button id="quizStartButton" ><Link to="/quiz">Start</Link></button>
                 </div>
             </div>
-            <footer><button onClick={muteGameMusic}>Mute</button></footer>
-
+            <footer>
+            <audio controls src={gameMusic} ></audio>
+            </footer>
         </>
     )
 }
 
 export default StartContainer;
+
+// onClick={playGameMusic}

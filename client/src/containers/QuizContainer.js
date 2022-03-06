@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, Routes, Router, Route } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import "./../css/QuizContainer.css"
+import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
+import whistle from '../sounds/Whistle.wav'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
     // const muteAllSounds = () => {
     //     window.soundManager.muteAll();
     // }
+    const [blowWhistle] = useSound(whistle)
 
     const pauseGameMusic = () => {
         (new Audio(gameMusic).pause())
@@ -36,6 +39,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
         console.log("This is the answer we picked", chosenQuiz.questions[questionNumber - 1].options[number].correct)
         console.log("this is our number", number)
         setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
+        blowWhistle()
     }
 
     return (
@@ -53,6 +57,9 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
                     <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[2].expression}</Link></button>
                     <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[3].expression}</Link></button>
                 </div>
+                <footer>
+            <audio controls src={gameMusic} ></audio>
+            </footer>
             </div>
         </>
     )
