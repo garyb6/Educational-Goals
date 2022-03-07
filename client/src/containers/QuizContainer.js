@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Routes, Router, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Trophy from "../images/Trophy.png"
 import { motion } from 'framer-motion'
@@ -7,12 +7,19 @@ import "./../css/QuizContainer.css"
 import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import whistle from '../sounds/Whistle.wav'
+import Request from '../helpers/request';
 
-const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
+const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
     const [blowWhistle] = useSound(whistle)
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
+
+    const requestQuiz = function (id) {
+        const request = new Request();
+        request.get(`http://localhost:8080/quizzes/${id}`)
+            .then((data) => setChosenQuiz(data))
+    }
 
     if (chosenQuiz === null) {
         return (<h1>Quiz not loaded!</h1>)

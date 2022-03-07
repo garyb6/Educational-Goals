@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import Game from '../components/Game';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
 import useSound from 'use-sound';
@@ -39,7 +38,6 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             console.log('p2 left', event.keyCode)
         }
     };
-
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);

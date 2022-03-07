@@ -17,33 +17,16 @@ const MainContainer = () => {
     const [chosenQuiz, setChosenQuiz] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1)
     const [chosenAnswer, setChosenAnswer] = useState(null)
-
-
     const [quizzes, setQuizzes] = useState([]);
-    useEffect(() => {
-        requestAll()
-    }, [])
-
-    const requestAll = function () {
-        const request = new Request();
-        request.get('http://localhost:8080/quizzes')
-            .then((data) => setQuizzes(data))
-    }
-
-    const requestQuiz = function (id) {
-        const request = new Request();
-        request.get(`http://localhost:8080/quizzes/${id}`)
-            .then((data) => setChosenQuiz(data))
-    }
 
     return (
 
         <Router>
             <Routes>
                 <Route path="/" element={<StartPage/>}/>
-                <Route path="/start" element={<StartContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} quizzes={quizzes} setSelectedQuiz={setSelectedQuiz} />} />
+                <Route path="/start" element={<StartContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} quizzes={quizzes} setQuizzes={setQuizzes} setSelectedQuiz={setSelectedQuiz} />} />
                 <Route path="/quizzes/create" element={<CreateQuiz/>}/>
-                <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} requestQuiz={requestQuiz} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
+                <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} setChosenQuiz={setChosenQuiz}questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
                 <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} chosenAnswer={chosenAnswer} setChosenAnswer={setChosenAnswer}/>} />
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
