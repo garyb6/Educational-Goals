@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
 import Crouch from "./../images/Crouch.png";
@@ -9,8 +9,9 @@ import "./../css/Animation.css"
 import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import {Howl, Howler} from 'howler';
+import Request from '../helpers/request';
 
-const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz}) => {
+const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
 
     // const [playGameMusic] = useSound(gameMusic)
     // const gameMusic = new Howl({
@@ -19,32 +20,35 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
 
     // const playGameMusic = () => (new Audio (gameMusic).play())
 
-    const handleChangePlayerOne = (event) => {
+    useEffect(() => {
+        requestAll()
+    }, [])
 
+    const requestAll = function () {
+        const request = new Request();
+        request.get('http://localhost:8080/quizzes')
+            .then((data) => setQuizzes(data))
+    }
+
+    const handleChangePlayerOne = (event) => {
         const tempPlayer = playerOne;
         tempPlayer.name = event.target.value
         setPlayerOne(tempPlayer)
-
-
     }
-    const handleChangePlayerTwo = (event) => {
 
+    const handleChangePlayerTwo = (event) => {
         const tempPlayer = playerTwo;
         tempPlayer.name = event.target.value
         setPlayerTwo(tempPlayer)
-
     }
 
     const handleChangeQuizChoice = (event) => {
-
         setSelectedQuiz(parseInt(event.target.value));
     }
 
     const listOfQuizzes = quizzes.map((quiz, index) => {
         return <option key={index} value={quiz.id}> {quiz.title} </option>
     });
-
-
 
     return (
         <>
