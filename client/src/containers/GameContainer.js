@@ -105,7 +105,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 </div>
             </div>
             <Animation/>
-            <a href="/quiz" id="nextQuestion" onClick={handleClick}><div id="nextQuestionText">Next question</div></a>
+            <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link>
         </>
     )
 
