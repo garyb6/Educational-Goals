@@ -1,26 +1,87 @@
-@media only screen and (min-device-width: 400px) {.background-container {
+/* @media only screen and (min-device-width: 400px) {.background-container {
     width:auto;
     height:auto;
+    background-image: url(../images/Spotlight.jpg);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center;
+    background-attachment:fixed;  
+}} */
+
+.bigger-background{
+    /* display: flex; */
+    justify-content: center;
+    border: 1px solid black;
+    margin: 50px 50px 50px 50px
+}
+
+.background-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: cover; */
+    border-radius: 25px;
     background-position: center;
-    background-attachment:scroll;
-}}
+    border: 1px solid black;
+    
+    
+}
 
-.crouch-container{
-    padding: 1px;
+
+.keeper-container{
     position: relative;
-    top: 300px;
-    left: -130px;
-    
-    
+    border: 1px solid black;
+    flex-direction: column;
 
+    top: 14vw;
+    left: 0vw;
+    
 }
 
 .ball-container{
     position: relative;
-    left: 285px;
-    top: -100px;
-   
+    border: 1px solid black;
+    left: 0vw;
+    top: -8vw;
+    
+}
+
+.crouch{
+    width: 100px;
+    height: auto;
+}
+
+.ball{
+    width: 450px;
+    height: auto;
+}
+
+.trophy-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    left: 0vw;
+    top: 7vw;
+
+}
+.trophy{
+    width: 450px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.winner-name{
+    top: -300px;
+}
+
+.game-directions{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 1px black;
 }

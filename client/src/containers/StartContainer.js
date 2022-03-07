@@ -5,6 +5,7 @@ import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
 import JumpL from "./../images/Jump_left.png";
 import "./../css/StartContainer.css"
+import "./../css/Animation.css"
 import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import {Howl, Howler} from 'howler';
@@ -17,7 +18,6 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
     // });
 
     // const playGameMusic = () => (new Audio (gameMusic).play())
-
 
     const handleChangePlayerOne = (event) => {
 

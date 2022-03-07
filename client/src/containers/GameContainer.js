@@ -96,6 +96,14 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             <div id="scoreboard">
                 <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
+            <div id="game-directions">
+                <div>
+                <h3> Left: A Middle: S Right: D</h3>
+                </div>
+                <div>
+                <h3> Left: J Middle: K Right: L</h3>
+                </div>
+            </div>
             <Animation/>
             <a href="/quiz" id="nextQuestion" onClick={handleClick}><div id="nextQuestionText">Next question</div></a>
         </>
