@@ -7,7 +7,7 @@ import "../css/Animation.css"
 import useSound from 'use-sound';
 import Kick from '../sounds/Kick.wav'
 
-function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating, questionNumber}) {
+function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnimating, setIsAnimating, questionNumber}) {
 
     const [playKick] = useSound(Kick)
     const currentPlayer = (questionNumber % 2 === 0) ? "one" : "two";
