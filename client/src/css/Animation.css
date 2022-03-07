@@ -1,0 +1,26 @@
+@media only screen and (min-device-width: 400px) {.background-container {
+    width:auto;
+    height:auto;
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment:scroll;
+}}
+
+.crouch-container{
+    padding: 1px;
+    position: relative;
+    top: 300px;
+    left: -130px;
+    
+    
+
+}
+
+.ball-container{
+    position: relative;
+    left: 285px;
+    top: -100px;
+   
+}

@@ -2,10 +2,16 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Game from '../components/Game';
 import ScoreDisplay from '../components/ScoreDisplay';
-
+import Animation from '../components/Animation';
+import useSound from 'use-sound';
+import goal from '../sounds/Goal_chant.wav'
+import miss from '../sounds/Goal_missed.wav'
+import "./../css/GameContainer.css"
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
+    const [shotScored] = useSound(goal)
+    const [shotSaved] = useSound(miss)
 
     const playerOneInput = ["s"]
     const playerTwoInput = ["k"]
@@ -61,9 +67,13 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
             adjustScore(0);
+            shotSaved()
             console.log('It was saved!');
-        } else {
+        } 
+        
+        if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
             adjustScore(1);
+            shotScored()
             console.log('GOOOAL!');
         }
     }
@@ -84,10 +94,10 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="scoreboard">
-                        <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
+                <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
-            
-            <Link to="/quiz" onClick={handleClick}>Next question</Link>
+            <Animation/>
+            <a href="/quiz" id="nextQuestion" onClick={handleClick}><div id="nextQuestionText">Next question</div></a>
         </>
     )
 
