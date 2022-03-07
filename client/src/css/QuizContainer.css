@@ -1,35 +1,43 @@
 #whiteboard{
+    /* background-image: url(https://cdn.wallpapersafari.com/94/29/CLZxKo.jpg); */
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     margin: 20px;
     gap: 20px;
-    border: solid 1px black;
+    border: solid 1px #fff;
+    color: #fff;
 }
 
 #scoreboard{
     display: flex;
-    width: 100vw;
+    width: 50vw;
     justify-content: space-evenly;
     align-items: center;
-    border: solid 1px black;
+    border: solid 1px #fff;
 
 }
 
 .answer{
     width: 400px;
     height: 50px;
-    background: #000;
+    background: #fff;
   background: #fff;
   border-radius: 30px;
   transition: transform 0.3s ease;
+  position: relative;
 }
+
 
 .answer::after,
 .answer::before {
+
   content: "";
   position: absolute;
+  display: inline-block;
+  color: #000000;
+  overflow: hidden;
   opacity: 0.3;
   width: 100%;
   height: 100%;
@@ -41,6 +49,9 @@
 
 .answer:hover {
   transform: translate(-12px, -12px);
+  color: #000000;
+  background:#c090f3;
+  box-shadow: 0 0 10px #c090f3, 0 0 40px #c090f3, 0 0 80px #c090f3;
 }
 
 .answer:hover::after {
@@ -72,5 +83,9 @@
     " . Q Q . "
     ". A1 A2 ."
     ". A3 A4 ."
+}
+
+.noHover{
+  pointer-events: none;
 }
 
