@@ -12,7 +12,7 @@
 
 #scoreboard{
     display: flex;
-    width: 100vw;
+    width: 50vw;
     justify-content: space-evenly;
     align-items: center;
     border: solid 1px #fff;
@@ -26,6 +26,7 @@
   background: #fff;
   border-radius: 30px;
   transition: transform 0.3s ease;
+  position: relative;
 }
 
 
@@ -35,7 +36,7 @@
   content: "";
   position: absolute;
   display: inline-block;
-  color: #2196FE;
+  color: #000000;
   overflow: hidden;
   opacity: 0.3;
   width: 100%;
@@ -48,7 +49,7 @@
 
 .answer:hover {
   transform: translate(-12px, -12px);
-  color: #255784;
+  color: #000000;
   background:#c090f3;
   box-shadow: 0 0 10px #c090f3, 0 0 40px #c090f3, 0 0 80px #c090f3;
 }
@@ -82,5 +83,9 @@
     " . Q Q . "
     ". A1 A2 ."
     ". A3 A4 ."
+}
+
+.noHover{
+  pointer-events: none;
 }
 

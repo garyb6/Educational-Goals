@@ -6,10 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./images/CL.jpg);
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
