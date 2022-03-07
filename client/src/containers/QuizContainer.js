@@ -35,6 +35,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <motion.img className='trophy'
                             src={Trophy}
                             drag
+                            // onDrag={}
                             dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
                             >
                 </motion.img>
@@ -64,8 +65,8 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
     const handleClick = (number) => {
         console.log("This is the answer we picked", chosenQuiz.questions[questionNumber - 1].options[number].correct)
         console.log("this is our number", number)
-        setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
         blowWhistle()
+        setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
     }
 
     return (

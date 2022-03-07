@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
 import useSound from 'use-sound';
-import goal from '../sounds/Goal_chant.wav'
-import miss from '../sounds/Goal_missed.wav'
+import Goal from '../sounds/Goal_chant.wav'
+import Miss from '../sounds/Goal_missed.wav'
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
-    const [shotScored] = useSound(goal)
-    const [shotSaved] = useSound(miss)
+    const [shotScored] = useSound(Goal)
+    const [shotSaved] = useSound(Miss)
 
     const playerOneInput = ["s"]
     const playerTwoInput = ["k"]
@@ -41,11 +41,19 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);
-
+        if (chosenAnswer === false){
+            setTimeout(checkGoal, 1)
+            console.log("ANSWER INCORRECT")
+        } else {
+            setTimeout(checkGoal, 5000)
+            console.log("ANSWER CORRECT")
+        }
         return () => {
         window.removeEventListener('keydown', playerDirection);
         };
     }, []);
+
+    // let combinedInput = (playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0]))
 
     const checkGoal = () => {
 
@@ -65,24 +73,17 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         }
         
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
-            adjustScore(0);
-            shotSaved()
+            adjustScore(0)
+            {shotSaved()}
             console.log('It was saved!');
         } 
         
         if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
-            adjustScore(1);
-            shotScored()
-            console.log('GOOOAL!');
-        }
-    }
+            adjustScore(1) 
+            {shotScored()}
+            console.log('GOOOAL!'); 
 
-    if (chosenAnswer === false){
-        setTimeout(checkGoal, 1)
-        console.log("ANSWER INCORRECT")
-    } else {
-        setTimeout(checkGoal, 5000)
-        console.log("ANSWER CORRECT")
+        }
     }
 
     const handleClick = () => {
@@ -96,10 +97,10 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
             <div id="game-directions">
-                <div>
+                <div id="player1Instructions">
                 <h3> Left: A Middle: S Right: D</h3>
                 </div>
-                <div>
+                <div id="player2Instructions">
                 <h3> Left: J Middle: K Right: L</h3>
                 </div>
             </div>
