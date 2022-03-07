@@ -71,10 +71,10 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
                     <div className="Q">
                         <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
                     </div>
-                    <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[0].expression}</Link></button>
-                    <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[1].expression}</Link></button>
-                    <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[2].expression}</Link></button>
-                    <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game">{chosenQuiz.questions[questionNumber - 1].options[3].expression}</Link></button>
+                    <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[0].expression}</div></Link></button>
+                    <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[1].expression}</div></Link></button>
+                    <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[2].expression}</div></Link></button>
+                    <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[3].expression}</div></Link></button>
                 </div>
                 <footer>
             <audio controls src={gameMusic} ></audio>
