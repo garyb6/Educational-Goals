@@ -30,6 +30,23 @@ public class DataLoader implements ApplicationRunner {
         Quiz roman = new Quiz("Romans");
         quizRepository.save(roman);
 
+        Question firstEmperor = new Question (roman, "What was the name of the first emperor of Rome in 27 BC?");
+        questionRepository.save(firstEmperor);
+        Option tiberius = new Option("Tiberius", firstEmperor);
+        optionRespository.save(tiberius);
+        firstEmperor.addOption(tiberius);
+        Option claudius = new Option("Claudius", firstEmperor);
+        optionRespository.save(claudius);
+        firstEmperor.addOption(claudius);
+        Option titus = new Option("Titus", firstEmperor);
+        optionRespository.save(titus);
+        firstEmperor.addOption(titus);
+        Option augustus = new Option("Augustus", firstEmperor, true);
+        optionRespository.save(augustus);
+        firstEmperor.addOption(augustus);
+
+        roman.addQuestion(firstEmperor);
+
         Question romanRiver = new Question (roman, "Which river was the city of Rome built next to?");
         questionRepository.save(romanRiver);
 
@@ -50,23 +67,6 @@ public class DataLoader implements ApplicationRunner {
         romanRiver.addOption(rhine);
 
         roman.addQuestion(romanRiver);
-
-        Question firstEmperor = new Question (roman, "What was the name of the first emperor of Rome in 27 BC?");
-        questionRepository.save(firstEmperor);
-        Option tiberius = new Option("Tiberius", firstEmperor);
-        optionRespository.save(tiberius);
-        firstEmperor.addOption(tiberius);
-        Option claudius = new Option("Claudius", firstEmperor);
-        optionRespository.save(claudius);
-        firstEmperor.addOption(claudius);
-        Option titus = new Option("Titus", firstEmperor);
-        optionRespository.save(titus);
-        firstEmperor.addOption(titus);
-        Option augustus = new Option("Augustus", firstEmperor, true);
-        optionRespository.save(augustus);
-        firstEmperor.addOption(augustus);
-
-        roman.addQuestion(firstEmperor);
 
         Question venusGoddess = new Question (roman, "Who was Venus the Roman goddess of?");
         questionRepository.save(venusGoddess);

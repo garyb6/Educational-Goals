@@ -5,9 +5,13 @@
 }
 
 #shotNoPoint {
+    border: 1px solid white;
+    border-radius: 100%;
     color: red;
 }
 
 #shotPointScore {
+    border: 1px solid white;
+    border-radius: 100%;
     color: green;
 }

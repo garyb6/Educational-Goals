@@ -1,12 +1,12 @@
 #whiteboard{
-    background-image: url(https://t4.ftcdn.net/jpg/04/37/93/59/240_F_437935932_eJsRZ3d11tpE5g7gW7DfVboXdkSAorLI.jpg);
+    /* background-image: url(https://cdn.wallpapersafari.com/94/29/CLZxKo.jpg); */
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     margin: 20px;
     gap: 20px;
-    border: solid 1px black;
+    border: solid 1px #fff;
     color: #fff;
 }
 
@@ -15,23 +15,28 @@
     width: 100vw;
     justify-content: space-evenly;
     align-items: center;
-    border: solid 1px black;
+    border: solid 1px #fff;
 
 }
 
 .answer{
     width: 400px;
     height: 50px;
-    background: #000;
+    background: #fff;
   background: #fff;
   border-radius: 30px;
   transition: transform 0.3s ease;
 }
 
+
 .answer::after,
 .answer::before {
+
   content: "";
   position: absolute;
+  display: inline-block;
+  color: #2196FE;
+  overflow: hidden;
   opacity: 0.3;
   width: 100%;
   height: 100%;
@@ -43,12 +48,13 @@
 
 .answer:hover {
   transform: translate(-12px, -12px);
+  color: #255784;
+  background:#c090f3;
+  box-shadow: 0 0 10px #c090f3, 0 0 40px #c090f3, 0 0 80px #c090f3;
 }
 
 .answer:hover::after {
   transform: translate(6px, 6px);
-  box-shadow: 10px 10px 10px 10px blue;
-  background-color: rgb(238, 13, 13);
 }
 
 .answer:hover::before {
