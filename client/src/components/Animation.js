@@ -4,11 +4,13 @@ import Crouch from "../images/Crouch.png"
 import Football from "../images/Football.png"
 import Background from "../images/Background.jpg"
 import "../css/Animation.css"
+import useSound from 'use-sound';
+import Kick from '../sounds/Kick.wav'
 
 function Animation() {
 
     const [isAnimating, setIsAnimating] = useState(false)
-
+    const [playKick] = useSound(Kick)
 
     return(
         <>
@@ -17,13 +19,8 @@ function Animation() {
                  {/* <img className='background' */}
                 {/* src={Background}/> */}
 
-       
-
             {/* <div className="background-container"> */}
                 
-
-
-            
                     {/* dive right */}
                     {/* <div className="keeper-container">
                         <motion.img className='crouch'
@@ -144,6 +141,7 @@ function Animation() {
                 </div>
             {/* </div> */}
         </div>    
+
         </>
     )
 

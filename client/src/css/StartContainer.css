@@ -2,27 +2,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 h1{
-    border: 2px solid black;
+    /* border: 2px solid white; */
     margin: 1%;
+    padding: 2%;
+    color: white;
 }
 
 .players{
     display: flex;
     flex-direction: row;
-    border: 2px solid black;
+    border: 2px solid white;
+}
+
+.playerLabel{
+    padding: 1%;
+    margin: 1%;
+    margin-top: 2%;
 }
 
 .player1Select{
-    border: 2px solid black;
+    border: 2px solid white;
     margin: 1%;
     padding-left: 5%;
+    align-items: center;
 }
 
 .player2Select{
-    border: 2px solid black;
+    border: 2px solid white;
     margin: 1%;
     padding-left: 5%;
 }
@@ -40,5 +50,37 @@ h1{
 .quizSelector{
     margin-top: 1%;
     display: flex;
-    border: 2px solid black;
+    border: 2px solid white;
 }
+
+.carousel-caption{
+    color: white;
+    position: relative;
+    margin-top: 10%;
+    left: auto;
+    right: auto;
+}
+
+h5{
+    border: 2px solid white;
+    margin: 2%;
+    padding: 5% 2% 5% 2%;
+    color: white;
+    font-size: medium;
+}
+
+.quizSelector{
+    display: flex;
+    margin: 5%;
+    padding: 2%;
+}
+
+/* .quizSelectText{
+
+} */
+
+.quizStartButton:hover{
+background: #ff96ad;
+box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+}
+
