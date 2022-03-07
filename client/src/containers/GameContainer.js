@@ -18,25 +18,11 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     const playerDirection = (event) => {
 
-        if (event.key === "d") {
-            playerOneInput.push("d")
-            console.log('p1 right', event.keyCode);
-        } else if (event.key === "s") {
-            playerOneInput.push("s")
-            console.log('p1 middle', event.keyCode)
-        } else if (event.key === "a") {
-            playerOneInput.push("a")
-            console.log('p1 left', event.keyCode)
-        } else if (event.key === "l") {
-            playerTwoInput.push("l")
-            console.log('p2 right', event.keyCode);
-        } else if (event.key === "k") {
-            playerTwoInput.push("k")
-            console.log('p2 middle', event.keyCode)
-        } else if (event.key === "j") {
-            playerTwoInput.push("j")
-            console.log('p2 left', event.keyCode)
-        }
+        if (event.key === "d" || event.key === "s" || event.key === "a") {
+            playerOneInput.push(event.key)
+        } else if (event.key === "l" || event.key === "k" || event.key === "j") {
+            playerTwoInput.push(event.key)
+        } 
     };
 
     useEffect(() => {
