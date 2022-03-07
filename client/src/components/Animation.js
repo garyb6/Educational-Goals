@@ -11,98 +11,49 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
 
     const [playKick] = useSound(Kick)
     const currentPlayer = (questionNumber % 2 === 0) ? "one" : "two";
+    const currentGoalie = (questionNumber % 2 === 0) ? playerOne : playerTwo;
     const styles = [
+        // Red
         { filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }, 
+        // Green
         { filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" },
+        // Blue
         { filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }
+    ]
+    const saveAnimations = [
+    // Right
+    <div className="keeper-container"><motion.img className='crouch'src={Crouch}style={styles[currentGoalie.filter]}animate={{x: isAnimating ? 200 : 0,rotate: isAnimating ? 90:0,}}transition={{type: 'spring',duration: 0.8}}/></div>,
+    // Middle
+    <div className="keeper-container"><motion.img className='crouch'src={Crouch}style={styles[currentGoalie.filter]}animate={{y: isAnimating ? 10 : 0,}}transition={{type: 'spring',duration: 0.8}}/></div>,
+    // Left
+    <div className="keeper-container"><motion.img className='crouch'src={Crouch}style={styles[currentGoalie.filter]}animate={{x: isAnimating ? -200 : 0,rotate: isAnimating ? -90:0,}}transition={{type: 'spring',duration: 0.8}}/></div>
+    ]
+
+    const shootAnimations = [
+        // Right
+        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? 220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>,
+        // Middle
+        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>,
+        // Left
+        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? -220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>
     ]
 
     const playSaveAnimation = () => {
     if (currentPlayer === "one") {
         if (playerOneInput.slice(-1)[0] === "d") {
-            return (<div className="keeper-container">
-                <motion.img className='crouch'
-                src={Crouch}
-                style={styles[playerOne.filter]}
-                animate={{
-                    x: isAnimating ? 200 : 0,
-                    rotate: isAnimating ? 90:0,
-                }}
-                transition={{
-                    type: 'spring',
-                    duration: 0.8
-                }}/>
-            </div>)
+            return (saveAnimations[0])
         } else if (playerOneInput.slice(-1)[0] === "s"){
-            return (<div className="keeper-container">
-            <motion.img className='crouch'
-            src={Crouch}
-            style={styles[playerOne.filter]}
-            animate={{
-                y: isAnimating ? 10 : 0,
-            }}
-            transition={{
-                type: 'spring',
-                duration: 0.8
-            }}/>
-        </div>)
+            return (saveAnimations[1])
         } else {
-            return (<div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
-                        style={styles[playerOne.filter]}
-                        animate={{
-                            x: isAnimating ? -200 : 0,
-                            rotate: isAnimating ? -90:0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                        duration: 0.8
-                        }}/>
-            </div>)
+            return (saveAnimations[2])
         }
     } else {
         if (playerTwoInput.slice(-1)[0] === "l") {
-            return (<div className="keeper-container">
-                <motion.img className='crouch'
-                src={Crouch}
-                style={styles[playerTwo.filter]}
-                animate={{
-                    x: isAnimating ? 200 : 0,
-                    rotate: isAnimating ? 90:0,
-                }}
-                transition={{
-                    type: 'spring',
-                    duration: 0.8
-                }}/>
-            </div>)
+            return (saveAnimations[0])
         } else if (playerTwoInput.slice(-1)[0] === "k"){
-            return (<div className="keeper-container">
-            <motion.img className='crouch'
-            src={Crouch}
-            style={styles[playerTwo.filter]}
-            animate={{
-                y: isAnimating ? 10 : 0,
-            }}
-            transition={{
-                type: 'spring',
-                duration: 0.8
-            }}/>
-        </div>)
+            return (saveAnimations[1])
         } else {
-            return (<div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
-                        style={styles[playerTwo.filter]}
-                        animate={{
-                            x: isAnimating ? -200 : 0,
-                            rotate: isAnimating ? -90:0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                        duration: 0.8
-                        }}/>
-            </div>)
+            return (saveAnimations[2])
         }
     }
     }
@@ -110,252 +61,35 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     const playShootAnimation = () => {
         if (currentPlayer !== "one") {
             if (playerOneInput.slice(-1)[0] === "d") {
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        x: isAnimating ? 220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)}
-                />
-            </div>)
+                return (shootAnimations[0])
             } else if (playerOneInput.slice(-1)[0] === "s"){
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        // x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)} {...playKick()}
-                />
-            </div>)
+                return (shootAnimations[1])
             } else {
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)}
-                />
-            </div>)
+                return (shootAnimations[2])
             }
         } else {
             if (playerTwoInput.slice(-1)[0] === "l") {
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        x: isAnimating ? 220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)}
-                />
-            </div>)
+                return (shootAnimations[0])
             } else if (playerTwoInput.slice(-1)[0] === "k"){
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        // x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)} {...playKick()}
-                />
-            </div>)
+                return (shootAnimations[1])
             } else {
-                return (<div className="ball-container">
-                <motion.img
-                    className="ball"
-                    src={Football}
-                    animate={{
-                        y: isAnimating ? 0 : 230,
-                        x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
-                        scale: isAnimating ? 0.15 : 0.25,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 40
-                    }}
-                    // onClick={() => setIsAnimating(!isAnimating)}
-                />
-            </div>)
+                return (shootAnimations[2])
             }
         }
-    
         }
 
     return(
         <>
         <div className='bigger-background'>
             <div className="background-image">
-
-            <div className="background-container">
-                {playSaveAnimation()}
-                {playShootAnimation()}
-                    {/* dive right */}
-                    {/* <div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
-                        animate={{
-                            x: isAnimating ? 200 : 0,
-                            rotate: isAnimating ? 90:0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                            duration: 0.8
-                        }}
-
-                        onClick={() => setIsAnimating(!isAnimating)}
-                        >
-
-                        </motion.img>
-                    </div> */}
-
-                    {/* dive left  */}
-                    {/* <div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
-                        animate={{
-                            x: isAnimating ? -200 : 0,
-                            rotate: isAnimating ? -90:0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                        duration: 0.8
-                        }}
-
-                        onClick={() => setIsAnimating(!isAnimating)}
-                        >
-
-                        </motion.img>
-                    </div>  */}
-
-                    {/* save middle */}
-                    {/* <div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
-                        animate={{
-                            y: isAnimating ? 10 : 0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                            duration: 0.8
-                        }}
-
-                        onClick={() => setIsAnimating(!isAnimating)}
-                        >
-
-                        </motion.img>
-                    </div> */}
-            
-                    {/* shoot right */}
-                    {/* <div className="ball-container">
-                        <motion.img
-                            className="ball"
-                            src={Football}
-                            animate={{
-                                y: isAnimating ? 0 : 230,
-                                x: isAnimating ? 220 : 0,
-                                rotate: isAnimating ? 360 : 0,
-                                scale: isAnimating ? 0.15 : 0.25,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 40
-                            }}
-                            onClick={() => setIsAnimating(!isAnimating)}
-                        >
-                        </motion.img>
-                    </div> */}
-
-                        {/* shoot left */}
-                        {/* <div className="ball-container">
-                        <motion.img
-                            className="ball"
-                            src={Football}
-                            animate={{
-                                y: isAnimating ? 0 : 230,
-                                x: isAnimating ? -220 : 0,
-                                rotate: isAnimating ? 360 : 0,
-                                scale: isAnimating ? 0.15 : 0.25,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 40
-                            }}
-                            onClick={() => setIsAnimating(!isAnimating)}
-                        >
-                        </motion.img>
-                    </div> */}
-
-                        {/* shoot middle score */}
-                        {/* <div className="ball-container">
-                        <motion.img
-                            className="ball"
-                            src={Football}
-                            animate={{
-                                y: isAnimating ? 0 : 230,
-                                // x: isAnimating ? -220 : 0,
-                                rotate: isAnimating ? 360 : 0,
-                                scale: isAnimating ? 0.15 : 0.25,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 40
-                            }}
-                            onClick={() => setIsAnimating(!isAnimating)} {...playKick()}
-                        >
-                        </motion.img>
-                    </div> */}
-
-                    
+                <div className="background-container">
+                    {playSaveAnimation()}
+                    {playShootAnimation()}
                 </div>
             </div>
         </div>    
-
         </>
     )
-
 }
 
 export default Animation;
