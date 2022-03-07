@@ -40,7 +40,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosen
                         drag
                         dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
                         >
-            </motion.img>
+                    </motion.img>
             <h4 className='winner-name'>{playerTwo.name} Wins!</h4>
             </div>
             </>

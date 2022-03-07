@@ -5,6 +5,7 @@ import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
 import JumpL from "./../images/Jump_left.png";
 import "./../css/StartContainer.css"
+import "./../css/Animation.css"
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setSelectedQuiz }) => {
 

@@ -77,3 +77,11 @@
 .winner-name{
     top: -300px;
 }
+
+.game-directions{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 1px black;
+}
