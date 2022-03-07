@@ -370,7 +370,7 @@ public class DataLoader implements ApplicationRunner {
         Option inverness = new Option("Inverness", capital);
         optionRespository.save(inverness);
         capital.addOption(nineteen61);
-        Option scone = new Option("Scone", capital);
+        Option scone = new Option("Scone", capital, true);
         optionRespository.save(scone);
         capital.addOption(scone);
 
@@ -382,6 +382,10 @@ public class DataLoader implements ApplicationRunner {
         Question scienceBones = new Question (science, "How many bones are there in the human body?");
         questionRepository.save(scienceBones);
 
+        Option threeSevenThree = new Option("373", scienceBones);
+        optionRespository.save(threeSevenThree);
+        scienceBones.addOption(threeSevenThree);
+
         Option twoZeroSix = new Option("206", scienceBones, true);
         optionRespository.save(twoZeroSix);
         scienceBones.addOption(twoZeroSix);
@@ -389,11 +393,6 @@ public class DataLoader implements ApplicationRunner {
         Option oneTwoZeroNine = new Option("1209", scienceBones);
         optionRespository.save(oneTwoZeroNine);
         scienceBones.addOption(oneTwoZeroNine);
-
-
-        Option threeSevenThree = new Option("373", scienceBones);
-        optionRespository.save(threeSevenThree);
-        scienceBones.addOption(threeSevenThree);
 
         Option fiveFiveThree = new Option("553", scienceBones);
         optionRespository.save(fiveFiveThree);
@@ -403,10 +402,6 @@ public class DataLoader implements ApplicationRunner {
 
         Question scienceEarth = new Question (science, "What is the hardest natural substance on Earth?");
         questionRepository.save(scienceEarth);
-
-        Option diamond = new Option("Diamond", scienceEarth, true);
-        optionRespository.save(diamond);
-        scienceEarth.addOption(diamond);
 
         Option lonsdaleite = new Option("Lonsdaleite", scienceEarth);
         optionRespository.save(lonsdaleite);
@@ -420,18 +415,22 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(siliconCarbide);
         scienceEarth.addOption(siliconCarbide);
 
+        Option diamond = new Option("Diamond", scienceEarth, true);
+        optionRespository.save(diamond);
+        scienceEarth.addOption(diamond);
+
         science.addQuestion(scienceEarth);
 
         Question scienceTemperature = new Question (science, "At what temperature are Celsius and Fahrenheit equal?");
         questionRepository.save(scienceTemperature);
 
-        Option minusFourZero = new Option("-40", scienceTemperature, true);
-        optionRespository.save(minusFourZero);
-        scienceTemperature.addOption(minusFourZero);
-
         Option sevenEight = new Option("78", scienceTemperature);
         optionRespository.save(sevenEight);
         scienceTemperature.addOption(sevenEight);
+
+        Option minusFourZero = new Option("-40", scienceTemperature, true);
+        optionRespository.save(minusFourZero);
+        scienceTemperature.addOption(minusFourZero);
 
         Option minusTwoNine = new Option("-29", scienceTemperature);
         optionRespository.save(minusTwoNine);
@@ -446,10 +445,6 @@ public class DataLoader implements ApplicationRunner {
         Question scienceSun = new Question (science, "Roughly how long does it take for the sun’s light to reach earth?");
         questionRepository.save(scienceSun);
 
-        Option eightMinutes = new Option("8 minutes", scienceSun, true);
-        optionRespository.save(eightMinutes);
-        scienceSun.addOption(eightMinutes);
-
         Option eightSeconds = new Option("8 seconds", scienceSun);
         optionRespository.save(eightSeconds);
         scienceSun.addOption(eightSeconds);
@@ -457,6 +452,10 @@ public class DataLoader implements ApplicationRunner {
         Option eightHours = new Option("8 hours", scienceSun);
         optionRespository.save(eightHours);
         scienceSun.addOption(eightHours);
+
+        Option eightMinutes = new Option("8 minutes", scienceSun, true);
+        optionRespository.save(eightMinutes);
+        scienceSun.addOption(eightMinutes);
 
         Option eightDays = new Option("8 days", scienceSun);
         optionRespository.save(eightDays);
@@ -467,13 +466,13 @@ public class DataLoader implements ApplicationRunner {
         Question scienceMushrooms = new Question (science, "What is the study of mushrooms called?");
         questionRepository.save(scienceMushrooms);
 
-        Option mycology = new Option("Mycology", scienceMushrooms, true);
-        optionRespository.save(mycology);
-        scienceMushrooms.addOption(mycology);
-
         Option fungology = new Option("Fungology", scienceMushrooms);
         optionRespository.save(fungology);
         scienceMushrooms.addOption(fungology);
+
+        Option mycology = new Option("Mycology", scienceMushrooms, true);
+        optionRespository.save(mycology);
+        scienceMushrooms.addOption(mycology);
 
         Option nephology = new Option("Nephology", scienceMushrooms);
         optionRespository.save(nephology);
@@ -488,10 +487,6 @@ public class DataLoader implements ApplicationRunner {
         Question scienceCountry = new Question (science, "What modern day country was Marie Curie born in?");
         questionRepository.save(scienceCountry);
 
-        Option poland = new Option("Poland", scienceCountry, true);
-        optionRespository.save(poland);
-        scienceCountry.addOption(poland);
-
         Option netherlands = new Option("Netherlands", scienceCountry);
         optionRespository.save(netherlands);
         scienceCountry.addOption(netherlands);
@@ -503,6 +498,10 @@ public class DataLoader implements ApplicationRunner {
         Option uk = new Option("UK", scienceCountry);
         optionRespository.save(uk);
         scienceCountry.addOption(uk);
+
+        Option poland = new Option("Poland", scienceCountry, true);
+        optionRespository.save(poland);
+        scienceCountry.addOption(poland);
 
         science.addQuestion(scienceCountry);
 
@@ -530,10 +529,6 @@ public class DataLoader implements ApplicationRunner {
         Question scienceElectric = new Question (science, "What is a material that will not carry an electric charge called?");
         questionRepository.save(scienceElectric);
 
-        Option insulator  = new Option("Insulator", scienceElectric, true);
-        optionRespository.save(insulator);
-        scienceElectric.addOption(insulator);
-
         Option dense = new Option("Dense", scienceElectric);
         optionRespository.save(dense);
         scienceElectric.addOption(dense);
@@ -541,6 +536,10 @@ public class DataLoader implements ApplicationRunner {
         Option liquid = new Option("Liquid", scienceElectric);
         optionRespository.save(liquid);
         scienceElectric.addOption(liquid);
+
+        Option insulator  = new Option("Insulator", scienceElectric, true);
+        optionRespository.save(insulator);
+        scienceElectric.addOption(insulator);
 
         Option vulcanised = new Option("Vulcanised", scienceElectric);
         optionRespository.save(vulcanised);
@@ -572,10 +571,6 @@ public class DataLoader implements ApplicationRunner {
         Question sciencePound = new Question (science, "How much does a British £2 coin weigh?");
         questionRepository.save(sciencePound);
 
-        Option zeroZeroTwoPounds  = new Option("0.02 pounds", sciencePound, true);
-        optionRespository.save(zeroZeroTwoPounds);
-        sciencePound.addOption(zeroZeroTwoPounds);
-
         Option twoPounds  = new Option("2 pounds", sciencePound);
         optionRespository.save(twoPounds);
         sciencePound.addOption(twoPounds);
@@ -588,6 +583,10 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(zeroPointTwoPounds);
         sciencePound.addOption(zeroPointTwoPounds);
 
+        Option zeroZeroTwoPounds  = new Option("0.02 pounds", sciencePound, true);
+        optionRespository.save(zeroZeroTwoPounds);
+        sciencePound.addOption(zeroZeroTwoPounds);
+
         science.addQuestion(sciencePound);
 
         Quiz grammar = new Quiz("Grammar");
@@ -596,10 +595,6 @@ public class DataLoader implements ApplicationRunner {
         Question grammarLottery = new Question (grammar, "If I won the lottery...");
         questionRepository.save(grammarLottery);
 
-        Option mansion  = new Option("I would buy a mansion", grammarLottery, true);
-        optionRespository.save(mansion);
-        grammarLottery.addOption(mansion);
-
         Option car  = new Option("I will buy a car", grammarLottery);
         optionRespository.save(car);
         grammarLottery.addOption(car);
@@ -607,6 +602,10 @@ public class DataLoader implements ApplicationRunner {
         Option computer = new Option("I buy a computer", grammarLottery);
         optionRespository.save(computer);
         grammarLottery.addOption(computer);
+
+        Option mansion  = new Option("I would buy a mansion", grammarLottery, true);
+        optionRespository.save(mansion);
+        grammarLottery.addOption(mansion);
 
         Option ps5 = new Option("I would have bought a PS5", grammarLottery);
         optionRespository.save(ps5);
@@ -638,13 +637,13 @@ public class DataLoader implements ApplicationRunner {
         Question grammarStudied = new Question (grammar, "If I had studied more...");
         questionRepository.save(grammarStudied);
 
-        Option passed  = new Option("I would have passed the exam", grammarStudied, true);
-        optionRespository.save(passed);
-        grammarStudied.addOption(passed);
-
         Option smart  = new Option("I would be very smart", grammarStudied);
         optionRespository.save(smart);
         grammarStudied.addOption(smart);
+
+        Option passed  = new Option("I would have passed the exam", grammarStudied, true);
+        optionRespository.save(passed);
+        grammarStudied.addOption(passed);
 
         Option things = new Option("I will know more things", grammarStudied);
         optionRespository.save(things);
@@ -659,10 +658,6 @@ public class DataLoader implements ApplicationRunner {
         Question grammarFood = new Question (grammar, "If I could only eat one food for the rest of my life...");
         questionRepository.save(grammarFood);
 
-        Option pizza = new Option("It would be pizza", grammarFood, true);
-        optionRespository.save(pizza);
-        grammarFood.addOption(pizza);
-
         Option pasta  = new Option("It will be pasta", grammarFood);
         optionRespository.save(pasta);
         grammarFood.addOption(pasta);
@@ -674,6 +669,10 @@ public class DataLoader implements ApplicationRunner {
         Option burgers = new Option("It would have been burgers", grammarFood);
         optionRespository.save(burgers);
         grammarFood.addOption(burgers);
+
+        Option pizza = new Option("It would be pizza", grammarFood, true);
+        optionRespository.save(pizza);
+        grammarFood.addOption(pizza);
 
         grammar.addQuestion(grammarFood);
 
@@ -701,10 +700,6 @@ public class DataLoader implements ApplicationRunner {
         Question grammarFood1 = new Question (grammar, "If I had eaten more...");
         questionRepository.save(grammarFood1);
 
-        Option sick = new Option("I would have been sick", grammarFood1, true);
-        optionRespository.save(sick);
-        grammarFood1.addOption(sick);
-
         Option hungry  = new Option("I won’t be hungry", grammarFood1);
         optionRespository.save(hungry);
         grammarFood1.addOption(hungry);
@@ -712,6 +707,10 @@ public class DataLoader implements ApplicationRunner {
         Option full = new Option("I will be full", grammarFood1);
         optionRespository.save(full);
         grammarFood1.addOption(full);
+
+        Option sick = new Option("I would have been sick", grammarFood1, true);
+        optionRespository.save(sick);
+        grammarFood1.addOption(sick);
 
         Option pizza2 = new Option("I choose the pizza", grammarFood1);
         optionRespository.save(pizza2);
@@ -721,10 +720,6 @@ public class DataLoader implements ApplicationRunner {
 
         Question grammarGame = new Question (grammar, "If I lose this game...");
         questionRepository.save(grammarGame);
-
-        Option sad1 = new Option("I will be sad", grammarGame, true);
-        optionRespository.save(sad1);
-        grammarGame.addOption(sad1);
 
         Option angry2  = new Option("I would be angry", grammarGame);
         optionRespository.save(angry2);
@@ -737,6 +732,10 @@ public class DataLoader implements ApplicationRunner {
         Option lose = new Option("I lose", grammarGame);
         optionRespository.save(lose);
         grammarGame.addOption(lose);
+
+        Option sad1 = new Option("I will be sad", grammarGame, true);
+        optionRespository.save(sad1);
+        grammarGame.addOption(sad1);
 
         grammar.addQuestion(grammarGame);
 
@@ -764,13 +763,13 @@ public class DataLoader implements ApplicationRunner {
         Question grammarCelebrity = new Question (grammar, "If I met a celebrity...");
         questionRepository.save(grammarCelebrity);
 
-        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
-        optionRespository.save(selfie);
-        grammarCelebrity.addOption(selfie);
-
         Option autograph  = new Option("I will ask for an autograph", grammarCelebrity);
         optionRespository.save(autograph);
         grammarCelebrity.addOption(autograph);
+
+        Option selfie = new Option("I would take a selfie", grammarCelebrity, true);
+        optionRespository.save(selfie);
+        grammarCelebrity.addOption(selfie);
 
         Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
         optionRespository.save(hello3);
@@ -785,10 +784,6 @@ public class DataLoader implements ApplicationRunner {
         Question grammarGame1 = new Question (grammar, "If I win this game...");
         questionRepository.save(grammarGame1);
 
-        Option happy = new Option("I will be very happy", grammarGame1, true);
-        optionRespository.save(happy);
-        grammarGame1.addOption(happy);
-
         Option lost  = new Option("I would have lost this game", grammarGame1);
         optionRespository.save(lost);
         grammarGame1.addOption(lost);
@@ -800,6 +795,10 @@ public class DataLoader implements ApplicationRunner {
         Option study3 = new Option("I study more", grammarGame1);
         optionRespository.save(study3);
         grammarGame1.addOption(study3);
+
+        Option happy = new Option("I will be very happy", grammarGame1, true);
+        optionRespository.save(happy);
+        grammarGame1.addOption(happy);
 
         grammar.addQuestion(grammarGame1);
 

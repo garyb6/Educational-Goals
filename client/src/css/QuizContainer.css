@@ -1,4 +1,5 @@
 #whiteboard{
+    background-image: url(https://t4.ftcdn.net/jpg/04/37/93/59/240_F_437935932_eJsRZ3d11tpE5g7gW7DfVboXdkSAorLI.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,6 +7,7 @@
     margin: 20px;
     gap: 20px;
     border: solid 1px black;
+    color: #fff;
 }
 
 #scoreboard{
@@ -45,6 +47,8 @@
 
 .answer:hover::after {
   transform: translate(6px, 6px);
+  box-shadow: 10px 10px 10px 10px blue;
+  background-color: rgb(238, 13, 13);
 }
 
 .answer:hover::before {
