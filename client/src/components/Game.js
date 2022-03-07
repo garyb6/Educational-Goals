@@ -1,13 +1,11 @@
 import { typeImplementation } from '@testing-library/user-event/dist/type/typeImplementation';
-import React, {useEffect, useSound} from 'react';
-
+import React, {useEffect} from 'react';
 
 const Game = ({ setPlayerOne, setPlayerTwo, questionNumber, playerOne, playerTwo}) => {
 
-
-
     const playerOneInput = ["a"]
     const playerTwoInput = ["l"]
+
     const playerDirection = (event) => {
 
         if (event.key === "d") {
@@ -63,7 +61,8 @@ const Game = ({ setPlayerOne, setPlayerTwo, questionNumber, playerOne, playerTwo
         tempPlayer.score += 1
         setPlayerTwo(tempPlayer)
     }
-        return console.log("GOOOOOOOOOAL")
+        return
+        console.log("GOOOOOOOOOAL")
     }
     }
     return (null);

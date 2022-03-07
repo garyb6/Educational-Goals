@@ -8,15 +8,7 @@ import whistle from '../sounds/Whistle.wav'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, requestQuiz, chosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
-    // const muteAllSounds = () => {
-    //     window.soundManager.muteAll();
-    // }
     const [blowWhistle] = useSound(whistle)
-
-    const pauseGameMusic = () => {
-        (new Audio(gameMusic).pause())
-        console.log(pauseGameMusic)
-    }
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
