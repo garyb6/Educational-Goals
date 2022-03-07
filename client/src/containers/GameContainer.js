@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
@@ -11,17 +11,25 @@ import "./../css/Animation.css"
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
     const [shotScored] = useSound(Goal)
-    const [shotSaved] = useSound(Miss)
+    const [shotSaved] = useSound(Miss) 
 
-    const playerOneInput = ["s"]
-    const playerTwoInput = ["k"]
+    // const playerOneInput = ["s"]
+    // const playerTwoInput = ["k"]
+    const [playerOneInput, setPlayerOneInput] = useState(["s"])
+    const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
 
     const playerDirection = (event) => {
-
+        console.log(playerTwoInput.length > 1)
         if (event.key === "d" || event.key === "s" || event.key === "a") {
-            playerOneInput.push(event.key)
+            let temp = playerOneInput
+            temp.push(event.key)
+            setPlayerOneInput(temp)
+            console.log(playerOneInput)
         } else if (event.key === "l" || event.key === "k" || event.key === "j") {
-            playerTwoInput.push(event.key)
+            let temp = playerTwoInput
+            temp.push(event.key)
+            setPlayerTwoInput(temp)
+            console.log(playerTwoInput)
         } 
     };
 
@@ -77,6 +85,8 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         setChosenAnswer(null)
     }
 
+
+
     return (
         <>
             <div id="scoreboard">
@@ -85,9 +95,11 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             <div id="game-directions">
                 <div id="player1Instructions">
                 <h3> Left: A Middle: S Right: D</h3>
+                {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 <div id="player2Instructions">
                 <h3> Left: J Middle: K Right: L</h3>
+                {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
             </div>
             <Animation/>
