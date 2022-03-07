@@ -30,15 +30,27 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
             .then((data) => setQuizzes(data))
     }
 
-    const handleChangePlayerOne = (event) => {
+    const handleChangePlayerOneName = (event) => {
         const tempPlayer = playerOne;
         tempPlayer.name = event.target.value
         setPlayerOne(tempPlayer)
     }
 
-    const handleChangePlayerTwo = (event) => {
+    const handleChangePlayerOneColour = (event) => {
+        const tempPlayer = playerOne;
+        tempPlayer.filter = event
+        setPlayerOne(tempPlayer)
+    }
+
+    const handleChangePlayerTwoName = (event) => {
         const tempPlayer = playerTwo;
         tempPlayer.name = event.target.value
+        setPlayerTwo(tempPlayer)
+    }
+
+    const handleChangePlayerTwoColour = (event) => {
+        const tempPlayer = playerTwo;
+        tempPlayer.filter = event
         setPlayerTwo(tempPlayer)
     }
 
@@ -57,9 +69,9 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <div className="players">
                     <div className="player1Select">
                         <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
-                        <input id="player1Box" type="text" onChange={handleChangePlayerOne} placeholder="type in your name"/>
+                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel interval = {null}>
+                            <Carousel interval = {null} onSelect={handleChangePlayerOneColour}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
@@ -98,9 +110,9 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     </div>
                     <div className="player2Select">
                         <label className="playerLabel" htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo} placeholder="type in your name"/>
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel interval = {null}>
+                            <Carousel interval = {null} onSelect={handleChangePlayerTwoColour}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"

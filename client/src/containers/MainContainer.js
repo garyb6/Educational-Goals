@@ -11,8 +11,8 @@ import NotFound from '../components/NotFound';
 
 const MainContainer = () => {
 
-    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: ['x', 'x', 'x', 'x', 'x'], filter: ""  });
-    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: ['x', 'x', 'x', 'x', 'x'], filter: ""  });
+    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: ['x', 'x', 'x', 'x', 'x'], filter: 0  });
+    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: ['x', 'x', 'x', 'x', 'x'], filter: 0  });
     const [selectedQuiz, setSelectedQuiz] = useState(0);
     const [chosenQuiz, setChosenQuiz] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1)
