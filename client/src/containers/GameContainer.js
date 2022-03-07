@@ -10,6 +10,7 @@ import "./../css/Animation.css"
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
+    const [isAnimating, setIsAnimating] = useState(false)
     const [shotScored] = useSound(Goal)
     const [shotSaved] = useSound(Miss) 
 
@@ -51,6 +52,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     const checkGoal = () => {
 
+        setIsAnimating(true);
         const combinedInput = playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0])
         const scoreIndex = Math.floor(questionNumber / 2);
         const playerGo = (questionNumber % 2 !== 0);
@@ -83,6 +85,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     const handleClick = () => {
         setQuestionNumber(questionNumber + 1)
         setChosenAnswer(null)
+        setIsAnimating(false)
     }
 
 
@@ -102,7 +105,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
             </div>
-            <Animation/>
+            <Animation playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
             <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link>
         </>
     )

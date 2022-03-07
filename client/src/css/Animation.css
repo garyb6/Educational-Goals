@@ -34,9 +34,10 @@
     position: relative;
     border: 1px solid black;
     flex-direction: column;
+    
 
     top: 14vw;
-    left: 0vw;
+    left: 12vw;
     
 }
 
