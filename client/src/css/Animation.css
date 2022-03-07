@@ -57,3 +57,23 @@
     width: 450px;
     height: auto;
 }
+
+.trophy-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    left: 0vw;
+    top: 7vw;
+
+}
+.trophy{
+    width: 450px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.winner-name{
+    top: -300px;
+}
