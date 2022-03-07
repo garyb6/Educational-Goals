@@ -7,6 +7,7 @@ import useSound from 'use-sound';
 import goal from '../sounds/Goal_chant.wav'
 import miss from '../sounds/Goal_missed.wav'
 import "./../css/GameContainer.css"
+import "./../css/Animation.css"
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
