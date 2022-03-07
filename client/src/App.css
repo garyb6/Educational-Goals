@@ -2,9 +2,8 @@
 
   text-align: center;
   margin: 0;
-  padding: 0
-}
+  padding: 0;
+  background: url(./images/CL.jpg) no-repeat center center fixed; 
+  background-size: cover;
 
-.noHover{
-  pointer-events: none;
 }

@@ -132,7 +132,7 @@ function Animation() {
                                 type: "spring",
                                 stiffness: 40
                             }}
-                            onClick={() => setIsAnimating(!isAnimating)}
+                            onClick={() => setIsAnimating(!isAnimating)} {...playKick()}
                         >
                         </motion.img>
                     </div>
