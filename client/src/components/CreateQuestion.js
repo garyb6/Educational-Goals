@@ -41,7 +41,7 @@ const CreateQuestion = ({newQuiz, questionNumber, setQuestionNumber}) => {
         {newQuestion.hasOwnProperty("id") ? <h6>Creating {newQuestion.ask}</h6>
         :<form onSubmit={handleSubmit}>
         <label htmlFor="questionName">Question:</label>
-        <input id="questionName" type="textarea" onChange={handleChange}/>
+        <input id="questionName" type="text" required onChange={handleChange}/>
         <button className="createButton" type='submit'>Create question</button>
         </form>
         }

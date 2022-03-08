@@ -50,7 +50,7 @@ const CreateQuiz = () => {
                     :
                     <form onSubmit={handleSubmit}>
                     <label htmlFor="quizName">Quiz Name:</label>
-                    <input id="quizName" type="text" onChange={handleChange}/>
+                    <input id="quizName" type="text" required onChange={handleChange}/>
                     <button className="createButton" type='submit'>Create quiz</button>
                     </form>
                 }   
@@ -60,7 +60,6 @@ const CreateQuiz = () => {
                     <li>Each question can have up to 4 answers</li>
                     <li>Mark answers as correct or incorrect, there can be more than one correct answer</li>
                 </ul>
-
 
             </div>
             </>
