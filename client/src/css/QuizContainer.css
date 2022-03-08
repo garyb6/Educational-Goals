@@ -15,10 +15,7 @@
     box-sizing: border-box;
     margin-top: 20%;
     gap: 20px;
-    padding: 1% 0 5% 0;
-    border: solid 5px #fff;
-    color: #fff;
-    /* top: 10; */
+    border: solid 1px #fff;
 }
 
 #penArea{
@@ -39,19 +36,43 @@
     justify-content: space-evenly;
     align-items: center;
     border: solid 1px #fff;
-
+    color: white; 
 }
 
 .answer{
-    width: 400px;
-    height: 50px;
-    background: #fff;
-    background: #fff;
-    border-radius: 30px;
-    transition: transform 0.3s ease;
-    position: relative;
+  width: 30vw;
+  height: 5vh;
+  text-align: center;
+  background: white;
+  border-radius: 0.6em;
+  padding: 2%;
+  margin: 1%;
+  transition: transform 0.3s ease;
+  position: relative;
 }
 
+#quizContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#penArea{
+  display: flex;
+  border: solid 5px #fff;
+  box-sizing: border-box;
+  height: 20vh;
+  width: 60vh;
+  /* margin-left: 5%; */
+  /* border-radius: 0 100% 25% 100%; */
+  border-bottom-left-radius: 100% 200%;
+  border-bottom-right-radius: 100% 200%;
+  top: -10;
+} 
+ 
 .answer::after,
 .answer::before {
     content: "";
@@ -83,15 +104,15 @@
     transform: translate(12px, 12px);
 }
 
-/* .playerScore{}
-
-.playerAllocation{} */
-
 .Q{grid-area: Q;}
-.A1{grid-area: A1;}
-.A2{grid-area: A2;}
-.A3{grid-area: A3;}
-.A4{grid-area: A4;}
+.A1{grid-area: A1;
+color: black}
+.A2{grid-area: A2;
+  color: black}
+.A3{grid-area: A3;
+  color: black}
+.A4{grid-area: A4;
+  color: black}
 
 #quizBoard{
     display: grid;
