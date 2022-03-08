@@ -55,7 +55,9 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
     }
 
     const listOfQuizzes = quizzes.map((quiz, index) => {
+        if (quiz.questions.length >= 10){
         return <option key={index} value={quiz.id}> {quiz.title} </option>
+        }
     });
 
     return (
