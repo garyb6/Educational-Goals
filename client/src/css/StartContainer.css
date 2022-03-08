@@ -6,10 +6,15 @@
 }
 
 h1{
-    /* border: 2px solid white; */
     margin: 1%;
     padding: 2%;
     color: white;
+}
+
+#logoStart{
+    width: 275px; height: 125px; 
+    object-fit: cover;
+    margin: 1%;
 }
 
 .players{
@@ -19,32 +24,33 @@ h1{
 }
 
 .playerLabel{
+    font: bold 25px/125% Arvo, san serif;
     padding: 1%;
-    margin: 1%;
-    margin-top: 2%;
+    margin: 1%; margin-top: 2%;
 }
 
 .player1Select{
     border: 2px solid white;
     margin: 1%;
-    padding-left: 5%;
+    padding-left: 7%;
     align-items: center;
 }
 
 .player2Select{
     border: 2px solid white;
     margin: 1%;
-    padding-left: 5%;
+    padding-left: 7%;
 }
 
 .colourSelector{
+    margin: 0;
     margin-top: 5%;
     width: 190px;
 }
 
 .carousel{
     max-width: 190px;
-    height: 50vh;
+    height: 45vh;
 }
 
 .quizSelector{
@@ -71,16 +77,50 @@ h5{
 
 .quizSelector{
     display: flex;
-    margin: 5%;
-    padding: 2%;
+    align-items: center;
+    margin: 2% 0 2% 0;
+    padding: 2%
 }
 
-/* .quizSelectText{
-
-} */
-
-.quizStartButton:hover{
-background: #ff96ad;
-box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+.quizSelectText{
+    margin: 1%;
 }
+
+select{
+    margin: 1%;
+}
+
+#quizStartButton{
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1;
+    margin: 10px;
+    border: 2px solid #0f7dcf;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    text-transform: uppercase;
+}
+
+#quizStartButtonText{
+    color: white;
+    font-size: 25px;
+}
+
+select{
+    color: black;
+}
+
+#quizStartButton:hover{
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;}
 

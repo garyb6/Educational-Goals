@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
 import JumpL from "./../images/Jump_left.png";
+import logo from "../images/logo.jpg"
 import "./../css/StartContainer.css"
 import "./../css/Animation.css"
 import useSound from 'use-sound';
@@ -12,14 +13,8 @@ import {Howl, Howler} from 'howler';
 import Request from '../helpers/request';
 import { styles } from '../data/Styles'
 
+
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
-
-    // const [playGameMusic] = useSound(gameMusic)
-    // const gameMusic = new Howl({
-    //     src: ['../sounds/Game_music.wav']
-    // });
-
-    // const playGameMusic = () => (new Audio (gameMusic).play())
 
     useEffect(() => {
         requestAll()
@@ -66,7 +61,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
     return (
         <>
             <div className="startContainer">
-                <h1>Educational Goals</h1>
+            <img id="logoStart" src={logo}></img>
                 <div className="players">
                     <div className="player1Select">
                         <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
@@ -159,7 +154,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <button id="quizStartButton" ><Link to="/quiz">Start</Link></button>
+                    <button id="quizStartButton" ><Link to="/quiz"><div id="quizStartButtonText">Start</div></Link></button>
                 </div>
             </div>
             <footer>

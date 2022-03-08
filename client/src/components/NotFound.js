@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import gameMusic from '../sounds/MOTD.mp3'
+import "./../css/NotFound.css"
 
 const NotFound = () => {
 
     return (
         <>
+        <div id="wrongway">
         <i className="fas fa-map-signs"/><br/>
         <h4>There's nothing to see...</h4>
-        <Link to="/">Get me out of here!</Link>
+        <button id="help"><Link to="/"><div id="helpText">Get me out of here!</div></Link></button>
+        <h6>Oh well, play some soothing music:</h6>
+        <audio controls src={gameMusic} ></audio>
+        </div>
         </>
     )
 

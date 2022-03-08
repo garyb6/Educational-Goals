@@ -34,11 +34,19 @@
     position: relative;
     border: 1px solid black;
     flex-direction: column;
-    
-
     top: 14vw;
     left: 12vw;
     
+}
+
+.jump-right{
+    width: 200px;
+    height:auto;
+}
+
+.jump-left{
+    width: 200px;
+    height:auto;
 }
 
 .ball-container{
@@ -59,23 +67,43 @@
     height: auto;
 }
 
-.trophy-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    align-items: center;
-    left: 0vw;
-    top: 7vw;
 
+.winner-container{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 50px 50px 50px 50px;
+    left: 40vw;
 }
+
+.trophy-container{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    left: 36vw;
+    top:100px;
+}
+
 .trophy{
-    width: 450px;
-    height: auto;
+    /* display: flex;
+    justify-content: center; */
+    left: 1vw;
+    top: 1vw;
+    width: 500px;
+    height: 500px;
+    background-image:url('../images/Trophy.png');
+    background-repeat: no-repeat;
+    background-size: 400px;
     border: 1px solid black;
 }
 
 .winner-name{
-    top: -300px;
+    font-size: 32px;
+    padding-left: 148px;
+    padding-top: 350px;
 }
+
 
