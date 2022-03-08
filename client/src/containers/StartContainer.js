@@ -60,6 +60,20 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
         }
     });
 
+    const carouselItems = styles.map((item, index) => {
+        return <Carousel.Item key={index}>
+        <img
+            className="d-block"
+            src={Stand}
+            alt={item.colour}
+            style={item.filter}
+        />
+        <Carousel.Caption>
+            <h5>Pick the {item.colour} Player</h5>
+        </Carousel.Caption>
+    </Carousel.Item>
+    })
+
     return (
         <>
             <div className="startContainer">
@@ -70,39 +84,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                         <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerOneColour}>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Red Player"
-                                        style={styles[0]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Red Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Green Player"
-                                        style={styles[1]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Green Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Blue Player"
-                                        style={styles[2]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Blue Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
+                                {carouselItems}
                             </Carousel>
                         </div>
                     </div>
@@ -111,39 +93,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                         <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerTwoColour}>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Red Player"
-                                        style={styles[0]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Red Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Green Player"
-                                        style={styles[1]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Green Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Blue Player"
-                                        style={styles[2]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Blue Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
+                                {carouselItems}
                             </Carousel>
                         </div>
                     </div>
