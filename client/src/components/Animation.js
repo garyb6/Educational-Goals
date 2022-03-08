@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { motion } from 'framer-motion'
 import Crouch from "../images/Crouch.png"
+import Jump_left from "../images/Jump_left.png"
+import Jump_right from "../images/Jump_right.png"
 import Football from "../images/Football.png"
 import Background from "../images/Background.jpg"
 import "../css/Animation.css"
@@ -16,11 +18,11 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
     if (currentPlayer === "one") {
         if (playerOneInput.slice(-1)[0] === "d") {
             return (<div className="keeper-container">
-                <motion.img className='crouch'
-                src={Crouch}
+                <motion.img className='jump-right'
+                src={Jump_right}
                 animate={{
-                    x: isAnimating ? 200 : 0,
-                    rotate: isAnimating ? 90:0,
+                    x: isAnimating ? 110 : 0,
+                    // rotate: isAnimating ? 90:0,
                 }}
                 transition={{
                     type: 'spring',
@@ -32,7 +34,7 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
             <motion.img className='crouch'
             src={Crouch}
             animate={{
-                y: isAnimating ? 10 : 0,
+                y: isAnimating ? -10 : 0,
             }}
             transition={{
                 type: 'spring',
@@ -41,11 +43,11 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
         </div>)
         } else {
             return (<div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
+                        <motion.img className='jump-left'
+                        src={Jump_left}
                         animate={{
                             x: isAnimating ? -200 : 0,
-                            rotate: isAnimating ? -90:0,
+                            // rotate: isAnimating ? -90:0,
                         }}
                         transition={{
                             type: 'spring',
@@ -56,11 +58,11 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
     } else {
         if (playerTwoInput.slice(-1)[0] === "l") {
             return (<div className="keeper-container">
-                <motion.img className='crouch'
-                src={Crouch}
+                <motion.img className='jump-right'
+                src={Jump_right}
                 animate={{
-                    x: isAnimating ? 200 : 0,
-                    rotate: isAnimating ? 90:0,
+                    x: isAnimating ? 110 : 0,
+                    // rotate: isAnimating ? 90:0,
                 }}
                 transition={{
                     type: 'spring',
@@ -72,7 +74,7 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
             <motion.img className='crouch'
             src={Crouch}
             animate={{
-                y: isAnimating ? 10 : 0,
+                y: isAnimating ? -10 : 0,
             }}
             transition={{
                 type: 'spring',
@@ -81,11 +83,11 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
         </div>)
         } else {
             return (<div className="keeper-container">
-                        <motion.img className='crouch'
-                        src={Crouch}
+                        <motion.img className='jump-left'
+                        src={Jump_left}
                         animate={{
                             x: isAnimating ? -200 : 0,
-                            rotate: isAnimating ? -90:0,
+                            // rotate: isAnimating ? -90:0,
                         }}
                         transition={{
                             type: 'spring',
@@ -124,7 +126,7 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
                     animate={{
                         y: isAnimating ? 0 : 230,
                         // x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
+                        rotate: isAnimating ? 160 : 0,
                         scale: isAnimating ? 0.15 : 0.25,
                     }}
                     transition={{
@@ -180,7 +182,7 @@ function Animation({playerOneInput, playerTwoInput, isAnimating, setIsAnimating,
                     animate={{
                         y: isAnimating ? 0 : 230,
                         // x: isAnimating ? -220 : 0,
-                        rotate: isAnimating ? 360 : 0,
+                        rotate: isAnimating ? 160 : 0,
                         scale: isAnimating ? 0.15 : 0.25,
                     }}
                     transition={{
