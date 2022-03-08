@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
-import Trophy from "../images/Trophy.png"
 import { motion } from 'framer-motion'
 import "./../css/QuizContainer.css"
 import useSound from 'use-sound';
@@ -18,13 +17,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
-    // const confettiEffect = () => {
-    //     const {width, height} = useWindowSize()
-    //     return (<Confetti
-    //             width={width}
-    //             height={height}/>
-    //             )
-    // }
+
 
     const requestQuiz = function (id) {
         const request = new Request();
@@ -43,33 +36,30 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                 <>
                     <Confetti/>
                     {championMusic()}
-                    <div className='winner-container'><h1> {playerOne.name} is the winner!</h1></div>
-                    <div className='trophy-container'>
-                        <motion.img className='trophy'
-                            src={Trophy}
+                    <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
+                        <div className = "trophy-container">
+                            <motion.div className='trophy'
                             drag
-                            // onDrag={}
                             dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
                             >
-                </motion.img>
-                <h4 className='winner-name'>{playerOne.name} Wins!</h4>
-                </div>
+                            <div className='winner-name'>{playerOne.name}</div>
+                            </motion.div>
+                        </div>
                 </>)
         } else if (playerTwo.score > playerOne.score) {
             return (
             <>
-                <Confetti/>
-                {championMusic()}
-                <div className='winner-container'><h1> {playerTwo.name} is the winner!</h1></div>
-                <div className='trophy-container'>
-                    <motion.img className='trophy'
-                        src={Trophy}
-                        drag
-                        dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
-                        >
-                    </motion.img>
-            <h4 className='winner-name'>{playerTwo.name} Wins!</h4>
-            </div>
+                 <Confetti/>
+                    {championMusic()}
+                    <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
+                        <div className = "trophy-container">
+                            <motion.div className='trophy'
+                            drag
+                            dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
+                            >
+                            <div className='winner-name'>{playerOne.name}</div>
+                            </motion.div>
+                        </div>
             </>
             )
         } else {
