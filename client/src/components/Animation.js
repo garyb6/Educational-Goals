@@ -21,7 +21,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
            <div className="keeper-container">
                 <motion.img className='jump-right'
                 src={Jump_right}
-                style={styles[currentGoalie.filter]}
+                style={styles[currentGoalie.filter].filter}
                 animate={{
                     x: isAnimating ? 110 : 0,
                     // rotate: isAnimating ? 90:0,
@@ -35,7 +35,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
         <div className="keeper-container">
             <motion.img className='crouch'
             src={Crouch}
-            style={styles[currentGoalie.filter]}
+            style={styles[currentGoalie.filter].filter}
             animate={{
                 y: isAnimating ? -10 : 0,
             }}
@@ -48,7 +48,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
                 <div className="keeper-container">
                         <motion.img className='jump-left'
                         src={Jump_left}
-                        style={styles[currentGoalie.filter]}
+                        style={styles[currentGoalie.filter].filter}
                         animate={{
                             x: isAnimating ? -200 : 0,
                             // rotate: isAnimating ? -90:0,
