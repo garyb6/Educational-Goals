@@ -1,18 +1,8 @@
-/* @media only screen and (min-device-width: 400px) {.background-container {
-    width:auto;
-    height:auto;
-    background-image: url(../images/Spotlight.jpg);
-    background-repeat: no-repeat; 
-    background-size: contain; 
-    background-position: center;
-    background-attachment:fixed;  
-}} */
 
 .bigger-background{
     /* display: flex; */
     justify-content: center;
     border: 1px solid black;
-    margin: 50px 50px 50px 50px
 }
 
 .background-image{
@@ -40,12 +30,12 @@
 }
 
 .jump-right{
-    width: 200px;
+    width: 13.2vw;
     height:auto;
 }
 
 .jump-left{
-    width: 200px;
+    width: 13.2vw;
     height:auto;
 }
 
@@ -70,7 +60,9 @@
 
 .winner-container{
     display: flex;
-    justify-content: center;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
     left: 40vw;
 }
 
@@ -84,7 +76,7 @@
     position: relative;
     width: 37vw;
     height: 10vw;
-    left: 36vw;
+    left: 37vw;
     top:10vw;
 }
 
@@ -104,6 +96,11 @@
     font-size: 2.2vw;
     padding-left: 8.5vw;
     padding-top: 21.5vw;
+}
+
+.next-question{
+    display: flex;
+    justify-content: center;
 }
 
 
