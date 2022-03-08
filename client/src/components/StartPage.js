@@ -15,7 +15,7 @@ const StartPage = () => {
             <div id="header">
                 <img id="logo" src={logo}></img>
             </div>
-            <button className="startPageButton"><Link to="/start"><div className="startPageButtonText">Start a quiz</div></Link></button>
+            <button className="startPageButton"><Link to="/start"><div className="startPageButtonText">Select a quiz</div></Link></button>
             <button className="startPageButton"><Link to="/quizzes/create"><div className="startPageButtonText">Create a quiz</div></Link></button>
         </div>
         </>
