@@ -44,7 +44,7 @@ h1{
 
 .carousel{
     max-width: 190px;
-    height: 50vh;
+    height: 45vh;
 }
 
 .quizSelector{
@@ -71,8 +71,8 @@ h5{
 
 .quizSelector{
     display: flex;
-    margin: 5%;
-    padding: 2%;
+    margin: 1%;
+    padding: 1%;
 }
 
 /* .quizSelectText{
