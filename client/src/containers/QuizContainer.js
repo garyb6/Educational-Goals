@@ -49,7 +49,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         } else if (playerTwo.score > playerOne.score) {
             return (
             <>
-                 <Confetti/>
+                <Confetti/>
                     {championMusic()}
                     <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
                         <div className = "trophy-container">
