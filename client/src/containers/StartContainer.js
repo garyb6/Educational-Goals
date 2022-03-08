@@ -10,6 +10,7 @@ import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import {Howl, Howler} from 'howler';
 import Request from '../helpers/request';
+import { styles } from '../data/Styles'
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
 
@@ -77,7 +78,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Red Player"
-                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
+                                        style={styles[0]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Red Player</h5>
@@ -88,7 +89,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Green Player"
-                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
+                                        style={styles[1]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Green Player</h5>
@@ -99,7 +100,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Blue Player"
-                                        style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
+                                        style={styles[2]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Blue Player</h5>
@@ -118,7 +119,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Red Player"
-                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
+                                        style={styles[0]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Red Player</h5>
@@ -129,7 +130,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Green Player"
-                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
+                                        style={styles[1]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Green Player</h5>
@@ -140,7 +141,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Blue Player"
-                                        style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
+                                        style={styles[2]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Blue Player</h5>
