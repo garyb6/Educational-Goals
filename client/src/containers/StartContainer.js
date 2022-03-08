@@ -11,6 +11,7 @@ import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import {Howl, Howler} from 'howler';
 import Request from '../helpers/request';
+import { styles } from '../data/Styles'
 
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
@@ -25,15 +26,27 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
             .then((data) => setQuizzes(data))
     }
 
-    const handleChangePlayerOne = (event) => {
+    const handleChangePlayerOneName = (event) => {
         const tempPlayer = playerOne;
         tempPlayer.name = event.target.value
         setPlayerOne(tempPlayer)
     }
 
-    const handleChangePlayerTwo = (event) => {
+    const handleChangePlayerOneColour = (event) => {
+        const tempPlayer = playerOne;
+        tempPlayer.filter = event
+        setPlayerOne(tempPlayer)
+    }
+
+    const handleChangePlayerTwoName = (event) => {
         const tempPlayer = playerTwo;
         tempPlayer.name = event.target.value
+        setPlayerTwo(tempPlayer)
+    }
+
+    const handleChangePlayerTwoColour = (event) => {
+        const tempPlayer = playerTwo;
+        tempPlayer.filter = event
         setPlayerTwo(tempPlayer)
     }
 
@@ -52,15 +65,15 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <div className="players">
                     <div className="player1Select">
                         <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
-                        <input id="player1Box" type="text" onChange={handleChangePlayerOne} placeholder="Type in your name"/>
+                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel interval = {null}>
+                            <Carousel interval = {null} onSelect={handleChangePlayerOneColour}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
                                         alt="Red Player"
-                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
+                                        style={styles[0]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Red Player</h5>
@@ -71,7 +84,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Green Player"
-                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
+                                        style={styles[1]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Green Player</h5>
@@ -82,7 +95,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Blue Player"
-                                        style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
+                                        style={styles[2]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Blue Player</h5>
@@ -93,15 +106,15 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     </div>
                     <div className="player2Select">
                         <label className="playerLabel" htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwo} placeholder="Type in your name"/>
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="type in your name"/>
                         <div className="colourSelector">
-                            <Carousel interval = {null}>
+                            <Carousel interval = {null} onSelect={handleChangePlayerTwoColour}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block"
                                         src={Stand}
                                         alt="Red Player"
-                                        style={{ filter: "invert(24%) sepia(45%) saturate(6956%) hue-rotate(352deg) brightness(105%) contrast(85%)" }}
+                                        style={styles[0]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Red Player</h5>
@@ -112,7 +125,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Green Player"
-                                        style={{ filter: "invert(67%) sepia(13%) saturate(4833%) hue-rotate(72deg) brightness(101%) contrast(81%)" }}
+                                        style={styles[1]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Green Player</h5>
@@ -123,7 +136,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                                         className="d-block"
                                         src={Stand}
                                         alt="Blue Player"
-                                        style={{ filter: "invert(18%) sepia(75%) saturate(5707%) hue-rotate(223deg) brightness(102%) contrast(105%)" }}
+                                        style={styles[2]}
                                     />
                                     <Carousel.Caption>
                                         <h5>Pick the Blue Player</h5>

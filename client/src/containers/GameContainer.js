@@ -123,7 +123,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
             </div>
-            <Animation playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
+            <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
             {isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}
         </div>
         </>
