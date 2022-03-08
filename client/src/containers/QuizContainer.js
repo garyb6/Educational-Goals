@@ -32,7 +32,6 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         <h4 className='please-wait'>Please wait or return to home page</h4>
         <button id="back-home"><a href='/'><div id='back-text'>Back to home</div></a></button>
         </div>)
-
     }
 
     const playerVictory = (player) => {
@@ -58,7 +57,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         if (playerTwo.name === "Player 2" || playerTwo.name === ""){
             return <>
                 {playerVictory(playerOne)}
-                <h2>You got {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10!</h2>
+                <h2>You scored {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10 goals!</h2>
                 </>
         }
 
