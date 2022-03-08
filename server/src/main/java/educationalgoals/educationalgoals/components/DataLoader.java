@@ -369,7 +369,7 @@ public class DataLoader implements ApplicationRunner {
         capital.addOption(dumbarton);
         Option inverness = new Option("Inverness", capital);
         optionRespository.save(inverness);
-        capital.addOption(nineteen61);
+        capital.addOption(inverness);
         Option scone = new Option("Scone", capital, true);
         optionRespository.save(scone);
         capital.addOption(scone);
@@ -771,7 +771,7 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(selfie);
         grammarCelebrity.addOption(selfie);
 
-        Option hello3 = new Option("I would have said “hello”", grammarCelebrity);
+        Option hello3 = new Option("I would have said hello", grammarCelebrity);
         optionRespository.save(hello3);
         grammarCelebrity.addOption(hello3);
 
