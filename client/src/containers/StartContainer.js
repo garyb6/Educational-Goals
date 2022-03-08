@@ -154,7 +154,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <button id="quizStartButton" ><Link to="/quiz"><div id="quizStartButtonText">Start</div></Link></button>
+                    <Link to="/quiz" id="quizStartButton"><div id="quizStartButtonText">Start</div></Link>
                 </div>
             </div>
             <footer>
