@@ -41,7 +41,7 @@ const CreateQuiz = () => {
                 </div>
 
                 {newQuiz.hasOwnProperty("id") ? 
-                    <>
+                    <div className='mainCreate'>
                     <h3>Creating the {newQuiz.title} quiz.</h3>
                     <CreateQuestion newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/>
                     <ul>
@@ -49,9 +49,9 @@ const CreateQuiz = () => {
                         <li>Each question has 4 answers</li>
                         <li>Mark answers as correct or incorrect - there can be more than one correct answer</li>
                     </ul>
-                    </>
+                    </div>
                     :
-                    <>
+                    <div className='mainCreate'>
                     <h4>Enter a quiz name below!</h4>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="quizName">Quiz Name:</label>
@@ -64,7 +64,7 @@ const CreateQuiz = () => {
                         <li>Each question has 4 answers</li>
                         <li>Mark answers as correct or incorrect - there can be more than one correct answer</li>
                     </ul>
-                    </>
+                    </div>
                 } 
 
             </div>
