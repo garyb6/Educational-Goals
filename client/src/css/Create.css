@@ -1,0 +1,56 @@
+.createForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.headerCreate{
+    border: 0px solid white;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+}
+
+.logoQuiz{
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    margin: 5%;
+}
+
+.createButton{
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1;
+    margin: 10px;
+    border: 2px solid #0f7dcf;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+.createButton:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
+
+}
+
+.createButtonText{
+margin: 4 (25%);
+font-size: 35px;
+
+}

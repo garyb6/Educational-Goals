@@ -3,46 +3,97 @@
     flex-direction: column;
     align-items: center;
     color: white;
+    border: 0px solid white;
+    margin: 5% 10% 10% 10%;
+
 }
 
 #header{
-    border: 1px solid white;
+    border: 0px solid white;
     display: flex;
     justify-content: center;
-    /* margin-top: 10%; */
-    /* padding: 5em; */
+    margin: 0;
+
 }
 
-.logo{
-    top: -30px;
-    width: 50px;
-    height: 50px;
+#logo{
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    margin: 5%;
+
 }
 
-#startPageButton{
-    border: 1px solid white;
+.startPageButton{
+    width: 500px;
+    height: 75px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     appearance: none;
     background-color: transparent;
-    border: 2px solid blue;
     border-radius: 0.6em;
-    color: white;
     cursor: pointer;
-    font-size: 1rem;
     font-weight: 700;
     line-height: 1;
     margin: 10px;
-    border-color: blue;
-    box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+    border: 2px solid #0f7dcf;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
-    text-decoration: none;
-    /* text-align:inherit; */
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
 }
 
-#startPageButton:hover {
-    box-shadow: 0 0 10px 0 greenyellow inset, 0 0 10px 4px greenyellow;
+
+.startPageButton:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
+    text-decoration: none;
+
 }
+
+.startPageButtonText{
+margin: 4 (25%);
+color: white;
+font-size: 35px;
+
+}
+/* if animating display next question : null */
+
+/* #upperLeft {
+	width: 125px; height: 125px;
+	position: absolute;
+	top: 0; left: 0;
+	background-image: url("./../images/small-ball.png");
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+}
+
+#upperRight {
+	width: 125px; height: 125px;
+	position: absolute;
+	top: 0;
+	right: 0%;
+	background-image: url("./../images/small-ball.png");
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+}
+
+#lowerLeft {
+	width: 125px; height: 125px;
+	position: absolute;
+	bottom: 0%; left: 0;
+	background-image: url("./../images/small-ball.png");
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+}
+
+#lowerRight {
+	width: 125px; height: 125px;
+	bottom: 0%;
+	right: 0%;
+	position: absolute;
+	background-image: url("./../images/small-ball.png");
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+} */
