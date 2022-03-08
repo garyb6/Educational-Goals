@@ -82,7 +82,7 @@ const CreateOptions = ({newQuestion, setNewQuestion, newQuiz, questionNumber, se
             <option value={false}>Not correct</option>
             <option value={true}>Correct</option>
         </select>
-        <button type='submit'>Create options</button>
+        <button className="createButton" type='submit'>Create options</button>
         </form>
         </>
     )

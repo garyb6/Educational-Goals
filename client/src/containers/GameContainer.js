@@ -7,6 +7,9 @@ import Goal from '../sounds/Goal_chant.wav'
 import Miss from '../sounds/Goal_missed.wav'
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
+import leftArrow from "./../images/left-arrow.png";
+import upArrow from "./../images/top-arrow.png";
+import rightArrow from "./../images/right-arrow.png";
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
 
@@ -92,21 +95,37 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     return (
         <>
+        <div id="gameContainer">
             <div id="scoreboard">
                 <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
             </div>
             <div id="game-directions">
                 <div id="player1Instructions">
-                <h3> Left: A Middle: S Right: D</h3>
+                    <div className="controls"><span>
+                        <h3>
+                        <img className="directions" src={leftArrow}></img>A 
+                        <img className="directions" src={upArrow}></img>S 
+                        <img className="directions" src={rightArrow}></img>D
+                        </h3>
+                        </span>
+                    </div>
                 {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 <div id="player2Instructions">
-                <h3> Left: J Middle: K Right: L</h3>
-                {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
+                    <div className="controls"><span>
+                        <h3>
+                        <img className="directions" src={leftArrow}></img> J 
+                        <img className="directions" src={upArrow}></img>K 
+                        <img className="directions" src={rightArrow}></img>L
+                        </h3>
+                        </span>
+                    </div>                
+                    {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
             </div>
             <Animation playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
-            <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link>
+            {isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}
+        </div>
         </>
     )
 
