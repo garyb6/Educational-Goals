@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
@@ -12,7 +12,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     const [isAnimating, setIsAnimating] = useState(false)
     const [shotScored] = useSound(Goal)
-    const [shotSaved] = useSound(Miss) 
+    const [shotSaved] = useSound(Miss)
 
     // const playerOneInput = ["s"]
     // const playerTwoInput = ["k"]
@@ -31,12 +31,12 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             temp.push(event.key)
             setPlayerTwoInput(temp)
             console.log(playerTwoInput)
-        } 
+        }
     };
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);
-        if (chosenAnswer === false){
+        if (chosenAnswer === false) {
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
@@ -44,7 +44,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             console.log("ANSWER CORRECT")
         }
         return () => {
-        window.removeEventListener('keydown', playerDirection);
+            window.removeEventListener('keydown', playerDirection);
         };
     }, []);
 
@@ -67,17 +67,17 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 setPlayerTwo(tempPlayer)
             }
         }
-        
+
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
             adjustScore(0)
-            {shotSaved()}
+            { shotSaved() }
             console.log('It was saved!');
-        } 
-        
+        }
+
         if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
-            adjustScore(1) 
-            {shotScored()}
-            console.log('GOOOAL!'); 
+            adjustScore(1)
+            { shotScored() }
+            console.log('GOOOAL!');
 
         }
     }
@@ -92,20 +92,20 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     return (
         <>
-            <div id="scoreboard">
-                <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
+            <div id="scoreboard1">
+                <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
             </div>
             <div id="game-directions">
                 <div id="player1Instructions">
-                <h3> Left: A Middle: S Right: D</h3>
-                {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
+                    <h3> Left: A Middle: S Right: D</h3>
+                    {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 <div id="player2Instructions">
-                <h3> Left: J Middle: K Right: L</h3>
-                {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
+                    <h3> Left: J Middle: K Right: L</h3>
+                    {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
             </div>
-            <Animation playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
+            <Animation playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
             <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link>
         </>
     )
