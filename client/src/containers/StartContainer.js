@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
-import JumpL from "./../images/Jump_left.png";
 import logo from "../images/logo.jpg"
 import "./../css/StartContainer.css"
 import "./../css/Animation.css"
-import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
-import {Howl, Howler} from 'howler';
 import Request from '../helpers/request';
 import { styles } from '../data/Styles'
+// import { Carousel } from 'react-responsive-carousel';
 
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
@@ -52,6 +49,24 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
 
     const handleChangeQuizChoice = (event) => {
         setSelectedQuiz(parseInt(event.target.value));
+    }
+
+    const carouselComponent = () => {
+        return (
+            <div className="carousel-wrapper">
+                <Carousel infiniteLoop useKeyboardArrows showArrows showIndicators>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                </Carousel>
+            </div>
+        );
     }
 
     const listOfQuizzes = quizzes.map((quiz, index) => {
@@ -97,6 +112,8 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             </Carousel>
                         </div>
                     </div>
+
+
                 </div>
                 <div className="quizSelector">
                     <form>
@@ -109,6 +126,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     <Link to="/quiz" id="quizStartButton"><div id="quizStartButtonText">Start</div></Link>
                 </div>
             </div>
+            <div>{carouselComponent}</div>
             <footer id="lowerRight">
             <p>Listen to a tune while you setup!</p>
             <audio controls src={gameMusic} ></audio>

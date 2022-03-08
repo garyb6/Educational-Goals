@@ -18,7 +18,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     
     const saveAnimations = [
         // Right
-           <div className="keeper-container">
+            <div className="keeper-container">
                 <motion.img className='jump-right'
                 src={Jump_right}
                 style={styles[currentGoalie.filter].filter}

@@ -2,7 +2,7 @@
 .bigger-background{
     /* display: flex; */
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .background-image{
@@ -14,7 +14,7 @@
     /* background-size: cover; */
     border-radius: 25px;
     background-position: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     
     
 }
@@ -22,7 +22,7 @@
 
 .keeper-container{
     position: relative;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex-direction: column;
     top: 14vw;
     left: 12vw;
@@ -41,7 +41,7 @@
 
 .ball-container{
     position: relative;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     left: 0vw;
     top: -8vw;
     

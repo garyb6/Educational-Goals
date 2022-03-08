@@ -13,9 +13,9 @@
     align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-top: 20%;
+    margin-top: 10%;
     gap: 20px;
-    border: solid 1px #fff;
+    border: solid 5px #fff;
 }
 
 #penArea{
