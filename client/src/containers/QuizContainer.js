@@ -31,36 +31,36 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     if (questionNumber > 10) {
 
-        if (playerOne.score.reduce((a, b) => a + b, 0) > playerTwo.score.reduce((a, b) => a + b, 0)){
+        if (playerOne.score.reduce((a, b) => a + b, 0) > playerTwo.score.reduce((a, b) => a + b, 0)) {
             return (
                 <>
-                    <Confetti/>
+                    <Confetti />
                     {championMusic()}
                     <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
-                        <div className = "trophy-container">
-                            <motion.div className='trophy'
+                    <div className="trophy-container">
+                        <motion.div className='trophy'
                             drag
-                            dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
-                            >
+                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                        >
                             <div className='winner-name'>{playerOne.name}</div>
-                            </motion.div>
-                        </div>
+                        </motion.div>
+                    </div>
                 </>)
         } else if (playerTwo.score > playerOne.score) {
             return (
-            <>
-                 <Confetti/>
+                <>
+                    <Confetti />
                     {championMusic()}
                     <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
-                        <div className = "trophy-container">
-                            <motion.div className='trophy'
+                    <div className="trophy-container">
+                        <motion.div className='trophy'
                             drag
-                            dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
-                            >
+                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                        >
                             <div className='winner-name'>{playerOne.name}</div>
-                            </motion.div>
-                        </div>
-            </>
+                        </motion.div>
+                    </div>
+                </>
             )
         } else {
             return (<h1> It's a draw!</h1>)
@@ -71,28 +71,28 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         console.log("This is the answer we picked", chosenQuiz.questions[questionNumber - 1].options[number].correct)
         console.log("this is our number", number)
         blowWhistle()
-        setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
+        setChosenAnswer(chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
     }
 
 
     return (
         <>
-            <div id="whiteboard">
-                <div id="scoreboard">
-                        <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
-                </div>
-                <div id="quizBoard">
-                    <div className="Q">
-                        <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
+            <div id="quizboard">
+                <div id="whiteboard">
+                    <div id="scoreboard">
+                        <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                     </div>
-                    <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[0].expression}</div></Link></button>
-                    <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[1].expression}</div></Link></button>
-                    <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[2].expression}</div></Link></button>
-                    <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[3].expression}</div></Link></button>
+                    <div id="quizBoard">
+                        <div className="Q">
+                            <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
+                        </div>
+                        <Link className="A1 answer" onClick={() => handleClick(0)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[0].expression}</div></Link>
+                        <Link className="A2 answer" onClick={() => handleClick(1)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[1].expression}</div></Link>
+                        <Link className="A3 answer" onClick={() => handleClick(2)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[2].expression}</div></Link>
+                        <Link className="A4 answer" onClick={() => handleClick(3)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[3].expression}</div></Link>
+                    </div>
                 </div>
-                <footer>
-            <audio controls src={gameMusic} ></audio>
-            </footer>
+                <div id="penArea"></div>
             </div>
         </>
     )
