@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
@@ -15,7 +15,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     const [isAnimating, setIsAnimating] = useState(false)
     const [shotScored] = useSound(Goal)
-    const [shotSaved] = useSound(Miss) 
+    const [shotSaved] = useSound(Miss)
 
     // const playerOneInput = ["s"]
     // const playerTwoInput = ["k"]
@@ -34,12 +34,12 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             temp.push(event.key)
             setPlayerTwoInput(temp)
             console.log(playerTwoInput)
-        } 
+        }
     };
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);
-        if (chosenAnswer === false){
+        if (chosenAnswer === false) {
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
@@ -47,7 +47,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             console.log("ANSWER CORRECT")
         }
         return () => {
-        window.removeEventListener('keydown', playerDirection);
+            window.removeEventListener('keydown', playerDirection);
         };
     }, []);
 
@@ -70,17 +70,17 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 setPlayerTwo(tempPlayer)
             }
         }
-        
+
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
             adjustScore(0)
-            {shotSaved()}
+            { shotSaved() }
             console.log('It was saved!');
-        } 
-        
+        }
+
         if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
-            adjustScore(1) 
-            {shotScored()}
-            console.log('GOOOAL!'); 
+            adjustScore(1)
+            { shotScored() }
+            console.log('GOOOAL!');
 
         }
     }
@@ -128,7 +128,6 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         </div>
         </>
     )
-
 }
 
 export default GameContainer;
