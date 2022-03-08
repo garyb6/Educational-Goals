@@ -7,6 +7,7 @@ import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import whistle from '../sounds/Whistle.wav'
 import Champions_league from '../sounds/Champions_league.mp3'
+import Draw from '../sounds/Draw.mp3'
 import Request from '../helpers/request';
 import Confetti from 'react-confetti'
 
@@ -14,6 +15,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     const [blowWhistle] = useSound(whistle)
     const [championMusic] = useSound(Champions_league)
+    const [drawSound] = useSound(Draw)
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
@@ -28,8 +30,8 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
     if (chosenQuiz === null) {
         return (
         <div className = "not-found">
-        <h2>Quiz not loaded yet</h2> 
-        <h4>Please wait or return to home page</h4>
+        <h2 className='not-loaded'>Quiz not loaded yet</h2> 
+        <h4 className='please-wait'>Please wait or return to home page</h4>
         <button id="back-home"><Link to="/"><div id='back-text'>Back to home</div></Link></button>
         </div>)
 
@@ -71,7 +73,21 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             </>
             )
         } else {
-            return (<h1> It's a draw!</h1>)
+            return (
+                <>
+                {drawSound()}
+                <div className = "draw">
+                <h1>It's a draw!</h1> 
+                <button id="back-home"><Link to="/"><div id='back-text'>Play again?</div></Link></button>
+                </div>
+                <div className = "handshake-container">
+                            <motion.div className='handshake'
+                            drag
+                            dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
+                            >
+                            </motion.div>
+                </div>
+                </>)
         }
     }
 

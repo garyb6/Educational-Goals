@@ -80,6 +80,16 @@
     top:10vw;
 }
 
+.handshake-container{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    width: 37vw;
+    height: 10vw;
+    left: 38vw;
+    top:-5vw;
+}
+
 .trophy{
     /* display: flex;
     justify-content: center; */
@@ -90,6 +100,19 @@
     background-image:url('../images/Trophy.png');
     background-repeat: no-repeat;
     background-size: 25vw;
+}
+
+.handshake{
+    /* display: flex;
+    justify-content: center; */
+    left: 1vw;
+    top: 12vw;
+    width: 45vw;
+    height: 45vw;
+    background-image:url('../images/Draw.png');
+    background-repeat: no-repeat;
+    background-size: 25vw;
+    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%)
 }
 
 .winner-name{
