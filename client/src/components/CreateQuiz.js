@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Request from '../helpers/request';
 import CreateQuestion from './CreateQuestion';
+import "./../css/Create.css"
+import logo from "../images/logo.jpg"
 
 const CreateQuiz = () => {
 
@@ -33,21 +35,34 @@ const CreateQuiz = () => {
     if (questionNumber <= 10){
         return (
             <>
-            <h1>This is the create quiz</h1>
+            <div className="createForm">
+                <div className="headerCreate">
+                    <img className="logoQuiz" src={logo}></img>
+                </div>
 
-            {newQuiz.hasOwnProperty("id") ? 
-            <h4>Creating the {newQuiz.title} quiz</h4>
-            :
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="quizName">Quiz Name:</label>
-            <input id="quizName" type="text" onChange={handleChange}/>
-            <button type='submit'>Create quiz</button>
-            </form>
-            }
+                {newQuiz.hasOwnProperty("id") ? 
+                    <CreateQuestion newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/> 
+                    : <h3>Enter a quiz name below!</h3>
+                }
 
-            {newQuiz.hasOwnProperty("id") ? 
-            <CreateQuestion newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/> 
-            : <h3>Enter a quiz name above!</h3>}
+                {newQuiz.hasOwnProperty("id") ? 
+                    <h4>Creating the {newQuiz.title} quiz</h4>
+                    :
+                    <form onSubmit={handleSubmit}>
+                    <label htmlFor="quizName">Quiz Name:</label>
+                    <input id="quizName" type="text" onChange={handleChange}/>
+                    <button className="createButton" type='submit'>Create quiz</button>
+                    </form>
+                }   
+                <ul>
+                    <li>Enter a quiz name first</li>
+                    <li>Each quiz can have up to 10 questions</li>
+                    <li>Each question can have up to 4 answers</li>
+                    <li>Mark answers as correct or incorrect, there can be more than one correct answer</li>
+                </ul>
+
+
+            </div>
             </>
         )
     } else {
