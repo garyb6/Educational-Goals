@@ -7,13 +7,24 @@ import "./../css/QuizContainer.css"
 import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
 import whistle from '../sounds/Whistle.wav'
+import Champions_league from '../sounds/Champions_league.mp3'
 import Request from '../helpers/request';
+import Confetti from 'react-confetti'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
     const [blowWhistle] = useSound(whistle)
+    const [championMusic] = useSound(Champions_league)
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
+
+    // const confettiEffect = () => {
+    //     const {width, height} = useWindowSize()
+    //     return (<Confetti
+    //             width={width}
+    //             height={height}/>
+    //             )
+    // }
 
     const requestQuiz = function (id) {
         const request = new Request();
@@ -30,7 +41,9 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         if (playerOne.score.reduce((a, b) => a + b, 0) > playerTwo.score.reduce((a, b) => a + b, 0)){
             return (
                 <>
-                    <h1> {playerOne.name} is the winner!</h1>
+                    <Confetti/>
+                    {championMusic()}
+                    <div className='winner-container'><h1> {playerOne.name} is the winner!</h1></div>
                     <div className='trophy-container'>
                         <motion.img className='trophy'
                             src={Trophy}
@@ -45,7 +58,9 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         } else if (playerTwo.score > playerOne.score) {
             return (
             <>
-                <h1> {playerTwo.name} is the winner!</h1>
+                <Confetti/>
+                {championMusic()}
+                <div className='winner-container'><h1> {playerTwo.name} is the winner!</h1></div>
                 <div className='trophy-container'>
                     <motion.img className='trophy'
                         src={Trophy}
@@ -68,6 +83,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         blowWhistle()
         setChosenAnswer (chosenQuiz.questions[questionNumber - 1].options[number].correct === true)
     }
+
 
     return (
         <>

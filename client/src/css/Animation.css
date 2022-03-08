@@ -34,11 +34,19 @@
     position: relative;
     border: 1px solid black;
     flex-direction: column;
-    
-
     top: 14vw;
     left: 12vw;
     
+}
+
+.jump-right{
+    width: 200px;
+    height:auto;
+}
+
+.jump-left{
+    width: 200px;
+    height:auto;
 }
 
 .ball-container{
