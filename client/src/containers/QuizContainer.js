@@ -57,7 +57,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         } else if (playerTwo.score > playerOne.score) {
             return (
             <>
-                 <Confetti/>
+                <Confetti/>
                     {championMusic()}
                     <div className='winner-container'><h1 className='winner-font'>{playerOne.name} is the winner!</h1>
                     <button id="back-home"><Link to="/"><div id='back-text'>Play again</div></Link></button>
@@ -101,22 +101,22 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     return (
         <>
-            <div id="whiteboard">
-                <div id="scoreboard">
-                        <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
-                </div>
-                <div id="quizBoard">
-                    <div className="Q">
-                        <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
+            <div id="quizContainer">
+                <div id="whiteboard">
+                    <div id="scoreboard">
+                            <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
                     </div>
-                    <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[0].expression}</div></Link></button>
-                    <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[1].expression}</div></Link></button>
-                    <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[2].expression}</div></Link></button>
-                    <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[3].expression}</div></Link></button>
+                    <div id="quizBoard">
+                        <div className="Q">
+                            <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
+                        </div>
+                        <button className="A1 answer"><Link onClick={() => handleClick(0)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[0].expression}</div></Link></button>
+                        <button className="A2 answer"><Link onClick={() => handleClick(1)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[1].expression}</div></Link></button>
+                        <button className="A3 answer"><Link onClick={() => handleClick(2)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[2].expression}</div></Link></button>
+                        <button className="A4 answer"><Link onClick={() => handleClick(3)} to="/game" style={{ textDecoration: 'none' }}><div>{chosenQuiz.questions[questionNumber - 1].options[3].expression}</div></Link></button>
+                    </div>
                 </div>
-                <footer>
-            <audio controls src={gameMusic} ></audio>
-            </footer>
+                <div id="penArea"></div>
             </div>
         </>
     )

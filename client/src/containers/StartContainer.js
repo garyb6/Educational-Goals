@@ -81,7 +81,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <div className="players">
                     <div className="player1Select">
                         <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
-                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="type in your name"/>
+                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="Type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerOneColour}>
                                 {carouselItems}
@@ -90,7 +90,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     </div>
                     <div className="player2Select">
                         <label className="playerLabel" htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="type in your name"/>
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="Type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerTwoColour}>
                                 {carouselItems}
@@ -106,10 +106,11 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <button id="quizStartButton" ><Link to="/quiz"><div id="quizStartButtonText">Start</div></Link></button>
+                    <Link to="/quiz" id="quizStartButton"><div id="quizStartButtonText">Start</div></Link>
                 </div>
             </div>
-            <footer>
+            <footer id="lowerRight">
+            <p>Listen to a tune while you setup!</p>
             <audio controls src={gameMusic} ></audio>
             </footer>
         </>
