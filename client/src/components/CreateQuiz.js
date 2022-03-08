@@ -35,31 +35,37 @@ const CreateQuiz = () => {
     if (questionNumber <= 10){
         return (
             <>
-            <div className="createForm">
+            <div className="createBox">
                 <div className="headerCreate">
                     <img className="logoQuiz" src={logo}></img>
                 </div>
 
                 {newQuiz.hasOwnProperty("id") ? 
-                    <CreateQuestion newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/> 
-                    : <h3>Enter a quiz name below!</h3>
-                }
-
-                {newQuiz.hasOwnProperty("id") ? 
-                    <h4>Creating the {newQuiz.title} quiz</h4>
+                    <div className='mainCreate'>
+                    <h3>Creating the {newQuiz.title} quiz.</h3>
+                    <CreateQuestion newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/>
+                    <ul>
+                        <li>Each quiz has 10 questions</li>
+                        <li>Each question has 4 answers</li>
+                        <li>Mark answers as correct or incorrect - there can be more than one correct answer</li>
+                    </ul>
+                    </div>
                     :
+                    <div className='mainCreate'>
+                    <h4>Enter a quiz name below!</h4>
                     <form onSubmit={handleSubmit}>
-                    <label htmlFor="quizName">Quiz Name:</label>
-                    <input id="quizName" type="text" required onChange={handleChange}/>
-                    <button className="createButton" type='submit'>Create quiz</button>
+                        <label htmlFor="quizName">Quiz Name:</label>
+                        <input id="quizName" type="text" required onChange={handleChange}/>
+                        <button className="createButton" type='submit'>Create quiz</button>
                     </form>
-                }   
-                <ul>
-                    <li>Enter a quiz name first</li>
-                    <li>Each quiz can have up to 10 questions</li>
-                    <li>Each question can have up to 4 answers</li>
-                    <li>Mark answers as correct or incorrect, there can be more than one correct answer</li>
-                </ul>
+                    <ul>
+                        <li>Enter a quiz name first</li>
+                        <li>Each quiz has 10 questions</li>
+                        <li>Each question has 4 answers</li>
+                        <li>Mark answers as correct or incorrect - there can be more than one correct answer</li>
+                    </ul>
+                    </div>
+                } 
 
             </div>
             </>
