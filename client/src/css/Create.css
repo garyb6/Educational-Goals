@@ -1,4 +1,4 @@
-.createForm{
+.createBox{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,18 +6,24 @@
 }
 
 .headerCreate{
-    border: 0px solid white;
     display: flex;
     justify-content: center;
     margin: 0;
+}
 
+.mainCreate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%
 }
 
 .logoQuiz{
-    width: 400px;
-    height: 400px;
+    width: 15vw;
+    height: auto;
     border-radius: 100%;
     margin: 5%;
+    border: solid 0.1vw white;
 }
 
 .createButton{
@@ -46,11 +52,52 @@
     box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
     text-decoration: none;
-
 }
 
 .createButtonText{
 margin: 4 (25%);
 font-size: 35px;
+}
 
+.questionBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questionBox > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainCreate > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.optionsForm{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.optionsFormBoxes{
+    display: flex;
+    width: 75vw;
+    margin: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.optionsFormBoxes > input{
+    margin: 1%
+}
+
+#questionName{
+    width: 25vw;
+    height: 2em;
+    text-align: center;
 }

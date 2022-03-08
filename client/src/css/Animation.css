@@ -1,18 +1,8 @@
-/* @media only screen and (min-device-width: 400px) {.background-container {
-    width:auto;
-    height:auto;
-    background-image: url(../images/Spotlight.jpg);
-    background-repeat: no-repeat; 
-    background-size: contain; 
-    background-position: center;
-    background-attachment:fixed;  
-}} */
 
 .bigger-background{
     /* display: flex; */
     justify-content: center;
     border: 1px solid black;
-    margin: 50px 50px 50px 50px
 }
 
 .background-image{
@@ -40,12 +30,12 @@
 }
 
 .jump-right{
-    width: 200px;
+    width: 13.2vw;
     height:auto;
 }
 
 .jump-left{
-    width: 200px;
+    width: 13.2vw;
     height:auto;
 }
 
@@ -70,21 +60,34 @@
 
 .winner-container{
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    margin: 50px 50px 50px 50px;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
     left: 40vw;
+}
+
+.winner-font{
+    font-size: 5vw;
 }
 
 .trophy-container{
     justify-content: center;
     display: flex;
     position: relative;
-    width: 500px;
-    height: 200px;
-    border: 1px solid black;
-    left: 36vw;
-    top:100px;
+    width: 37vw;
+    height: 10vw;
+    left: 37vw;
+    top:10vw;
+}
+
+.handshake-container{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    width: 37vw;
+    height: 10vw;
+    left: 38vw;
+    top:-5vw;
 }
 
 .trophy{
@@ -92,18 +95,35 @@
     justify-content: center; */
     left: 1vw;
     top: 1vw;
-    width: 500px;
-    height: 500px;
+    width: 45vw;
+    height: 45vw;
     background-image:url('../images/Trophy.png');
     background-repeat: no-repeat;
-    background-size: 400px;
-    border: 1px solid black;
+    background-size: 25vw;
+}
+
+.handshake{
+    /* display: flex;
+    justify-content: center; */
+    left: 1vw;
+    top: 12vw;
+    width: 45vw;
+    height: 45vw;
+    background-image:url('../images/Draw.png');
+    background-repeat: no-repeat;
+    background-size: 25vw;
+    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%)
 }
 
 .winner-name{
-    font-size: 32px;
-    padding-left: 148px;
-    padding-top: 350px;
+    font-size: 2.2vw;
+    padding-left: 8.5vw;
+    padding-top: 21.5vw;
+}
+
+.next-question{
+    display: flex;
+    justify-content: center;
 }
 
 

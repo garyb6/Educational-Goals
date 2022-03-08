@@ -32,20 +32,21 @@ const CreateQuestion = ({newQuiz, questionNumber, setQuestionNumber}) => {
 
     return (
         <>
-
-        {newQuestion.hasOwnProperty("id") ? 
+        {newQuestion.hasOwnProperty("id") ?
+        <div className='questionBox'> 
+        <h4>{newQuestion.ask}</h4>
         <CreateOptions newQuestion={newQuestion} setNewQuestion={setNewQuestion} newQuiz={newQuiz} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber}/>
-        : <h3>Enter question {questionNumber} below!</h3>
-        }
-
-        {newQuestion.hasOwnProperty("id") ? <h6>Creating {newQuestion.ask}</h6>
-        :<form onSubmit={handleSubmit}>
-        <label htmlFor="questionName">Question:</label>
-        <input id="questionName" type="textarea" onChange={handleChange}/>
+        </div>
+        :
+        <div className='questionBox'>
+        <h4>Enter question {questionNumber} below!</h4>
+        <form onSubmit={handleSubmit}>
+        <textarea id="questionName" type="text" required onChange={handleChange}/>
+        {/* <input id="questionName" type="text" required onChange={handleChange}/> */}
         <button className="createButton" type='submit'>Create question</button>
         </form>
+        </div>
         }
-        
         </>
     )
 }

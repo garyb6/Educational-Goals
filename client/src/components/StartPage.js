@@ -7,16 +7,11 @@ const StartPage = () => {
     return (
         <>
         <div id="StartPageBox">
-        <div id="upperLeft"></div>
-        <div id="upperRight"></div>
-        <div id="lowerLeft"></div>
-        <div id="lowerRight"></div>
-
             <div id="header">
                 <img id="logo" src={logo}></img>
             </div>
-            <button className="startPageButton"><Link to="/start"><div className="startPageButtonText">Select a quiz</div></Link></button>
-            <button className="startPageButton"><Link to="/quizzes/create"><div className="startPageButtonText">Create a quiz</div></Link></button>
+            <Link to="/start" className="startPageButton"><div className="startPageButtonText">Play a quiz</div></Link>
+            <Link to="/quizzes/create" className="startPageButton"><div className="startPageButtonText">Create a quiz</div></Link>
         </div>
         </>
     )

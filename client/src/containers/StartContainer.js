@@ -55,8 +55,24 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
     }
 
     const listOfQuizzes = quizzes.map((quiz, index) => {
+        if (quiz.questions.length >= 10){
         return <option key={index} value={quiz.id}> {quiz.title} </option>
+        }
     });
+
+    const carouselItems = styles.map((item, index) => {
+        return <Carousel.Item key={index}>
+        <img
+            className="d-block"
+            src={Stand}
+            alt={item.colour}
+            style={item.filter}
+        />
+        <Carousel.Caption>
+            <h5>Pick the {item.colour} Player</h5>
+        </Carousel.Caption>
+    </Carousel.Item>
+    })
 
     return (
         <>
@@ -65,83 +81,19 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 <div className="players">
                     <div className="player1Select">
                         <label className="playerLabel" htmlFor="player1Box">Player 1:</label>
-                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="type in your name"/>
+                        <input id="player1Box" type="text" onChange={handleChangePlayerOneName} placeholder="Type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerOneColour}>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Red Player"
-                                        style={styles[0]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Red Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Green Player"
-                                        style={styles[1]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Green Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Blue Player"
-                                        style={styles[2]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Blue Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
+                                {carouselItems}
                             </Carousel>
                         </div>
                     </div>
                     <div className="player2Select">
                         <label className="playerLabel" htmlFor="player2Box">Player 2:</label>
-                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="type in your name"/>
+                        <input id="player2Box" type="text" onChange={handleChangePlayerTwoName} placeholder="Type in your name"/>
                         <div className="colourSelector">
                             <Carousel interval = {null} onSelect={handleChangePlayerTwoColour}>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Red Player"
-                                        style={styles[0]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Red Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Green Player"
-                                        style={styles[1]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Green Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block"
-                                        src={Stand}
-                                        alt="Blue Player"
-                                        style={styles[2]}
-                                    />
-                                    <Carousel.Caption>
-                                        <h5>Pick the Blue Player</h5>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
+                                {carouselItems}
                             </Carousel>
                         </div>
                     </div>
@@ -154,10 +106,11 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             {listOfQuizzes}
                         </select>
                     </form>
-                    <button id="quizStartButton" ><Link to="/quiz"><div id="quizStartButtonText">Start</div></Link></button>
+                    <Link to="/quiz" id="quizStartButton"><div id="quizStartButtonText">Start</div></Link>
                 </div>
             </div>
-            <footer>
+            <footer id="lowerRight">
+            <p>Listen to a tune while you setup!</p>
             <audio controls src={gameMusic} ></audio>
             </footer>
         </>
