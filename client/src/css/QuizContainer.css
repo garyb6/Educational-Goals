@@ -172,6 +172,40 @@ color: black}
   justify-content: center;
 }
 
+.not-loaded-home{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.not-loaded-button{
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 100;
+  top: 32%;
+  width: 25vw; height: 3vw;
+  margin: 0.5em;
+  color: white;
+  background-color: transparent;
+  border: 2px solid #0f7dcf;
+  border-radius: 0.6em;
+  box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+  transition: all 150ms ease-in-out;
+  font-size: 2vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.not-loaded-button:hover {
+  box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+  outline: 0;
+  text-decoration: none;
+}
 
 
 
