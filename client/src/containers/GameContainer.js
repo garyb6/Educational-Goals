@@ -2,25 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
-import useSound from 'use-sound';
-import Goal from '../sounds/Goal_chant.wav'
-import Miss from '../sounds/Goal_missed.wav'
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
 import leftArrow from "./../images/left-arrow.png";
 import upArrow from "./../images/top-arrow.png";
 import rightArrow from "./../images/right-arrow.png";
+import Goal from '../sounds/Goal_chant.wav'
+import Miss from '../sounds/Goal_missed.wav'
+import Kick from '../sounds/Kick.wav'
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
-
+    
     const [isAnimating, setIsAnimating] = useState(false)
-    const [shotScored] = useSound(Goal)
-    const [shotSaved] = useSound(Miss)
-
-    // const playerOneInput = ["s"]
-    // const playerTwoInput = ["k"]
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
+
+    const shotScored = new Audio(Goal);
+    const shotSaved = new Audio(Miss)
+    const kick = new Audio(Kick)    
 
     const playerDirection = (event) => {
         console.log(playerTwoInput.length > 1)
@@ -43,15 +42,14 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
-            setTimeout(checkGoal, 5000)
+            setTimeout(checkGoal, kick.play(), 5000)
             console.log("ANSWER CORRECT")
         }
         return () => {
+
             window.removeEventListener('keydown', playerDirection);
         };
     }, []);
-
-    // let combinedInput = (playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0]))
 
     const checkGoal = () => {
 
@@ -72,16 +70,14 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         }
 
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
+            shotSaved.play()
             adjustScore(0)
-            { shotSaved() }
             console.log('It was saved!');
         }
-
-        if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
+        else if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
+            shotScored.play();
             adjustScore(1)
-            { shotScored() }
             console.log('GOOOAL!');
-
         }
     }
 
@@ -90,8 +86,6 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         setChosenAnswer(null)
         setIsAnimating(false)
     }
-
-
 
     return (
         <>

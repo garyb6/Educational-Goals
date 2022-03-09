@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import Crouch from "./../images/Crouch.png";
 import Stand from "./../images/Stand.png";
-import JumpL from "./../images/Jump_left.png";
 import logo from "../images/logo.jpg"
 import "./../css/StartContainer.css"
 import "./../css/Animation.css"
-import useSound from 'use-sound';
 import gameMusic from '../sounds/MOTD.mp3'
-import {Howl, Howler} from 'howler';
 import Request from '../helpers/request';
 import { styles } from '../data/Styles'
+// import { Carousel } from 'react-responsive-carousel';
 
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
@@ -54,6 +51,24 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
         setSelectedQuiz(parseInt(event.target.value));
     }
 
+    const carouselComponent = () => {
+        return (
+            <div className="carousel-wrapper">
+                <Carousel infiniteLoop useKeyboardArrows showArrows showIndicators>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                    <div>
+                        <img src="./../images/Stand.png" />
+                    </div>
+                </Carousel>
+            </div>
+        );
+    }
+
     const listOfQuizzes = quizzes.map((quiz, index) => {
         if (quiz.questions.length >= 10){
         return <option key={index} value={quiz.id}> {quiz.title} </option>
@@ -69,7 +84,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
             style={item.filter}
         />
         <Carousel.Caption>
-            <h5>Pick the {item.colour} Player</h5>
+            <h5 className="colourPickText">Pick the {item.colour} Player</h5>
         </Carousel.Caption>
     </Carousel.Item>
     })
@@ -97,10 +112,12 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                             </Carousel>
                         </div>
                     </div>
+
+
                 </div>
                 <div className="quizSelector">
                     <form>
-                        <label className="quizSelectText"> Choose Quiz: </label>
+                        <label className="quizSelectText"> Choose a Quiz from the options below: </label>
                         <select defaultValue="" onChange={handleChangeQuizChoice} required>
                             <option value="" disabled ></option>
                             {listOfQuizzes}
@@ -109,10 +126,11 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                     <Link to="/quiz" id="quizStartButton"><div id="quizStartButtonText">Start</div></Link>
                 </div>
             </div>
-            <footer id="lowerRight">
+            <div>{carouselComponent}</div>
+            <div id="upperRight">
             <p>Listen to a tune while you setup!</p>
-            <audio controls src={gameMusic} ></audio>
-            </footer>
+            <audio id="controller" controls src={gameMusic} ></audio>
+            </div>
         </>
     )
 }
