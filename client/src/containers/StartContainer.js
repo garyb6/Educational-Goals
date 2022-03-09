@@ -84,7 +84,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
             style={item.filter}
         />
         <Carousel.Caption>
-            <h5>Pick the {item.colour} Player</h5>
+            <h5 className="colourPickText">Pick the {item.colour} Player</h5>
         </Carousel.Caption>
     </Carousel.Item>
     })
@@ -117,7 +117,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 </div>
                 <div className="quizSelector">
                     <form>
-                        <label className="quizSelectText"> Choose Quiz: </label>
+                        <label className="quizSelectText"> Choose a Quiz from the options below: </label>
                         <select defaultValue="" onChange={handleChangeQuizChoice} required>
                             <option value="" disabled ></option>
                             {listOfQuizzes}
@@ -127,10 +127,10 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 </div>
             </div>
             <div>{carouselComponent}</div>
-            <footer id="lowerRight">
+            <div id="upperRight">
             <p>Listen to a tune while you setup!</p>
-            <audio controls src={gameMusic} ></audio>
-            </footer>
+            <audio id="controller" controls src={gameMusic} ></audio>
+            </div>
         </>
     )
 }

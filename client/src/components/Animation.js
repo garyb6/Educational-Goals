@@ -4,7 +4,6 @@ import Crouch from "../images/Crouch.png"
 import Jump_left from "../images/Jump_left.png"
 import Jump_right from "../images/Jump_right.png"
 import Football from "../images/Football.png"
-import Background from "../images/Background.jpg"
 import "../css/Animation.css"
 import useSound from 'use-sound';
 import Kick from '../sounds/Kick.wav'
@@ -13,6 +12,7 @@ import { styles } from '../data/Styles'
 function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnimating, setIsAnimating, questionNumber}) {
 
     const [playKick] = useSound(Kick)
+
     const currentPlayer = (questionNumber % 2 === 0) ? "one" : "two";
     const currentGoalie = (questionNumber % 2 === 0) ? playerOne : playerTwo;
     
