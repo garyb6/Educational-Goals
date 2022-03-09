@@ -30,7 +30,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         <div className = "not-found">
         <h2 className='not-loaded'>Quiz not loaded yet</h2> 
         <h4 className='please-wait'>Please wait or return to home page</h4>
-        <div className='home-button'><Link id="nextQuestion" to="/"><div id="nextQuestionText">Home</div></Link></div>
+        <Link className="not-loaded-button not-loaded-home" to="/"><div id="nextQuestionText">Home</div></Link>
         </div>)
     }
 
@@ -48,7 +48,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <div className='winner-name'>{player.name}</div>
                     </motion.div>
                 </div>
-                <a href='/' className="back-home back-text">Play again?</a>
+                <a href='/' className="winner-home winner-text">Play again?</a>
             </>)
     }
 

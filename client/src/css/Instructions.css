@@ -1,0 +1,84 @@
+#instruction-home{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 100;
+    top: 75%;
+    width: 25vw; height: 3vw;
+    margin: 0.5em;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    font-size: 2vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#instruction-home:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
+}
+
+.instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    padding-top: 1.2vw;
+}
+
+.instruction-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1.4vw;
+}
+
+.instruction-paragraph{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: larger;
+    text-align: center;
+}
+
+.instruction-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: larger;
+    padding-left: 1.8vw;
+}
+
+.player-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: larger;
+    padding-top: 1.3vw;
+}
+
+.home-button{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.go-home{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10vw;
+}
+
+#instruction-home{
+   top: 83%
+}
