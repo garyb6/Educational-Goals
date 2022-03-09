@@ -72,13 +72,3 @@ public class Option {
     }
 }
 
-
-//    public boolean isCorrect() {
-//        return correct;
-//    }
-//
-//    public void setCorrect(boolean correct) {
-//        this.correct = correct;
-//    }
-
-//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
