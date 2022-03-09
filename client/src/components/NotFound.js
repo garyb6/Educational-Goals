@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import gameMusic from '../sounds/MOTD.mp3'
 import "./../css/NotFound.css"
+import varSign from "../images/var.png"
 
 const NotFound = () => {
 
@@ -16,8 +17,6 @@ const NotFound = () => {
         </div>
         </>
     )
-
-
 }
 
 export default NotFound;

@@ -80,25 +80,3 @@ public class Question {
         this.options.remove(option);
     }
 }
-
-//    @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
-//    @JsonIgnoreProperties({"question"})
-//    private Answer correctAnswer;
-
-//    public List<Answer> getAnswers() {
-//        return answers;
-//    }
-//
-//    public void setAnswers(List<Answer> answers) {
-//        this.answers = answers;
-//    }
-//
-//    public Answer getCorrectAnswer() {
-//        return correctAnswer;
-//    }
-//
-//    public void setCorrectAnswer(Answer correctAnswer) {
-//        this.correctAnswer = correctAnswer;
-//    }
-
-//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
