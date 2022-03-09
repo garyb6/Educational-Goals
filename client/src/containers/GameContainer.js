@@ -102,7 +102,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                <div id="scoreboard1">
+                <div id="scoreboard">
                     <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 </div>
                 <div id="game-directions">
