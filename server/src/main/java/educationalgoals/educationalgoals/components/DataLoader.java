@@ -788,7 +788,7 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(lost);
         grammarGame1.addOption(lost);
 
-        Option celebrate = new Option("I would celebrate”", grammarGame1);
+        Option celebrate = new Option("I would celebrate", grammarGame1);
         optionRespository.save(celebrate);
         grammarGame1.addOption(celebrate);
 
