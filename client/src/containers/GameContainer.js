@@ -9,17 +9,17 @@ import upArrow from "./../images/top-arrow.png";
 import rightArrow from "./../images/right-arrow.png";
 import Goal from '../sounds/Goal_chant.wav'
 import Miss from '../sounds/Goal_missed.wav'
+import Kick from '../sounds/Kick.wav'
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
     
     const [isAnimating, setIsAnimating] = useState(false)
-    const shotScored = new Audio(Goal);
-    const shotSaved = new Audio(Miss)
-
-    // const playerOneInput = ["s"]
-    // const playerTwoInput = ["k"]
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
+
+    const shotScored = new Audio(Goal);
+    const shotSaved = new Audio(Miss)
+    // const kick = new Audio(Kick)    
 
     const playerDirection = (event) => {
         console.log(playerTwoInput.length > 1)

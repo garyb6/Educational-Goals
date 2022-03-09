@@ -19,9 +19,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     const saveAnimations = [
         // Right
             <div className="keeper-container">
-                <motion.img className='jump-right'
-                src={Jump_right}
-                style={styles[currentGoalie.filter].filter}
+                <motion.img className='jump-right' src={Jump_right} style={styles[currentGoalie.filter].filter}
                 animate={{
                     x: isAnimating ? 110 : 0,
                     // rotate: isAnimating ? 90:0,
@@ -33,9 +31,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
             </div>,
         // Middle
         <div className="keeper-container">
-            <motion.img className='crouch'
-            src={Crouch}
-            style={styles[currentGoalie.filter].filter}
+            <motion.img className='crouch' src={Crouch} style={styles[currentGoalie.filter].filter}
             animate={{
                 y: isAnimating ? -10 : 0,
             }}
@@ -45,28 +41,35 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
             }}/>
         </div>,
         // Left
-                <div className="keeper-container">
-                        <motion.img className='jump-left'
-                        src={Jump_left}
-                        style={styles[currentGoalie.filter].filter}
-                        animate={{
-                            x: isAnimating ? -200 : 0,
-                            // rotate: isAnimating ? -90:0,
-                        }}
-                        transition={{
-                            type: 'spring',
-                        duration: 0.8
-                        }}/>
-            </div>
+        <div className="keeper-container">
+                <motion.img className='jump-left' src={Jump_left} style={styles[currentGoalie.filter].filter}
+                animate={{
+                    x: isAnimating ? -200 : 0,
+                    // rotate: isAnimating ? -90:0,
+                }}
+                transition={{
+                    type: 'spring',
+                    duration: 0.8
+                }}/>
+    </div>
     ]
 
     const shootAnimations = [
         // Right
-        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? 220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>,
+        <div className="ball-container">
+        {playKick()}
+        <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? 220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
+        </div>,
         // Middle
-        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,rotate: isAnimating ? 160 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>,
+        <div className="ball-container">
+        {playKick()}
+        <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,rotate: isAnimating ? 160 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
+        </div>,
         // Left
-        <div className="ball-container"><motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? -220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/></div>
+        <div className="ball-container">
+        {playKick()}
+        <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? -220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
+        </div>
     ]
 
     const checkInput = (input, array) => {
