@@ -8,8 +8,8 @@
 }
 
 #logoStart{
-    width: 15vh;
-    height:15vh;
+    width: 25vh;
+    height:25vh;
     margin-top: 0.5%;
     border-radius: 100%;
     border: 1px solid white;
@@ -105,12 +105,21 @@
 
 .quizSelector{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin: 0% 5% 0% 5%;
+    margin: 0%;
     padding: 0;
     padding: 0% 1% 0% 1%;
     width: 50%;
     height: 10%;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 select{
@@ -132,7 +141,6 @@ select{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    appearance: none;
     background-color: transparent;
     border-radius: 0.6em;
     cursor: pointer;

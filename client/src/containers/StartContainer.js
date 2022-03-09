@@ -117,7 +117,7 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
                 </div>
                 <div className="quizSelector">
                     <form>
-                        <label className="quizSelectText"> Choose a Quiz from the options below: </label>
+                        <label className="quizSelectText"> Choose a Quiz: </label>
                         <select defaultValue="" onChange={handleChangeQuizChoice} required>
                             <option value="" disabled ></option>
                             {listOfQuizzes}
