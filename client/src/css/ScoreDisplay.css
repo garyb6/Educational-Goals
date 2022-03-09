@@ -15,3 +15,18 @@
     color: green;
     background-color: white;
 }
+
+#scoreboard{
+    display: flex;
+    width: 50vw;
+    height: 7.5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 1px #fff;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    position: relative;
+    bottom: 0.4%;
+    font-size: x-large;  
+}

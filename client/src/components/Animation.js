@@ -101,7 +101,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
         <div className='bigger-background'>
             <div className="background-image">
                 <div className="background-container">
-                    {playSaveAnimation()}
+                    {isAnimating ? playSaveAnimation() : saveAnimations[1]}
                     {playShootAnimation()}
                 </div>
             </div>

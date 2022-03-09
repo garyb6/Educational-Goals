@@ -16,10 +16,26 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     const [isAnimating, setIsAnimating] = useState(false)
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
+    const [flag1, setFlag1] = useState("Waiting...")
+    const [flag2, setFlag2] = useState("Waiting...")
 
     const shotScored = new Audio(Goal);
     const shotSaved = new Audio(Miss)
     const kick = new Audio(Kick)
+
+    useEffect(() => {
+        window.addEventListener('keydown', playerDirection);
+        if (!chosenAnswer) {
+            setTimeout(checkGoal, 1)
+            console.log("ANSWER INCORRECT")
+        } else {
+            setTimeout(checkGoal, 5000)
+            console.log("ANSWER CORRECT")
+        }
+        return () => {
+            window.removeEventListener('keydown', playerDirection);
+        };
+    }, []);
 
     const playerDirection = (event) => {
 
@@ -28,11 +44,13 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             temp.push(event.key)
             setPlayerOneInput(temp)
             console.log(playerOneInput)
+            setFlag1("has chosen!")
         } else if ((event.key === "l" || event.key === "k" || event.key === "j") && ((playerTwo.name !== "Player 2" || playerTwo.name !== ""))) {
             let temp = playerTwoInput
             temp.push(event.key)
             setPlayerTwoInput(temp)
             console.log(playerTwoInput)
+            setFlag2("has chosen!")
         }
 
         if ((playerTwo.name === "Player 2" || playerTwo.name === "")) {
@@ -41,23 +59,9 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             temp.push(directions[(Math.floor(Math.random() * 3))])
             setPlayerTwoInput(temp)
             console.log(playerTwoInput)
+            setFlag1("has chosen!")
         }
     };
-
-    useEffect(() => {
-        window.addEventListener('keydown', playerDirection);
-        if (chosenAnswer === false) {
-            setTimeout(checkGoal, 1)
-            console.log("ANSWER INCORRECT")
-        } else {
-            setTimeout(checkGoal, 5000)
-            console.log("ANSWER CORRECT")
-        }
-        return () => {
-
-            window.removeEventListener('keydown', playerDirection);
-        };
-    }, []);
 
     const checkGoal = () => {
 
@@ -98,11 +102,10 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                <div id="scoreboard1">
                     <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
-                </div>
                 <div id="game-directions">
-                    <div id="player1Instructions">
+                    {!chosenAnswer ? null :
+                        <div id="player1Instructions">
                         <div className="controls"><span>
                             <h3>
                                 <img className="directions" src={leftArrow}></img>A
@@ -111,9 +114,11 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                             </h3>
                         </span>
                         </div>
-                        {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
+                        <h4>{playerOne.name} {flag1}</h4>
                     </div>
+                    }
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
+                !chosenAnswer ? null :
                 <div id="player2Instructions">
                     <div className="controls">
                       <span>
@@ -124,7 +129,8 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </h3>
                       </span>
                     </div>       
-                    {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
+                    <h4> {playerTwo.name} {flag2}</h4>
+                
                 </div>
                 }
                 </div>
