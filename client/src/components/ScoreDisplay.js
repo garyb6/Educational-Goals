@@ -19,17 +19,15 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
             })
         )
     }
+    
     if (playerTwo.name === "Player 2" || playerTwo.name === ""){
+
+        let combinedScore = {score: playerOne.score.concat(playerTwo.score)}
+
         return (
             <>
                 <div className='playerScore'>
-                    Odds {playerScore(playerOne)}
-                </div>
-                <div className='currentPlayer'>
-                    <h2>It is {playerOne.name}'s go</h2>
-                </div>
-                <div className='playerScore'>
-                    Evens {playerScore(playerTwo)}
+                    Score {playerScore(combinedScore)}
                 </div>
             </>
         )
