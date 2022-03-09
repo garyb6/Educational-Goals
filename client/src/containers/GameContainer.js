@@ -12,14 +12,14 @@ import Miss from '../sounds/Goal_missed.wav'
 import Kick from '../sounds/Kick.wav'
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
-    
+
     const [isAnimating, setIsAnimating] = useState(false)
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
 
     const shotScored = new Audio(Goal);
     const shotSaved = new Audio(Miss)
-    const kick = new Audio(Kick)    
+    const kick = new Audio(Kick)
 
     const playerDirection = (event) => {
 
@@ -35,7 +35,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             console.log(playerTwoInput)
         }
 
-        if ((playerTwo.name === "Player 2" || playerTwo.name === "")){
+        if ((playerTwo.name === "Player 2" || playerTwo.name === "")) {
             let directions = ["l", "k", "j"]
             let temp = playerTwoInput
             temp.push(directions[(Math.floor(Math.random() * 3))])
@@ -98,7 +98,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                <div id="scoreboard">
+                <div id="scoreboard1">
                     <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 </div>
                 <div id="game-directions">
