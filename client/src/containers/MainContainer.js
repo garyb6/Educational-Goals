@@ -7,6 +7,7 @@ import Request from '../helpers/request';
 import CreateQuiz from '../components/CreateQuiz';
 import StartPage from '../components/StartPage';
 import NotFound from '../components/NotFound';
+import Instructions from '../components/Instructions';
 
 
 const MainContainer = () => {
@@ -28,6 +29,7 @@ const MainContainer = () => {
                 <Route path="/quizzes/create" element={<CreateQuiz/>}/>
                 <Route path="/quiz" element={<QuizContainer playerOne={playerOne} playerTwo={playerTwo} selectedQuiz={selectedQuiz} chosenQuiz={chosenQuiz} setChosenQuiz={setChosenQuiz}questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} setChosenAnswer={setChosenAnswer} />} />
                 <Route path="/game" element={<GameContainer playerOne={playerOne} playerTwo={playerTwo} setPlayerOne={setPlayerOne} setPlayerTwo={setPlayerTwo} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} chosenAnswer={chosenAnswer} setChosenAnswer={setChosenAnswer}/>} />
+                <Route path="/start/instructions" element={<Instructions/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </Router>

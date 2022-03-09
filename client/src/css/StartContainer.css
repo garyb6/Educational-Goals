@@ -174,3 +174,14 @@ p{
     margin: 0;
     padding: 1.5%;
 }
+
+.instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.instruction-title{
+    
+}
