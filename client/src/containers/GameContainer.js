@@ -19,7 +19,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     const shotScored = new Audio(Goal);
     const shotSaved = new Audio(Miss)
-    // const kick = new Audio(Kick)    
+    const kick = new Audio(Kick)    
 
     const playerDirection = (event) => {
         console.log(playerTwoInput.length > 1)
@@ -42,7 +42,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
-            setTimeout(checkGoal, 5000)
+            setTimeout(checkGoal, kick.play(), 5000)
             console.log("ANSWER CORRECT")
         }
         return () => {
