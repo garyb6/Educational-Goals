@@ -50,7 +50,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
-            setTimeout(checkGoal, kick.play(), 5000)
+            setTimeout(checkGoal, 5000)
             console.log("ANSWER CORRECT")
         }
         return () => {
@@ -114,7 +114,6 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                     </div>
                 {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
-                </div>
                 {((playerTwo.name === "Player 2" || playerTwo.name === ""))? null :
                 <div id="player2Instructions">
                     <div className="controls"><span>
@@ -129,6 +128,11 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 }
+                </div>
+                <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
+                <div className='next-question'>
+                    <div>{isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
+                </div>
             </div>
         </>
     )
