@@ -8,9 +8,9 @@ const NotFound = () => {
     return (
         <>
         <div id="wrongway">
-        <i className="fas fa-map-signs"/><br/>
+        <i className="fas fa-map-signs fa-7x"/><br/>
         <h4>There's nothing to see...</h4>
-        <h6>Oh well, play some soothing music:</h6>
+        <h4>Oh well, play some soothing music:</h4>
         <audio controls src={gameMusic} ></audio>
         <Link to="/" className="help"><div id="helpText">Get me out of here!</div></Link>
         </div>
