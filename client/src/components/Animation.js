@@ -66,7 +66,6 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
         </div>,
         // Left
         <div className="ball-container">
-        {/* {playKick()} */}
         <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? -220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
         </div>
     ]

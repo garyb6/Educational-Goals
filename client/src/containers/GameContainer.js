@@ -124,15 +124,12 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </h3>
                         </span>
                     </div>
-                             
                     {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 }
                 </div>
                 <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
-                <div className='next-question'>
-                    <div>{isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
-                </div>
+                <div className="next-question">{isAnimating ? kick.play() && <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
             </div>
         </>
     )
