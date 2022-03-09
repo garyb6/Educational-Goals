@@ -22,15 +22,23 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     const kick = new Audio(Kick)    
 
     const playerDirection = (event) => {
-        console.log(playerTwoInput.length > 1)
+
         if (event.key === "d" || event.key === "s" || event.key === "a") {
             let temp = playerOneInput
             temp.push(event.key)
             setPlayerOneInput(temp)
             console.log(playerOneInput)
-        } else if (event.key === "l" || event.key === "k" || event.key === "j") {
+        } else if ((event.key === "l" || event.key === "k" || event.key === "j") && ((playerTwo.name !== "Player 2" || playerTwo.name !== ""))) {
             let temp = playerTwoInput
             temp.push(event.key)
+            setPlayerTwoInput(temp)
+            console.log(playerTwoInput)
+        }
+
+        if ((playerTwo.name === "Player 2" || playerTwo.name === "")){
+            let directions = ["l", "k", "j"]
+            let temp = playerTwoInput
+            temp.push(directions[(Math.floor(Math.random() * 3))])
             setPlayerTwoInput(temp)
             console.log(playerTwoInput)
         }
@@ -105,22 +113,22 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </div>
                         {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                     </div>
-                    <div id="player2Instructions">
-                        <div className="controls"><span>
-                            <h3>
-                                <img className="directions" src={leftArrow}></img>J
-                                <img className="directions" src={upArrow}></img>K
-                                <img className="directions" src={rightArrow}></img>L
-                            </h3>
+                {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
+                </div>
+                {((playerTwo.name === "Player 2" || playerTwo.name === ""))? null :
+                <div id="player2Instructions">
+                    <div className="controls"><span>
+                        <h3>
+                        <img className="directions" src={leftArrow}></img> J 
+                        <img className="directions" src={upArrow}></img>K 
+                        <img className="directions" src={rightArrow}></img>L
+                        </h3>
                         </span>
-                        </div>
-                        {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                     </div>
+                             
+                    {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
-                <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
-                <div className='next-question'>
-                    <div>{isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
-                </div>
+                }
             </div>
         </>
     )

@@ -19,20 +19,35 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
             })
         )
     }
-
-    return (
-        <>
-            <div className='playerScore'>
-                {playerOne.name} {playerScore(playerOne)}
-            </div>
-            <div className='currentPlayer'>
-                <h2>It is {currentPlayer}'s go</h2>
-            </div>
-            <div className='playerScore'>
-                {playerTwo.name} {playerScore(playerTwo)}
-            </div>
-        </>
-    )
+    if (playerTwo.name === "Player 2" || playerTwo.name === ""){
+        return (
+            <>
+                <div className='playerScore'>
+                    Odds {playerScore(playerOne)}
+                </div>
+                <div className='currentPlayer'>
+                    <h2>It is {playerOne.name}'s go</h2>
+                </div>
+                <div className='playerScore'>
+                    Evens {playerScore(playerTwo)}
+                </div>
+            </>
+        )
+    } else {
+        return (
+            <>
+                <div className='playerScore'>
+                    {playerOne.name} {playerScore(playerOne)}
+                </div>
+                <div className='currentPlayer'>
+                    <h2>It is {currentPlayer}'s go</h2>
+                </div>
+                <div className='playerScore'>
+                    {playerTwo.name} {playerScore(playerTwo)}
+                </div>
+            </>
+        )
+    }
 }
 
 export default ScoreDisplay;

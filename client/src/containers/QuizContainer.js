@@ -19,8 +19,6 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     useEffect(() => { requestQuiz(selectedQuiz) }, [])
 
-
-
     const requestQuiz = function (id) {
         const request = new Request();
         request.get(`http://localhost:8080/quizzes/${id}`)
@@ -29,60 +27,54 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     if (chosenQuiz === null) {
         return (
-            <div className="not-found">
-                <h2 className='not-loaded'>Quiz not loaded yet</h2>
-                <h4 className='please-wait'>Please wait or return to home page</h4>
-                <button id="back-home"><Link to="/"><div id='back-text'>Back to home</div></Link></button>
-            </div>)
+        <div className = "not-found">
+        <h2 className='not-loaded'>Quiz not loaded yet</h2> 
+        <h4 className='please-wait'>Please wait or return to home page</h4>
+        <button id="back-home"><a href='/'><div id='back-text'>Back to home</div></a></button>
+        </div>)
+    }
 
+    const playerVictory = (player) => {
+        return (
+            <>
+                <Confetti />
+                {championMusic()}
+                <div className='winner-container'><h1>{player.name} is the winner!</h1></div>
+                <div className="trophy-container">
+                    <motion.div className='trophy'
+                        drag
+                        dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                    >
+                        <div className='winner-name'>{player.name}</div>
+                    </motion.div>
+                </div>
+                <button id="back-home"><a href='/'><div id='back-text'>Play again?</div></a></button>
+            </>)
     }
 
     if (questionNumber > 10) {
 
-        if (playerOne.score.reduce((a, b) => a + b, 0) > playerTwo.score.reduce((a, b) => a + b, 0)) {
-            return (
-                <>
-                    <Confetti />
-                    {championMusic()}
-                    <div className='winner-container'><h1>{playerOne.name} is the winner!</h1></div>
-                    <div className="trophy-container">
-                        <motion.div className='trophy'
-                            drag
-                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
-                        >
-                            <div className='winner-name'>{playerOne.name}</div>
-                        </motion.div>
-                    </div>
-                </>)
-        } else if (playerTwo.score > playerOne.score) {
-            return (
-                <>
-                    <Confetti />
-                    {championMusic()}
-                    <div className='winner-container'><h1 className='winner-font'>{playerOne.name} is the winner!</h1>
-                        <button id="back-home"><Link to="/"><div id='back-text'>Play again</div></Link></button>
-                    </div>
-                    <div className="trophy-container">
-                        <motion.div className='trophy'
-
-                            drag
-                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
-                        >
-                            <div className='winner-name'>{playerOne.name}</div>
-                        </motion.div>
-                    </div>
+        if (playerTwo.name === "Player 2" || playerTwo.name === ""){
+            return <>
+                {playerVictory(playerOne)}
+                <h2>You scored {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10 goals!</h2>
                 </>
-            )
+        }
+
+        if (playerOne.score > playerTwo.score) {
+            return playerVictory(playerOne)
+        } else if (playerTwo.score > playerOne.score) {
+            return playerVictory(playerTwo)
         } else {
             return (
                 <>
-                    {drawSound()}
-                    <div className="draw">
-                        <h1>It's a draw!</h1>
-                        <button id="back-home"><Link to="/"><div id='back-text'>Play again?</div></Link></button>
-                    </div>
-                    <div className="handshake-container">
-                        <motion.div className='handshake'
+                {drawSound()}
+                <div className = "draw">
+                <h1>It's a draw!</h1> 
+                <button id="back-home"><a href='/'><div id='back-text'>Play again?</div></a></button>
+                </div>
+                <div className = "handshake-container">
+                            <motion.div className='handshake'
                             drag
                             dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
                         >

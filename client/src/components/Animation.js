@@ -11,10 +11,9 @@ import { styles } from '../data/Styles'
 
 function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnimating, setIsAnimating, questionNumber}) {
 
-    // const [playKick] = useSound(Kick)
-
-    const currentPlayer = (questionNumber % 2 === 0) ? "one" : "two";
-    const currentGoalie = (questionNumber % 2 === 0) ? playerOne : playerTwo;
+    const [playKick] = useSound(Kick)
+    const currentPlayer = ((playerTwo.name === "Player 2" || playerTwo.name === "")) ? "one" : (questionNumber % 2 === 1) ? "one" : "two"
+    const currentGoalie = ((playerTwo.name === "Player 2" || playerTwo.name === ""))? playerOne : (questionNumber % 2 === 0) ? playerOne : playerTwo
     
     const saveAnimations = [
         // Right
@@ -83,7 +82,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     }
 
     const playSaveAnimation = () => {
-        if (currentPlayer === "one") {
+        if (currentPlayer !== "one") {
             return checkInput(playerOneInput.slice(-1)[0], saveAnimations)
         } else {
             return checkInput(playerTwoInput.slice(-1)[0], saveAnimations)
@@ -91,7 +90,7 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     }
 
     const playShootAnimation = () => {
-        if (currentPlayer !== "one") {
+        if (currentPlayer === "one") {
             return checkInput(playerOneInput.slice(-1)[0], shootAnimations)
         } else {
             return checkInput(playerTwoInput.slice(-1)[0], shootAnimations)
