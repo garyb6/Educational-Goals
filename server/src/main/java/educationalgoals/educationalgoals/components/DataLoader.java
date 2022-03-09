@@ -274,7 +274,7 @@ public class DataLoader implements ApplicationRunner {
 
         scotland.addQuestion(unesco);
 
-        Question cave = new Question (scotland, "Robert the Bruce spent several months hiding out in a cave from the glorious English, where he was inspired by which animal?");
+        Question cave = new Question (scotland, "Robert the Bruce spent several months hiding out in a cave from the English, where he was inspired by which animal?");
         questionRepository.save(cave);
         Option bear = new Option("Bear", cave);
         optionRespository.save(bear);
