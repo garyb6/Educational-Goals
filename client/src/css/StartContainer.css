@@ -175,48 +175,5 @@ p{
     padding: 1.5%;
 }
 
-.instructions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-between;
-    padding-top: 1.2vw;
-}
 
-.instruction-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 1.4vw;
-}
-
-.instruction-paragraph{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: larger;
-    text-align: center;
-}
-
-.instruction-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: larger;
-    padding-left: 1.8vw;
-}
-
-.player-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: larger;
-    padding-top: 1.3vw;
-}
-
-.home-button{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-}
 

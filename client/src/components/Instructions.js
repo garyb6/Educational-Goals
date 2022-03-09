@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import "./../css/Instructions.css"
+import "./../css/GameContainer.css"
 
 const Instructions = () => {
 
@@ -18,7 +20,7 @@ const Instructions = () => {
             <div className="instruction-paragraph"> <b>Player One</b>: <b className="instruction-button">A = ⬅️</b> <b className="instruction-button">S = ⬆️</b> <b className="instruction-button">D = ➡️</b></div>
             <div className="instruction-paragraph"> <b>Player Two</b>: <b className="instruction-button">J = ⬅️</b> <b className="instruction-button">K = ⬆️</b> <b className="instruction-button">L = ➡️</b></div>
             <p className="instruction-paragraph">You can also create your own quizzes to play with your friends!</p>
-            <div className='home-button'><Link id="nextQuestion" to="/"><div id="nextQuestionText">Home</div></Link></div>
+            <Link id="instruction-home" to="/"><div id="nextQuestionText">Home</div></Link>
             </div>
            </>
            )
