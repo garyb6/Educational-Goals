@@ -10,11 +10,11 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
         return (
             player.score.map((value, index) => {
                 if (value === 'x') {
-                    return <i id="shotNotTaken" className="fas fa-circle fa-2xl" key={index} />
+                    return <i id="shotNotTaken" className="fas fa-circle" key={index} />
                 } else if (value === 0) {
-                    return <i id="shotNoPoint" className="fas fa-futbol fa-2xl" key={index} />
+                    return <i id="shotNoPoint" className="fas fa-futbol" key={index} />
                 } else {
-                    return <i id="shotPointScore" className="fas fa-futbol fa-2xl" key={index} />
+                    return <i id="shotPointScore" className="fas fa-futbol" key={index} />
                 }
             })
         )
