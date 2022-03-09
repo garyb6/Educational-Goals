@@ -48,7 +48,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <div className='winner-name'>{player.name}</div>
                     </motion.div>
                 </div>
-                <a href='/' className="back-home back-text">Play again?</a>
+                <a href='/' className="winner-home winner-text">Play again?</a>
             </>)
     }
 
