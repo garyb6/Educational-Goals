@@ -30,7 +30,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         <div className = "not-found">
         <h2 className='not-loaded'>Quiz not loaded yet</h2> 
         <h4 className='please-wait'>Please wait or return to home page</h4>
-        <button id="back-home"><a href='/'><div id='back-text'>Back to home</div></a></button>
+        <div className='home-button'><Link id="nextQuestion" to="/"><div id="nextQuestionText">Home</div></Link></div>
         </div>)
     }
 
@@ -48,7 +48,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <div className='winner-name'>{player.name}</div>
                     </motion.div>
                 </div>
-                <button id="back-home"><a href='/'><div id='back-text'>Play again?</div></a></button>
+                <a href='/' className="back-home back-text">Play again?</a>
             </>)
     }
 
@@ -71,7 +71,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                 {drawSound()}
                 <div className = "draw">
                 <h1>It's a draw!</h1> 
-                <button id="back-home"><a href='/'><div id='back-text'>Play again?</div></a></button>
+                <a href='/' className="back-home back-text">Play again?</a>
                 </div>
                 <div className = "handshake-container">
                             <motion.div className='handshake'

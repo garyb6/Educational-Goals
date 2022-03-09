@@ -5,39 +5,29 @@
 
 #scoreboard1{
     display: flex;
-    width: 50vw;
     justify-content: space-evenly;
     align-items: center;
-    border: solid 1px #fff;
+    width: 50vw;
     margin-left: auto;
     margin-right: auto;
     color: #fff;
     position: relative;
     margin-top: 0.9%
-    
 }
 
 #game-directions{
     display: flex;
-    width: 100vw;
     justify-content:space-around;
     align-items: center;
-    /* border: solid 1px black; */
+    width: 100vw;
     color: white;
-    
 }
 
 .directions{
     width: 25px; height: 25px;
+    padding: 4%;
     filter: invert(100%) sepia(40%) saturate(2%) hue-rotate(215deg) brightness(104%) contrast(100%);
-    padding: 4%
 }
-
-/* #player1Instructions{
-}
-
-#player2Instructions{
-} */
 
 #nextQuestion{
     display: flex;
@@ -45,20 +35,21 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    appearance: none;
+    position: absolute;
+    z-index: 100;
+    top: 75%;
+    width: 25vw; height: 3vw;
+    margin: 0.5em;
+    color: white;
     background-color: transparent;
     border: 2px solid #0f7dcf;
     border-radius: 0.6em;
-    color: white;
-    cursor: pointer;
-    width: 25vw;
-    height: 3vw;
-    font-size: 2vw;
-    margin: 1em;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    font-size: 2vw;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 #nextQuestion:hover {
@@ -66,10 +57,3 @@
     outline: 0;
     text-decoration: none;
 }
-
-
-
-
-
-/* #nextQuestionText{
-} */
