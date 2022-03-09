@@ -19,10 +19,10 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
             })
         )
     }
-    
+
     if (playerTwo.name === "Player 2" || playerTwo.name === ""){
 
-        let combinedScore = {score: playerOne.score.concat(playerTwo.score)}
+        let combinedScore = {score : playerOne.score.flatMap((score, index) => [score, playerTwo.score[index]])}
 
         return (
             <>
