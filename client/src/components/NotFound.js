@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import gameMusic from '../sounds/MOTD.mp3'
 import "./../css/NotFound.css"
+import varSign from "../images/var.png"
 
 const NotFound = () => {
 
     return (
         <>
         <div id="wrongway">
-        <i className="fas fa-map-signs"/><br/>
+        <img src={varSign}/><br/>
         <h4>There's nothing to see...</h4>
         <h6>Oh well, play some soothing music:</h6>
         <audio controls src={gameMusic} ></audio>
