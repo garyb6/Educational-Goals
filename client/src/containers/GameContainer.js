@@ -113,8 +113,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </div>
                         {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                     </div>
-                {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
-                {((playerTwo.name === "Player 2" || playerTwo.name === ""))? null :
+                {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
                 <div id="player2Instructions">
                     <div className="controls"><span>
                         <h3>
@@ -123,8 +122,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         <img className="directions" src={rightArrow}></img>L
                         </h3>
                         </span>
-                    </div>
-                             
+                    </div>       
                     {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 }
