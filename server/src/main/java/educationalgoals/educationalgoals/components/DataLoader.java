@@ -85,7 +85,7 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(venusGoddess);
 
-        Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper");
+        Question toiletPaper = new Question (roman, "What did the Romans use instead of toilet paper?");
         questionRepository.save(toiletPaper);
         Option cowTongue = new Option("Cow tongues", toiletPaper);
         optionRespository.save(cowTongue);
@@ -136,7 +136,7 @@ public class DataLoader implements ApplicationRunner {
 
         roman.addQuestion(toothpaste);
 
-        Question wall = new Question (roman, "Which emperor built a great wall in the north of England to keep the celts out");
+        Question wall = new Question (roman, "Which emperor built a great wall in the north of England to keep the celts out?");
         questionRepository.save(wall);
         Option marcus = new Option("Marcus Aurelius", wall);
         optionRespository.save(marcus);
@@ -299,7 +299,7 @@ public class DataLoader implements ApplicationRunner {
         Option fiftySeven = new Option("57", islands);
         optionRespository.save(fiftySeven);
         islands.addOption(fiftySeven);
-        Option twoHundred = new Option("200+", islands);
+        Option twoHundred = new Option("200-400", islands);
         optionRespository.save(twoHundred);
         islands.addOption(twoHundred);
         Option nineHundred = new Option("900+", islands, true);
@@ -788,7 +788,7 @@ public class DataLoader implements ApplicationRunner {
         optionRespository.save(lost);
         grammarGame1.addOption(lost);
 
-        Option celebrate = new Option("I would celebrate”", grammarGame1);
+        Option celebrate = new Option("I would celebrate", grammarGame1);
         optionRespository.save(celebrate);
         grammarGame1.addOption(celebrate);
 

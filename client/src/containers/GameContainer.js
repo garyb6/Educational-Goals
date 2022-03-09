@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
-import useSound from 'use-sound';
-import Goal from '../sounds/Goal_chant.wav'
-import Miss from '../sounds/Goal_missed.wav'
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
 import leftArrow from "./../images/left-arrow.png";
 import upArrow from "./../images/top-arrow.png";
 import rightArrow from "./../images/right-arrow.png";
+import Goal from '../sounds/Goal_chant.wav'
+import Miss from '../sounds/Goal_missed.wav'
+import Kick from '../sounds/Kick.wav'
 
 const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, questionNumber, setQuestionNumber, chosenAnswer, setChosenAnswer }) => {
-
+    
     const [isAnimating, setIsAnimating] = useState(false)
-    const [shotScored] = useSound(Goal)
-    const [shotSaved] = useSound(Miss)
-
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
+
+    const shotScored = new Audio(Goal);
+    const shotSaved = new Audio(Miss)
+    const kick = new Audio(Kick)    
 
     const playerDirection = (event) => {
 
@@ -49,15 +50,14 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
-            setTimeout(checkGoal, 5000)
+            setTimeout(checkGoal, kick.play(), 5000)
             console.log("ANSWER CORRECT")
         }
         return () => {
+
             window.removeEventListener('keydown', playerDirection);
         };
     }, []);
-
-    // let combinedInput = (playerOneInput.slice(-1)[0].concat(playerTwoInput.slice(-1)[0]))
 
     const checkGoal = () => {
 
@@ -78,14 +78,14 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
         }
 
         if (combinedInput == ["dl"] || combinedInput == ["sk"] || combinedInput == ["aj"]) {
+            shotSaved.play()
             adjustScore(0)
-            { shotSaved() }
+            console.log('It was saved!');
         }
-
-        if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
+        else if (combinedInput == ["al"] || combinedInput == ["ak"] || combinedInput == ["sj"] || combinedInput == ["sl"] || combinedInput == ["dj"] || combinedInput == ["dk"]) {
+            shotScored.play();
             adjustScore(1)
-            { shotScored() }
-
+            console.log('GOOOAL!');
         }
     }
 
@@ -97,19 +97,21 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     return (
         <>
-        <div id="gameContainer">
-            <div id="scoreboard">
-                <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
-            </div>
-            <div id="game-directions">
-                <div id="player1Instructions">
-                    <div className="controls"><span>
-                        <h3>
-                        <img className="directions" src={leftArrow}></img>A 
-                        <img className="directions" src={upArrow}></img>S 
-                        <img className="directions" src={rightArrow}></img>D
-                        </h3>
+            <div id="gameContainer">
+                <div id="scoreboard">
+                    <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
+                </div>
+                <div id="game-directions">
+                    <div id="player1Instructions">
+                        <div className="controls"><span>
+                            <h3>
+                                <img className="directions" src={leftArrow}></img>A
+                                <img className="directions" src={upArrow}></img>S
+                                <img className="directions" src={rightArrow}></img>D
+                            </h3>
                         </span>
+                        </div>
+                        {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                     </div>
                 {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
@@ -128,11 +130,6 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 </div>
                 }
             </div>
-            <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput = {playerOneInput} playerTwoInput = {playerTwoInput} isAnimating = {isAnimating} setIsAnimating = {setIsAnimating} questionNumber = {questionNumber}/>
-            <div className='next-question'>
-            <div>{isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
-            </div>
-        </div>
         </>
     )
 }

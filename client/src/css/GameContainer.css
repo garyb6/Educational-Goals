@@ -19,13 +19,15 @@
     width: 100vw;
     justify-content:space-around;
     align-items: center;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     color: white;
+    
 }
 
 .directions{
     width: 25px; height: 25px;
-    filter: invert(100%) sepia(40%) saturate(2%) hue-rotate(215deg) brightness(104%) contrast(100%)
+    filter: invert(100%) sepia(40%) saturate(2%) hue-rotate(215deg) brightness(104%) contrast(100%);
+    padding: 4%
 }
 
 /* #player1Instructions{

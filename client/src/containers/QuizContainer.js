@@ -76,10 +76,10 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                 <div className = "handshake-container">
                             <motion.div className='handshake'
                             drag
-                            dragConstraints={{ right:1,left:1,bottom:1,top: 1}}
-                            >
-                            </motion.div>
-                </div>
+                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                        >
+                        </motion.div>
+                    </div>
                 </>)
         }
     }
@@ -97,7 +97,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             <div id="quizContainer">
                 <div id="whiteboard">
                     <div id="scoreboard">
-                            <ScoreDisplay playerOne = {playerOne} playerTwo = {playerTwo} questionNumber = {questionNumber}/>
+                        <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                     </div>
                     <div id="quizBoard">
                         <div className="Q">

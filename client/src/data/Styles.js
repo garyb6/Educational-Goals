@@ -7,5 +7,7 @@ export const styles = [
     {colour: "Orange", filter: { filter: "invert(68%) sepia(48%) saturate(4075%) hue-rotate(1deg) brightness(107%) contrast(104%)" }},
     {colour: "Purple", filter: { filter: "invert(13%) sepia(100%) saturate(4928%) hue-rotate(278deg) brightness(80%) contrast(116%)" }},
     {colour: "White", filter: { filter: "invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%)" }},
-    {colour: "Black", filter: { filter: "invert(23%) sepia(1%) saturate(0%) hue-rotate(159deg) brightness(102%) contrast(87%)" }}
+    {colour: "Black", filter: { filter: "invert(0%) sepia(0%) saturate(0%) hue-rotate(159deg) brightness(100%) contrast(100%)" }}
 ]
+
+// {colour: "Black", filter: { filter: "invert(23%) sepia(1%) saturate(0%) hue-rotate(159deg) brightness(102%) contrast(87%)" }}
