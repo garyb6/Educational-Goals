@@ -115,22 +115,21 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     </div>
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
                 <div id="player2Instructions">
-                    <div className="controls"><span>
+                    <div className="controls">
+                      <span>
                         <h3>
                         <img className="directions" src={leftArrow}></img> J 
                         <img className="directions" src={upArrow}></img>K 
                         <img className="directions" src={rightArrow}></img>L
                         </h3>
-                        </span>
+                      </span>
                     </div>       
                     {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
                 </div>
                 }
                 </div>
                 <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
-                <div className='next-question'>
-                    <div>{isAnimating ? <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
-                </div>
+                <div className="next-question">{isAnimating ? kick.play() && <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
             </div>
         </>
     )
