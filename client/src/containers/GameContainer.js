@@ -25,7 +25,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);
-        if (chosenAnswer === false) {
+        if (!chosenAnswer) {
             setTimeout(checkGoal, 1)
             console.log("ANSWER INCORRECT")
         } else {
@@ -106,7 +106,8 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 </div>
                 <div id="game-directions">
-                    <div id="player1Instructions">
+                    {!chosenAnswer ? null :
+                        <div id="player1Instructions">
                         <div className="controls"><span>
                             <h3>
                                 <img className="directions" src={leftArrow}></img>A
@@ -117,7 +118,9 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </div>
                         <h4>{playerOne.name} {flag1}</h4>
                     </div>
+                    }
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
+                !chosenAnswer ? null :
                 <div id="player2Instructions">
                     <div className="controls">
                       <span>
@@ -129,6 +132,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                       </span>
                     </div>       
                     <h4> {playerTwo.name} {flag2}</h4>
+                
                 </div>
                 }
                 </div>
