@@ -16,33 +16,12 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     const [isAnimating, setIsAnimating] = useState(false)
     const [playerOneInput, setPlayerOneInput] = useState(["s"])
     const [playerTwoInput, setPlayerTwoInput] = useState(["k"])
+    const [flag1, setFlag1] = useState("Waiting...")
+    const [flag2, setFlag2] = useState("Waiting...")
 
     const shotScored = new Audio(Goal);
     const shotSaved = new Audio(Miss)
     const kick = new Audio(Kick)
-
-    const playerDirection = (event) => {
-
-        if (event.key === "d" || event.key === "s" || event.key === "a") {
-            let temp = playerOneInput
-            temp.push(event.key)
-            setPlayerOneInput(temp)
-            console.log(playerOneInput)
-        } else if ((event.key === "l" || event.key === "k" || event.key === "j") && ((playerTwo.name !== "Player 2" || playerTwo.name !== ""))) {
-            let temp = playerTwoInput
-            temp.push(event.key)
-            setPlayerTwoInput(temp)
-            console.log(playerTwoInput)
-        }
-
-        if ((playerTwo.name === "Player 2" || playerTwo.name === "")) {
-            let directions = ["l", "k", "j"]
-            let temp = playerTwoInput
-            temp.push(directions[(Math.floor(Math.random() * 3))])
-            setPlayerTwoInput(temp)
-            console.log(playerTwoInput)
-        }
-    };
 
     useEffect(() => {
         window.addEventListener('keydown', playerDirection);
@@ -54,10 +33,35 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
             console.log("ANSWER CORRECT")
         }
         return () => {
-
             window.removeEventListener('keydown', playerDirection);
         };
     }, []);
+
+    const playerDirection = (event) => {
+
+        if (event.key === "d" || event.key === "s" || event.key === "a") {
+            let temp = playerOneInput
+            temp.push(event.key)
+            setPlayerOneInput(temp)
+            console.log(playerOneInput)
+            setFlag1("has chosen!")
+        } else if ((event.key === "l" || event.key === "k" || event.key === "j") && ((playerTwo.name !== "Player 2" || playerTwo.name !== ""))) {
+            let temp = playerTwoInput
+            temp.push(event.key)
+            setPlayerTwoInput(temp)
+            console.log(playerTwoInput)
+            setFlag2("has chosen!")
+        }
+
+        if ((playerTwo.name === "Player 2" || playerTwo.name === "")) {
+            let directions = ["l", "k", "j"]
+            let temp = playerTwoInput
+            temp.push(directions[(Math.floor(Math.random() * 3))])
+            setPlayerTwoInput(temp)
+            console.log(playerTwoInput)
+            setFlag1("has chosen!")
+        }
+    };
 
     const checkGoal = () => {
 
@@ -111,7 +115,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                             </h3>
                         </span>
                         </div>
-                        {playerOneInput.length > 1 ? <h4> {playerOne.name} has chosen</h4> : <h4> Waiting... </h4>}
+                        <h4>{playerOne.name} {flag1}</h4>
                     </div>
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
                 <div id="player2Instructions">
@@ -124,7 +128,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         </h3>
                       </span>
                     </div>       
-                    {playerTwoInput.length > 1 ? <h4> {playerTwo.name} has chosen</h4> : <h4> Waiting... </h4>}
+                    <h4> {playerTwo.name} {flag2}</h4>
                 </div>
                 }
                 </div>
