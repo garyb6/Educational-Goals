@@ -25,15 +25,15 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
         let combinedScore = {score : playerOne.score.flatMap((score, index) => [score, playerTwo.score[index]])}
 
         return (
-            <>
+            <div id="scoreboard">
                 <div className='playerScore'>
                     Score {playerScore(combinedScore)}
                 </div>
-            </>
+            </div>
         )
     } else {
         return (
-            <>
+            <div id="scoreboard">
                 <div className='playerScore'>
                     {playerOne.name} {playerScore(playerOne)}
                 </div>
@@ -43,7 +43,7 @@ const ScoreDisplay = ({ playerOne, playerTwo, questionNumber }) => {
                 <div className='playerScore'>
                     {playerTwo.name} {playerScore(playerTwo)}
                 </div>
-            </>
+            </div>
         )
     }
 }

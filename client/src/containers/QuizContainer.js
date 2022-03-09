@@ -96,9 +96,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         <>
             <div id="quizContainer">
                 <div id="whiteboard">
-                    <div id="scoreboard">
                         <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
-                    </div>
                     <div id="quizBoard">
                         <div className="Q">
                             <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>

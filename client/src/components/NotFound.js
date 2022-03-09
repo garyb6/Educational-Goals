@@ -9,7 +9,7 @@ const NotFound = () => {
     return (
         <>
         <div id="wrongway">
-        <img src={varSign}/><br/>
+        <i className="fas fa-map-signs fa-7x"/><br/>
         <h4>There's nothing to see...</h4>
         <h4>Oh well, play some soothing music:</h4>
         <audio controls src={gameMusic} ></audio>
@@ -17,8 +17,6 @@ const NotFound = () => {
         </div>
         </>
     )
-
-
 }
 
 export default NotFound;
