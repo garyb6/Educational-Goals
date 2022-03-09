@@ -12,8 +12,8 @@ import Instructions from '../components/Instructions';
 
 const MainContainer = () => {
 
-    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: ['x', 'x', 'x', 'x', 'x'], filter: 0  });
-    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: ['x', 'x', 'x', 'x', 'x'], filter: 0  });
+    const [playerOne, setPlayerOne] = useState({ name: "Player 1", score: [-1, -1, -1, -1, -1], filter: 0  });
+    const [playerTwo, setPlayerTwo] = useState({ name: "Player 2", score: [-1, -1, -1, -1, -1], filter: 0  });
     const [selectedQuiz, setSelectedQuiz] = useState(0);
     const [chosenQuiz, setChosenQuiz] = useState(null);
     const [questionNumber, setQuestionNumber] = useState(1)
