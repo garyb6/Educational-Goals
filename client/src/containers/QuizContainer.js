@@ -51,7 +51,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             </>)
     }
 
-    if (questionNumber > 2) {
+    if (questionNumber > 10) {
         let playerOneScore = playerOne.score.reduce((a, b) => a + b, 0);
         let playerTwoScore = playerTwo.score.reduce((a, b) => a + b, 0);
 
