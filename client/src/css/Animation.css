@@ -65,7 +65,7 @@
     align-items: center;
     left: 40vw;
     padding-top: 2%;
-    padding-bottom: 8%;
+    padding-bottom: 4%;
 }
 
 .winner-font{
@@ -80,7 +80,7 @@
     width: 37vw;
     height: 10vw;
     left: 37vw;
-    top:10vw;
+    top:6vw;
 }
 
 .handshake-container{
@@ -89,7 +89,7 @@
     position: relative;
     width: 37vw;
     height: 10vw;
-    left: 38vw;
+    left: 42vw;
     top:-5vw;
 }
 

@@ -133,15 +133,15 @@ color: black}
   text-decoration: none;}
 
 .winner-home{
-    width: 14vw;
-    height: 3vw;
+    width: 16vw;
+    height: 4vw;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     position: absolute;
     z-index: 100;
-    top:16%;
+    top:85%;
     background-color: transparent;
     border-radius: 0.6em;
     cursor: pointer;
@@ -230,8 +230,12 @@ color: black}
   text-decoration: none;
 }
 
-#one-player-points{
+.one-player-points{
 display: flex;
+flex-direction: row;
+justify-content: center;
+padding-top: 1%;
+
 }
 
 
