@@ -99,7 +99,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                    <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
+                <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 <div id="game-directions">
                     {!chosenAnswer ? null :
                         <div id="player1Instructions">
@@ -111,7 +111,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                             </h3>
                         </span>
                         </div>
-                        <h4>{playerOne.name} {flag1}</h4>
+                      <h4> {playerOne.name} {flag1}</h4>
                     </div>
                     }
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :

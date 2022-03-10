@@ -1,6 +1,7 @@
 #gameContainer{
     display: flex;
     flex-direction: column;
+    margin-top: 0.9%;
 }
 
 #game-directions{
@@ -27,7 +28,7 @@
     box-sizing: border-box;
     position: absolute;
     z-index: 100;
-    top: 75%;
+    top: 80%; 
     width: 25vw; height: 3vw;
     margin: 0.5em;
     color: white;
