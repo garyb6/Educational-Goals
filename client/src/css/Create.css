@@ -135,3 +135,17 @@ font-size: 35px;
     height: 2em;
     text-align: center;
 }
+
+.quiz-created{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quiz-created-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1%;
+}

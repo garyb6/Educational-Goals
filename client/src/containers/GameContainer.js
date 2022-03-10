@@ -4,9 +4,6 @@ import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
-import leftArrow from "./../images/left-arrow.png";
-import upArrow from "./../images/top-arrow.png";
-import rightArrow from "./../images/right-arrow.png";
 import Goal from '../sounds/Goal_chant.wav'
 import Miss from '../sounds/Goal_missed.wav'
 import Kick from '../sounds/Kick.wav'
@@ -106,33 +103,33 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 <div id="game-directions">
                     {!chosenAnswer ? null :
                         <div id="player1Instructions">
-                            <div className="controls"><span>
-                                <h3>
-                                    <img className="directions" src={leftArrow}></img>A
-                                    <img className="directions" src={upArrow}></img>S
-                                    <img className="directions" src={rightArrow}></img>D
-                                </h3>
-                            </span>
-                            </div>
-                            <h4>{playerOne.name} {flag1}</h4>
+                        <div className="controls"><span>
+                            <h3>
+                                ⬅️ J
+                                ⬆️ K
+                                ➡️ L
+                            </h3>
+                        </span>
                         </div>
+                      <h4> {playerOne.name} {flag1}</h4>
+                    </div>
                     }
-                    {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
-                        !chosenAnswer ? null :
-                            <div id="player2Instructions">
-                                <div className="controls">
-                                    <span>
-                                        <h3>
-                                            <img className="directions" src={leftArrow}></img> J
-                                            <img className="directions" src={upArrow}></img>K
-                                            <img className="directions" src={rightArrow}></img>L
-                                        </h3>
-                                    </span>
-                                </div>
-                                <h4> {playerTwo.name} {flag2}</h4>
-
-                            </div>
-                    }
+                {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
+                !chosenAnswer ? null :
+                <div id="player2Instructions">
+                    <div className="controls">
+                      <span>
+                        <h3>
+                        ⬅️ A
+                        ⬆️ S
+                        ➡️ D
+                        </h3>
+                      </span>
+                    </div>       
+                    <h4> {playerTwo.name} {flag2}</h4>
+                
+                </div>
+                }
                 </div>
                 <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
                 <div className="next-question">{isAnimating ? kick.play() && <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
