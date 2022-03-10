@@ -4,7 +4,8 @@
 }
 
 #game-directions{
-    min-height: 5vh;
+    margin-top: 1%;
+    min-height: 9vh;
     display: flex;
     justify-content:space-around;
     align-items: center;

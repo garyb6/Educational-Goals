@@ -4,7 +4,6 @@ import ScoreDisplay from '../components/ScoreDisplay';
 import { motion } from 'framer-motion'
 import "./../css/QuizContainer.css"
 import useSound from 'use-sound';
-import gameMusic from '../sounds/MOTD.mp3'
 import whistle from '../sounds/Whistle.wav'
 import Champions_league from '../sounds/Champions_league.mp3'
 import Draw from '../sounds/Draw.mp3'
@@ -12,7 +11,7 @@ import Request from '../helpers/request';
 import Confetti from 'react-confetti'
 import { styles } from '../data/Styles'
 
-const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
+const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setChosenAnswer }) => {
 
     const [blowWhistle] = useSound(whistle)
     const [championMusic] = useSound(Champions_league)
@@ -52,18 +51,21 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             </>)
     }
 
-    if (questionNumber > 2) {
+    if (questionNumber > 10) {
+        let playerOneScore = playerOne.score.reduce((a, b) => a + b, 0);
+        let playerTwoScore = playerTwo.score.reduce((a, b) => a + b, 0);
 
-        if (playerTwo.name === "Player 2" || playerTwo.name === "") {
+        if (playerTwo.name === "Player 2" || playerTwo.name === ""){
             return <>
             <div className='one-player-points'><h2>You scored {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10 goals!</h2></div>
                 {playerVictory(playerOne)}
-            </>
+                <h2>You scored {(playerOneScore + playerTwoScore)} out of 10 goals!</h2>
+                </>
         }
 
-        if (playerOne.score > playerTwo.score) {
+        if (playerOneScore > playerTwoScore) {
             return playerVictory(playerOne)
-        } else if (playerTwo.score > playerOne.score) {
+        } else if (playerTwoScore > playerOneScore) {
             return playerVictory(playerTwo)
         } else {
             return (
