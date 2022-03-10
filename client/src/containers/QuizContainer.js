@@ -10,6 +10,7 @@ import Champions_league from '../sounds/Champions_league.mp3'
 import Draw from '../sounds/Draw.mp3'
 import Request from '../helpers/request';
 import Confetti from 'react-confetti'
+import { styles } from '../data/Styles'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setQuestionNumber, setChosenAnswer }) => {
 
@@ -72,16 +73,15 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <h1>It's a draw!</h1>
                         <a href='/' className="back-home back-text">Play again?</a>
                     </div>
-                    <div className="handshake-container">
-                        <motion.div className='handshake-right'
-                            drag
-                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
-                        >
-                            <div className='handshake-left'>
-
-                            </div>
-                        </motion.div>
-                    </div>
+                    <motion.div className="handshake-container"
+                    drag
+                    dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                    >
+                        <div className='handshake-right' style={styles[playerOne.filter].filter}></div>
+                            
+                        <div className='handshake-left' style={styles[playerTwo.filter].filter}></div>
+                        
+                    </motion.div>
                 </>)
         }
     }

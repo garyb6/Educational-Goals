@@ -83,16 +83,6 @@
     top:6vw;
 }
 
-.handshake-container{
-    justify-content: center;
-    display: flex;
-    position: relative;
-    width: 37vw;
-    height: 10vw;
-    left: 42vw;
-    top:-5vw;
-}
-
 .trophy{
     /* display: flex;
     justify-content: center; */
@@ -105,9 +95,20 @@
     background-size: 25vw;
 }
 
+.handshake-container{
+    justify-content: center;
+    /* display: flex; */
+    position: absolute;
+    width: 37vw;
+    height: 10vw;
+    left: 36vw;
+    bottom:62vh;
+}
+
 .handshake-right{
     /* display: flex;
     justify-content: center; */
+    position: absolute;
     left: 1vw;
     top: 12vw;
     width: 45vw;
@@ -115,14 +116,15 @@
     background-image:url('../images/DrawRight.png');
     background-repeat: no-repeat;
     background-size: 25vw;
-    /* filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%) */
 }
 
 .handshake-left{
+    position: absolute;
     left: 1vw;
     top: 12vw;
     width: 45vw;
     height: 45vw;
+    z-index: 100;
     background-image:url('../images/DrawLeft.png');
     background-repeat: no-repeat;
     background-size: 25vw;
