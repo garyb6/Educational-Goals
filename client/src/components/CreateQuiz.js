@@ -76,11 +76,6 @@ const CreateQuiz = () => {
         )
     } else {
         return (
-
-            <>
-                <h3>Quiz created!</h3>
-                <Link to="/">Back to home.</Link>
-            </>
                 <>
                 <div className='quiz-created'>
                 <h1 className='quiz-created-text'>Quiz created!</h1>
