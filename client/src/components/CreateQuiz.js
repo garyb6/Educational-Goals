@@ -79,7 +79,7 @@ const CreateQuiz = () => {
                 <>
                 <div className='quiz-created'>
                 <h1 className='quiz-created-text'>Quiz created!</h1>
-                <Link className='createButton' to="/">Back to home.</Link>
+                <Link className='createButton' to="/">Back to home</Link>
                 </div>
                 </>
         )
