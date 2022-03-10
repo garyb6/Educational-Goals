@@ -2,17 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
     margin: 5% 10% 10% 10%;
-
+    color: white;
 }
 
 #logo{
-    width: 25vw;
-    height: auto;
-    border-radius: 100%;
-    border: solid 0.1vw white;
+    width: 25vw; height: auto;
     margin: 1%;
+    border-radius: 100%;
+    border: solid 2px white;
 }
 
 .startPageButton{
@@ -20,61 +18,29 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 30vw;
-    height: 10vh;
+    width: 30vw; height: 10vh;
     padding: 2%;
     margin: 1%;
     background-color: transparent;
-    cursor: pointer;
-    font-weight: 700;
-    line-height: 1;
     border: 3px solid #0f7dcf;
     border-radius: 0.6em;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
 }
-
 
 .startPageButton:hover {
     box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
     text-decoration: none;
-
 }
 
 .startPageButtonText{
 margin: 4 (25%);
 color: white;
 font-size: 150%;
-
 }
-
-/* #upperLeft {
-	width: 125px; height: 125px;
-	position: absolute;
-	top: 0; left: 0;
-	background-image: url("./../images/small-ball.png");
-    background-repeat: no-repeat;
-    background-size: 125px 125px;
-}
-
-#upperRight {
-	width: 125px; height: 125px;
-	position: absolute;
-	top: 0;
-	right: 0%;
-	background-image: url("./../images/small-ball.png");
-    background-repeat: no-repeat;
-    background-size: 125px 125px;
-}
-
-#lowerLeft {
-	width: 125px; height: 125px;
-	position: absolute;
-	bottom: 0%; left: 0;
-	background-image: url("./../images/small-ball.png");
-    background-repeat: no-repeat;
-    background-size: 125px 125px;
-} */

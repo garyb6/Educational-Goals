@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StartContainer from './StartContainer';
 import GameContainer from './GameContainer';
 import QuizContainer from './QuizContainer';
-import Request from '../helpers/request';
 import CreateQuiz from '../components/CreateQuiz';
 import StartPage from '../components/StartPage';
 import NotFound from '../components/NotFound';

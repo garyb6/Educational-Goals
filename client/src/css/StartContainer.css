@@ -8,8 +8,7 @@
 }
 
 #logoStart{
-    width: 25vh;
-    height:25vh;
+    width: 25vh; height:25vh;
     margin-top: 0.5%;
     border-radius: 100%;
     border: 2px solid white;
@@ -18,26 +17,26 @@
 .players{
     display: flex;
     flex-direction: row;
+    width: fit-content;
     margin: 0;
     margin: 0.5%;
     padding: 0;
     padding: 4 (1%);
-    width: fit-content;
     border: 2px solid white;
 }
 
 .playerLabel{
     font: bold 1.5em/125% Arvo, san serif;
-    padding: 1%;
     margin: 1%; 
     margin-top: 2%;
+    padding: 1%;
 }
 
 .player1Select{
-    border: 2px solid white;
+    width:fit-content;
     margin: 1%;
     padding-left: 7%;
-    width:fit-content;
+    border: 2px solid white;
 }
 
 #player1Box{
@@ -45,10 +44,10 @@
 }
 
 .player2Select{
-    border: 2px solid white;
+    width:fit-content;
     margin: 1%;
     padding-left: 7%;
-    width:fit-content;
+    border: 2px solid white;
 }
 
 #player2Box{
@@ -57,29 +56,20 @@
 
 .colourSelector{
     display: flex;
-    width: 15vw;
     box-sizing: border-box;
+    width: 15vw;
 }
 
 .carousel_slide{
     max-width: 200vw;
+    width: auto;
     max-height: 200vw;
     height: 49vh;
-    width: auto;
 }
 
 .carousel-inner{
+    width: auto;
     margin: auto;
-    width: auto;
-
-}
-
-.quizSelector{
-    margin-top: 1%;
-    display: flex;
-    /* border: 2px solid white; */
-    width: auto;
-
 }
 
 .carousel-caption{
@@ -89,7 +79,6 @@
     left: auto;
     right: auto;
     width: auto;
-
 }
 
 .colourPickText{
@@ -109,7 +98,7 @@
     justify-content:space-evenly;
     align-items: center;
     width: 80vw; height: 10vh;
-    margin: 0% 0% 2% 0%;
+    margin: 0.5% 0% 1.5% 0%;
     border: 2px solid white;
 }
 
@@ -122,33 +111,32 @@ form{
 }
 
 select{
-    color: black;
-    margin: 0;
     width: 100%;
+    margin: 0;
+    color: black;
 }
 
 .quizSelectText{
-    margin: 0;
     width: 100%;
+    margin: 0;
     font-size: 1.5em;
 }
 
 #quizStartButton{
-    width: 25vw;
-    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-color: transparent;
-    border-radius: 0.6em;
-    cursor: pointer;
-    line-height: 1;
+    width: 25vw; height: 5vh;
     margin-left: 3%;
     border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    background-color: transparent;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    line-height: 1;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 #quizStartButtonText{

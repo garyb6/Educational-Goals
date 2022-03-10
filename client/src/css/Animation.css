@@ -19,36 +19,29 @@
     flex-direction: column;
     top: 14vw;
     left: 12vw;
-    
 }
 
 .jump-right{
-    width: 13.2vw;
-    height:auto;
+    width: 13.2vw; height:auto;
 }
 
 .jump-left{
-    width: 13.2vw;
-    height:auto;
+    width: 13.2vw; height:auto;
 }
 
 .ball-container{
     position: relative;
+    top: -8vw;    
     left: 0vw;
-    top: -8vw;
-    
 }
 
 .crouch{
-    width: 100px;
-    height: auto;
+    width: 100px; height: auto;
 }
 
 .ball{
-    width: 450px;
-    height: auto;
+    width: 450px; height: auto;
 }
-
 
 .winner-container{
     display: flex;
@@ -69,17 +62,15 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    width: 37vw;
-    height: 10vw;
-    left: 37vw;
+    width: 37vw; height: 10vw;
     top:6vw;
+    left: 37vw;
 }
 
 .trophy{
-    left: 1vw;
+    width: 45vw; height: 45vw;
     top: 5vh;
-    width: 45vw;
-    height: 45vw;
+    left: 1vw;
     background-image:url('../images/Trophy.png');
     background-repeat: no-repeat;
     background-size: 25vw;
@@ -88,8 +79,7 @@
 .handshake-container{
     justify-content: center;
     position: absolute;
-    width: 37vw;
-    height: 10vw;
+    width: 37vw; height: 10vw;
     left: 36vw;
     bottom:62vh;
 }
@@ -103,6 +93,9 @@
     background-image:url('../images/DrawRight.png');
     background-repeat: no-repeat;
     background-size: 25vw;
+    width: 45vw; height: 45vw;
+    top: 1vw;
+    left: 1vw;
 }
 
 .handshake-left{
@@ -117,12 +110,10 @@
     background-size: 25vw;
 }
 
-
-
 .winner-name{
-    font-size: 2.2vw;
-    padding-left: 9.5vw;
     padding-top: 21.5vw;
+    padding-left: 8.5vw;
+    font-size: 2.2vw;
 }
 
 .next-question{

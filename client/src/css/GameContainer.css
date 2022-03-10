@@ -5,12 +5,11 @@
 }
 
 #game-directions{
-    margin-top: 1%;
-    min-height: 9vh;
     display: flex;
     justify-content:space-around;
     align-items: center;
     width: 100vw;
+    min-height: 5vh;
     color: white;
 }
 
@@ -28,15 +27,15 @@
     box-sizing: border-box;
     position: absolute;
     z-index: 100;
-    top: 80%; 
     width: 25vw; height: 3vw;
     margin: 0.5em;
-    color: white;
-    background-color: transparent;
+    top: 70%;
     border: 2px solid #0f7dcf;
     border-radius: 0.6em;
+    background-color: transparent;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    color: white;
     font-size: 2vw;
     text-decoration: none;
     text-transform: uppercase;

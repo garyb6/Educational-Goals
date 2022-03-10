@@ -7,10 +7,6 @@
     color: white;
 }
 
-#varSign{
-    width: 50vw; height: 45vh;
-}
-
 .help{
     display: flex;
     justify-content: center;

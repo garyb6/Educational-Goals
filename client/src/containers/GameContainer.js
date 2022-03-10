@@ -118,13 +118,13 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 !chosenAnswer ? null :
                 <div id="player2Instructions">
                     <div className="controls">
-                      <span>
+                    <span>
                         <h3>
                         ⬅️ A
                         ⬆️ S
                         ➡️ D
                         </h3>
-                      </span>
+                    </span>
                     </div>       
                     <h4> {playerTwo.name} {flag2}</h4>
                 

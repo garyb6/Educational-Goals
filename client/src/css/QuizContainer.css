@@ -2,23 +2,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* position: relative; */
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; height: 100vh;
 }
 
 #whiteboard{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* flex-wrap: wrap; */
     box-sizing: border-box;
-    margin-top: 20%;
-    gap: 15vh;
-    border: solid 3px #fff;
     position: relative;
+    margin-top: 20%;
     bottom:33.5%;
+    gap: 1vh;
     height: 100vh;
+    border: solid 1px #fff;
+}
+
+.answer{
+    position: relative;
+    text-align: center;
+    width: 30vw; height: 5vh;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 0.6em;
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+#penArea{
+    display: flex;
+    position:relative;
+    box-sizing: border-box;
+    width: 30vw; height: 25%;
+    border-bottom-left-radius: 100% 200%;
+    border-bottom-right-radius: 100% 200%;
+    bottom:33.55%;
+    border: solid 3px #fff;
+    bottom:33.8%;
 }
 
 .answer{
@@ -41,28 +61,25 @@
   box-sizing: border-box;
   height: 25%;
   width: 30vw;
-  /* margin-left: 5%; */
-  /* border-radius: 0 100% 25% 100%; */
   border-bottom-left-radius: 100% 200%;
   border-bottom-right-radius: 100% 200%;
   position:relative;
   bottom:33.8%;
 } 
- 
+
 .answer::after,
 .answer::before {
-    content: "";
     position: absolute;
     display: inline-block;
-    color: #000000;
     overflow: hidden;
-    opacity: 0.3;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
+    z-index: -1;
     left: 0;
     bottom: 0;
-    z-index: -1;
     transition: transform 0.3s ease;
+    color: #000000;
+    opacity: 0.3;
+    content: "";
 }
 
 .answer:hover {
@@ -81,14 +98,10 @@
 }
 
 .Q{grid-area: Q;}
-.A1{grid-area: A1;
-color: black}
-.A2{grid-area: A2;
-  color: black}
-.A3{grid-area: A3;
-  color: black}
-.A4{grid-area: A4;
-  color: black}
+.A1{grid-area: A1; color: black}
+.A2{grid-area: A2; color: black}
+.A3{grid-area: A3; color: black}
+.A4{grid-area: A4; color: black}
 
 #quizBoard{
     display: grid;
@@ -111,129 +124,128 @@ color: black}
 }
 
 .back-home{
-  display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 100;
-  top: 75%;
-  width: 25vw; height: 3vw;
-  margin: 0.5em;
-  color: white;
-  background-color: transparent;
-  border: 2px solid #0f7dcf;
-  border-radius: 0.6em;
-  box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
-  transition: all 150ms ease-in-out;
-  font-size: 2vw;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 100;
+    top: 75%;
+    width: 25vw; height: 3vw;
+    margin: 0.5em;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    font-size: 2vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .back-home:hover{
-  box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-  outline: 0;
-  text-decoration: none;}
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;}
 
 .winner-home{
-    width: 16vw;
-    height: 4vw;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     position: absolute;
     z-index: 100;
-    top:85%;
+    width: 14vw;height: 3vw;
+    margin: 10px;
+    top:75%;
     background-color: transparent;
     border-radius: 0.6em;
-    cursor: pointer;
-    font-weight: 700;
-    line-height: 1;
-    margin: 10px;
     border: 2px solid #0f7dcf;
+    background-color: transparent;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
     text-decoration: none;
-  }
-  
+    cursor: pointer;
+}
+    
 .winner-home:hover{
     box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
-    text-decoration: none;}
+    text-decoration: none;
+}
 
 
 .draw{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  border: 0px solid white;
-  margin: 15% 10% 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15% 10% 10% 10%;
+    border: 0px solid white;
+    color: white;
 }
 
 .back-text{
-  color: white;
+    color: white;
 }
 
 .winner-text{
-  color: white;
+    color: white;
 }
 
 .play-again{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .not-found{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  border: 0px solid white;
-  margin: 0;
-  margin: 10% 10% 10% 18%;
-  width: 60vw;
-  height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw; height: auto;
+    margin: 0;
+    margin: 10% 10% 10% 18%;
+    border: 0px solid white;
+    color: white;
 }
 
 .not-loaded-home{
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .not-loaded-button{
-  display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  /* top: 38%; */
-  width: 50%; height: 3%;
-  margin: 0.5em;
-  color: white;
-  background-color: transparent;
-  border: 2px solid #0f7dcf;
-  border-radius: 0.6em;
-  box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
-  transition: all 150ms ease-in-out;
-  font-size: 2vw;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50%; height: 3%;
+    margin: 0.5em;
+    border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    background-color: transparent;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    color: white;
+    font-size: 2vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .not-loaded-button:hover {
-  box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-  outline: 0;
-  text-decoration: none;
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
 }
 
 .one-player-points{

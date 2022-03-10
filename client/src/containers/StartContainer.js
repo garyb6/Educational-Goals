@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
-import Stand from "./../images/Stand.png";
-import logo from "../images/logo.jpg"
+import { styles } from '../data/Styles'
+import Request from '../helpers/request';
 import "./../css/StartContainer.css"
 import "./../css/Animation.css"
+import Stand from "./../images/Stand.png";
+import logo from "../images/logo.jpg"
 import gameMusic from '../sounds/MOTD.mp3'
-import Request from '../helpers/request';
-import { styles } from '../data/Styles'
-// import { Carousel } from 'react-responsive-carousel';
 
 
 const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quizzes, setQuizzes, setSelectedQuiz, setChosenQuiz}) => {
@@ -136,5 +135,3 @@ const StartContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quiz
 }
 
 export default StartContainer;
-
-// onClick={playGameMusic}
