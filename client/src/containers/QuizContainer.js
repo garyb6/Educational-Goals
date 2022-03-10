@@ -9,6 +9,7 @@ import Champions_league from '../sounds/Champions_league.mp3'
 import Draw from '../sounds/Draw.mp3'
 import Request from '../helpers/request';
 import Confetti from 'react-confetti'
+import { styles } from '../data/Styles'
 
 const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChosenQuiz, questionNumber, setChosenAnswer }) => {
 
@@ -26,11 +27,11 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
 
     if (chosenQuiz === null) {
         return (
-        <div className = "not-found">
-        <h2 className='not-loaded'>Quiz not loaded yet</h2> 
-        <h4 className='please-wait'>Please wait or return to home page</h4>
-        <Link className="not-loaded-button not-loaded-home" to="/"><div id="nextQuestionText">Home</div></Link>
-        </div>)
+            <div className="not-found">
+                <h2 className='not-loaded'>Quiz not loaded yet</h2>
+                <h4 className='please-wait'>Please wait or return to home page</h4>
+                <Link className="not-loaded-button not-loaded-home" to="/"><div id="nextQuestionText">Home</div></Link>
+            </div>)
     }
 
     const playerVictory = (player) => {
@@ -38,7 +39,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             <>
                 <Confetti />
                 {championMusic()}
-                <div className='winner-container'><h1>{player.name} is the winner!</h1></div>
+                <div className='winner-container'><h1>{player.name} is the winner!</h1><a href='/' className="winner-home winner-text">Play again?</a></div>
                 <div className="trophy-container">
                     <motion.div className='trophy'
                         drag
@@ -47,18 +48,16 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
                         <div className='winner-name'>{player.name}</div>
                     </motion.div>
                 </div>
-                <a href='/' className="winner-home winner-text">Play again?</a>
             </>)
     }
 
     if (questionNumber > 10) {
-
         let playerOneScore = playerOne.score.reduce((a, b) => a + b, 0);
         let playerTwoScore = playerTwo.score.reduce((a, b) => a + b, 0);
 
-
         if (playerTwo.name === "Player 2" || playerTwo.name === ""){
             return <>
+            <div className='one-player-points'><h2>You scored {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10 goals!</h2></div>
                 {playerVictory(playerOne)}
                 <h2>You scored {(playerOneScore + playerTwoScore)} out of 10 goals!</h2>
                 </>
@@ -71,18 +70,20 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         } else {
             return (
                 <>
-                {drawSound()}
-                <div className = "draw">
-                <h1>It's a draw!</h1> 
-                <a href='/' className="back-home back-text">Play again?</a>
-                </div>
-                <div className = "handshake-container">
-                            <motion.div className='handshake'
-                            drag
-                            dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
-                        >
-                        </motion.div>
+                    {drawSound()}
+                    <div className="draw">
+                        <h1>It's a draw!</h1>
+                        <a href='/' className="back-home back-text">Play again?</a>
                     </div>
+                    <motion.div className="handshake-container"
+                    drag
+                    dragConstraints={{ right: 1, left: 1, bottom: 1, top: 1 }}
+                    >
+                        <div className='handshake-right' style={styles[playerOne.filter].filter}></div>
+                            
+                        <div className='handshake-left' style={styles[playerTwo.filter].filter}></div>
+                        
+                    </motion.div>
                 </>)
         }
     }
@@ -99,7 +100,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
         <>
             <div id="quizContainer">
                 <div id="whiteboard">
-                        <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
+                    <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                     <div id="quizBoard">
                         <div className="Q">
                             <h2>{chosenQuiz.questions[questionNumber - 1].ask}</h2>
