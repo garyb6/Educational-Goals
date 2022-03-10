@@ -1,8 +1,6 @@
 
 .bigger-background{
-    /* display: flex; */
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
 .background-image{
@@ -11,18 +9,13 @@
     align-items: center;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
-    /* background-size: cover; */
     border-radius: 25px;
     background-position: center;
-    /* border: 1px solid black; */
-    
-    
 }
 
 
 .keeper-container{
     position: relative;
-    /* border: 1px solid black; */
     flex-direction: column;
     top: 14vw;
     left: 12vw;
@@ -41,7 +34,6 @@
 
 .ball-container{
     position: relative;
-    /* border: 1px solid black; */
     left: 0vw;
     top: -8vw;
     
@@ -84,8 +76,6 @@
 }
 
 .trophy{
-    /* display: flex;
-    justify-content: center; */
     left: 1vw;
     top: 5vh;
     width: 45vw;
@@ -97,7 +87,6 @@
 
 .handshake-container{
     justify-content: center;
-    /* display: flex; */
     position: absolute;
     width: 37vw;
     height: 10vw;
@@ -106,8 +95,6 @@
 }
 
 .handshake-right{
-    /* display: flex;
-    justify-content: center; */
     position: absolute;
     left: 1vw;
     top: 12vw;
