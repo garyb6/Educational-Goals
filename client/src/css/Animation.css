@@ -1,6 +1,5 @@
 
 .bigger-background{
-    /* display: flex; */
     justify-content: center;
 }
 
@@ -10,7 +9,6 @@
     align-items: center;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
-    /* background-size: cover; */
     border-radius: 25px;
     background-position: center;
 }
@@ -51,7 +49,8 @@
     flex-direction: column;
     align-items: center;
     left: 40vw;
-    padding-top: 1%;
+    padding-top: 2%;
+    padding-bottom: 4%;
 }
 
 .winner-font{
@@ -61,25 +60,37 @@
 .trophy-container{
     justify-content: center;
     display: flex;
+    flex-direction: row;
     position: relative;
     width: 37vw; height: 10vw;
-    top:10vw;
+    top:6vw;
     left: 37vw;
+}
+
+.trophy{
+    width: 45vw; height: 45vw;
+    top: 5vh;
+    left: 1vw;
+    background-image:url('../images/Trophy.png');
+    background-repeat: no-repeat;
+    background-size: 25vw;
 }
 
 .handshake-container{
     justify-content: center;
-    display: flex;
-    position: relative;
+    position: absolute;
     width: 37vw; height: 10vw;
-    top:-5vw;
-    left: 38vw;
+    left: 36vw;
+    bottom:62vh;
 }
 
-.trophy{
-    /* display: flex;
-    justify-content: center; */
-    background-image:url('../images/Trophy.png');
+.handshake-right{
+    position: absolute;
+    left: 1vw;
+    top: 12vw;
+    width: 45vw;
+    height: 45vw;
+    background-image:url('../images/DrawRight.png');
     background-repeat: no-repeat;
     background-size: 25vw;
     width: 45vw; height: 45vw;
@@ -87,22 +98,22 @@
     left: 1vw;
 }
 
-.handshake{
-    /* display: flex;
-    justify-content: center; */
-    background-image:url('../images/Draw.png');
+.handshake-left{
+    position: absolute;
+    left: 1vw;
+    top: 12vw;
+    width: 45vw;
+    height: 45vw;
+    z-index: 100;
+    background-image:url('../images/DrawLeft.png');
     background-repeat: no-repeat;
     background-size: 25vw;
-    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%);
-    width: 45vw; height: 45vw;
-    top: 12vw;
-    left: 1vw;
 }
 
 .winner-name{
-    font-size: 2.2vw;
     padding-top: 21.5vw;
     padding-left: 8.5vw;
+    font-size: 2.2vw;
 }
 
 .next-question{

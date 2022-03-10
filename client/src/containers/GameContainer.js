@@ -4,9 +4,6 @@ import ScoreDisplay from '../components/ScoreDisplay';
 import Animation from '../components/Animation';
 import "./../css/GameContainer.css"
 import "./../css/Animation.css"
-import leftArrow from "./../images/left-arrow.png";
-import upArrow from "./../images/top-arrow.png";
-import rightArrow from "./../images/right-arrow.png";
 import Goal from '../sounds/Goal_chant.wav'
 import Miss from '../sounds/Goal_missed.wav'
 import Kick from '../sounds/Kick.wav'
@@ -102,19 +99,19 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                    <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
+                <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 <div id="game-directions">
                     {!chosenAnswer ? null :
                         <div id="player1Instructions">
                         <div className="controls"><span>
                             <h3>
-                                <img className="directions" src={leftArrow}></img>A
-                                <img className="directions" src={upArrow}></img>S
-                                <img className="directions" src={rightArrow}></img>D
+                                ⬅️ J
+                                ⬆️ K
+                                ➡️ L
                             </h3>
                         </span>
                         </div>
-                        <h4>{playerOne.name} {flag1}</h4>
+                      <h4> {playerOne.name} {flag1}</h4>
                     </div>
                     }
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
@@ -123,9 +120,9 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     <div className="controls">
                     <span>
                         <h3>
-                        <img className="directions" src={leftArrow}></img> J 
-                        <img className="directions" src={upArrow}></img>K 
-                        <img className="directions" src={rightArrow}></img>L
+                        ⬅️ A
+                        ⬆️ S
+                        ➡️ D
                         </h3>
                     </span>
                     </div>       
