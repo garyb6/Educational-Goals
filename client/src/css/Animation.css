@@ -64,7 +64,8 @@
     flex-direction: column;
     align-items: center;
     left: 40vw;
-    padding-top: 1%;
+    padding-top: 2%;
+    padding-bottom: 8%;
 }
 
 .winner-font{
@@ -74,6 +75,7 @@
 .trophy-container{
     justify-content: center;
     display: flex;
+    flex-direction: row;
     position: relative;
     width: 37vw;
     height: 10vw;
@@ -95,7 +97,7 @@
     /* display: flex;
     justify-content: center; */
     left: 1vw;
-    top: 1vw;
+    top: 5vh;
     width: 45vw;
     height: 45vw;
     background-image:url('../images/Trophy.png');
@@ -103,22 +105,34 @@
     background-size: 25vw;
 }
 
-.handshake{
+.handshake-right{
     /* display: flex;
     justify-content: center; */
     left: 1vw;
     top: 12vw;
     width: 45vw;
     height: 45vw;
-    background-image:url('../images/Draw.png');
+    background-image:url('../images/DrawRight.png');
     background-repeat: no-repeat;
     background-size: 25vw;
-    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%)
+    /* filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%) */
 }
+
+.handshake-left{
+    left: 1vw;
+    top: 12vw;
+    width: 45vw;
+    height: 45vw;
+    background-image:url('../images/DrawLeft.png');
+    background-repeat: no-repeat;
+    background-size: 25vw;
+}
+
+
 
 .winner-name{
     font-size: 2.2vw;
-    padding-left: 8.5vw;
+    padding-left: 9.5vw;
     padding-top: 21.5vw;
 }
 
