@@ -51,7 +51,7 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             </>)
     }
 
-    if (questionNumber > 10) {
+    if (questionNumber > 2) {
         let playerOneScore = playerOne.score.reduce((a, b) => a + b, 0);
         let playerTwoScore = playerTwo.score.reduce((a, b) => a + b, 0);
 
@@ -59,7 +59,6 @@ const QuizContainer = ({ playerOne, playerTwo, selectedQuiz, chosenQuiz, setChos
             return <>
             <div className='one-player-points'><h2>You scored {(playerOne.score.reduce((a, b) => a + b, 0) + playerTwo.score.reduce((a, b) => a + b, 0))} out of 10 goals!</h2></div>
                 {playerVictory(playerOne)}
-                <h2>You scored {(playerOneScore + playerTwoScore)} out of 10 goals!</h2>
                 </>
         }
 

@@ -105,9 +105,9 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                         <div id="player1Instructions">
                         <div className="controls"><span>
                             <h3>
-                                ⬅️ J
-                                ⬆️ K
-                                ➡️ L
+                                ⬅️ A
+                                ⬆️ S
+                                ➡️ D
                             </h3>
                         </span>
                         </div>
@@ -120,9 +120,9 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                     <div className="controls">
                     <span>
                         <h3>
-                        ⬅️ A
-                        ⬆️ S
-                        ➡️ D
+                        ⬅️ J
+                        ⬆️ K
+                        ➡️ L
                         </h3>
                     </span>
                     </div>       

@@ -93,9 +93,6 @@
     background-image:url('../images/DrawRight.png');
     background-repeat: no-repeat;
     background-size: 25vw;
-    width: 45vw; height: 45vw;
-    top: 1vw;
-    left: 1vw;
 }
 
 .handshake-left{
@@ -112,7 +109,7 @@
 
 .winner-name{
     padding-top: 21.5vw;
-    padding-left: 8.5vw;
+    padding-left: 9.5vw;
     font-size: 2.2vw;
 }
 

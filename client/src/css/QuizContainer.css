@@ -15,7 +15,7 @@
     bottom:33.5%;
     gap: 1vh;
     height: 100vh;
-    border: solid 1px #fff;
+    border: solid 3px #fff;
 }
 
 .answer{
@@ -104,6 +104,7 @@
 .A4{grid-area: A4; color: black}
 
 #quizBoard{
+    /* margin: 10%; */
     display: grid;
     flex-direction: column;
     justify-items: center;
@@ -111,12 +112,11 @@
     grid-template-columns: 50px 1fr 1fr 50px;
     grid-template-rows: auto;
     position: relative;
-    bottom: 20%;
+    top: 5%;
     grid-template-areas:
     " . Q Q . "
     ". A1 A2 ."
     ". A3 A4 ."
-    
 }
 
 .noHover{
@@ -160,7 +160,7 @@
     z-index: 100;
     width: 14vw;height: 3vw;
     margin: 10px;
-    top:75%;
+    bottom:5%;
     background-color: transparent;
     border-radius: 0.6em;
     border: 2px solid #0f7dcf;
