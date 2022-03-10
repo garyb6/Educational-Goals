@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; height: 100vh;
 }
 
 #whiteboard{
@@ -13,60 +12,57 @@
     align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
+    position: relative;
     margin-top: 20%;
+    bottom:33.5%;
     gap: 1vh;
     border: solid 1px #fff;
-    position: relative;
-    bottom:33.5%
 }
 
 .answer{
-  width: 30vw;
-  height: 5vh;
-  text-align: center;
-  background: white;
-  border-radius: 0.6em;
-  padding: 2%;
-  margin: 1%;
-  transition: transform 0.3s ease;
-  position: relative;
+    position: relative;
+    text-align: center;
+    width: 30vw; height: 5vh;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 0.6em;
+    background: white;
+    transition: transform 0.3s ease;
 }
 
 #penArea{
-  display: flex;
-  border: solid 1px #fff;
-  box-sizing: border-box;
-  height: 12.5vh;
-  width: 45vh;
-  /* margin-left: 5%; */
-  /* border-radius: 0 100% 25% 100%; */
-  border-bottom-left-radius: 100% 200%;
-  border-bottom-right-radius: 100% 200%;
-  position:relative;
-  bottom:33.55%;
+    display: flex;
+    position:relative;
+    box-sizing: border-box;
+    width: 45vh; height: 12.5vh;
+    /* margin-left: 5%; */
+    /* border-radius: 0 100% 25% 100%; */
+    border-bottom-left-radius: 100% 200%;
+    border-bottom-right-radius: 100% 200%;
+    bottom:33.55%;
+    border: solid 1px #fff;
 } 
- 
+
 .answer::after,
 .answer::before {
-    content: "";
     position: absolute;
     display: inline-block;
-    color: #000000;
     overflow: hidden;
-    opacity: 0.3;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
+    z-index: -1;
     left: 0;
     bottom: 0;
-    z-index: -1;
     transition: transform 0.3s ease;
+    color: #000000;
+    opacity: 0.3;
+    content: "";
 }
 
 .answer:hover {
     transform: translate(-12px, -12px);
-    color: #000000;
     background:#c090f3;
     box-shadow: 0 0 10px #c090f3, 0 0 40px #c090f3, 0 0 80px #c090f3;
+    color: #000000;
 }
 
 .answer:hover::after {
@@ -78,14 +74,10 @@
 }
 
 .Q{grid-area: Q;}
-.A1{grid-area: A1;
-color: black}
-.A2{grid-area: A2;
-  color: black}
-.A3{grid-area: A3;
-  color: black}
-.A4{grid-area: A4;
-  color: black}
+.A1{grid-area: A1; color: black}
+.A2{grid-area: A2; color: black}
+.A3{grid-area: A3; color: black}
+.A4{grid-area: A4; color: black}
 
 #quizBoard{
     display: grid;
@@ -105,129 +97,127 @@ color: black}
 }
 
 .back-home{
-  display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 100;
-  top: 75%;
-  width: 25vw; height: 3vw;
-  margin: 0.5em;
-  color: white;
-  background-color: transparent;
-  border: 2px solid #0f7dcf;
-  border-radius: 0.6em;
-  box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
-  transition: all 150ms ease-in-out;
-  font-size: 2vw;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 100;
+    top: 75%;
+    width: 25vw; height: 3vw;
+    margin: 0.5em;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    font-size: 2vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .back-home:hover{
-  box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-  outline: 0;
-  text-decoration: none;}
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;}
 
 .winner-home{
-    width: 14vw;
-    height: 3vw;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     position: absolute;
     z-index: 100;
-    top:75%;
-    background-color: transparent;
-    border-radius: 0.6em;
-    cursor: pointer;
-    font-weight: 700;
-    line-height: 1;
+    width: 14vw;height: 3vw;
     margin: 10px;
+    top:75%;
+    border-radius: 0.6em;
     border: 2px solid #0f7dcf;
+    background-color: transparent;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
+    font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
     text-decoration: none;
-  }
-  
+    cursor: pointer;
+}
+    
 .winner-home:hover{
     box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
-    text-decoration: none;}
+    text-decoration: none;
+}
 
 
 .draw{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  border: 0px solid white;
-  margin: 15% 10% 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15% 10% 10% 10%;
+    border: 0px solid white;
+    color: white;
 }
 
 .back-text{
-  color: white;
+    color: white;
 }
 
 .winner-text{
-  color: white;
+    color: white;
 }
 
 .play-again{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .not-found{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  border: 0px solid white;
-  margin: 0;
-  margin: 10% 10% 10% 18%;
-  width: 60vw;
-  height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw; height: auto;
+    margin: 0;
+    margin: 10% 10% 10% 18%;
+    border: 0px solid white;
+    color: white;
 }
 
 .not-loaded-home{
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .not-loaded-button{
-  display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  /* top: 38%; */
-  width: 50%; height: 3%;
-  margin: 0.5em;
-  color: white;
-  background-color: transparent;
-  border: 2px solid #0f7dcf;
-  border-radius: 0.6em;
-  box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
-  transition: all 150ms ease-in-out;
-  font-size: 2vw;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50%; height: 3%;
+    margin: 0.5em;
+    border: 2px solid #0f7dcf;
+    border-radius: 0.6em;
+    background-color: transparent;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    color: white;
+    font-size: 2vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .not-loaded-button:hover {
-  box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-  outline: 0;
-  text-decoration: none;
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
 }
 
 

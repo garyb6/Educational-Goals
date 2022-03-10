@@ -2,7 +2,6 @@
 .bigger-background{
     /* display: flex; */
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
 .background-image{
@@ -14,49 +13,37 @@
     /* background-size: cover; */
     border-radius: 25px;
     background-position: center;
-    /* border: 1px solid black; */
-    
-    
 }
 
 
 .keeper-container{
     position: relative;
-    /* border: 1px solid black; */
     flex-direction: column;
     top: 14vw;
     left: 12vw;
-    
 }
 
 .jump-right{
-    width: 13.2vw;
-    height:auto;
+    width: 13.2vw; height:auto;
 }
 
 .jump-left{
-    width: 13.2vw;
-    height:auto;
+    width: 13.2vw; height:auto;
 }
 
 .ball-container{
     position: relative;
-    /* border: 1px solid black; */
+    top: -8vw;    
     left: 0vw;
-    top: -8vw;
-    
 }
 
 .crouch{
-    width: 100px;
-    height: auto;
+    width: 100px; height: auto;
 }
 
 .ball{
-    width: 450px;
-    height: auto;
+    width: 450px; height: auto;
 }
-
 
 .winner-container{
     display: flex;
@@ -75,51 +62,47 @@
     justify-content: center;
     display: flex;
     position: relative;
-    width: 37vw;
-    height: 10vw;
-    left: 37vw;
+    width: 37vw; height: 10vw;
     top:10vw;
+    left: 37vw;
 }
 
 .handshake-container{
     justify-content: center;
     display: flex;
     position: relative;
-    width: 37vw;
-    height: 10vw;
-    left: 38vw;
+    width: 37vw; height: 10vw;
     top:-5vw;
+    left: 38vw;
 }
 
 .trophy{
     /* display: flex;
     justify-content: center; */
-    left: 1vw;
-    top: 1vw;
-    width: 45vw;
-    height: 45vw;
     background-image:url('../images/Trophy.png');
     background-repeat: no-repeat;
     background-size: 25vw;
+    width: 45vw; height: 45vw;
+    top: 1vw;
+    left: 1vw;
 }
 
 .handshake{
     /* display: flex;
     justify-content: center; */
-    left: 1vw;
-    top: 12vw;
-    width: 45vw;
-    height: 45vw;
     background-image:url('../images/Draw.png');
     background-repeat: no-repeat;
     background-size: 25vw;
-    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%)
+    filter: invert(99%) sepia(6%) saturate(282%) hue-rotate(301deg) brightness(117%) contrast(94%);
+    width: 45vw; height: 45vw;
+    top: 12vw;
+    left: 1vw;
 }
 
 .winner-name{
     font-size: 2.2vw;
-    padding-left: 8.5vw;
     padding-top: 21.5vw;
+    padding-left: 8.5vw;
 }
 
 .next-question{
