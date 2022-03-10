@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./../css/Instructions.css"
-import "./../css/GameContainer.css"
 
 const Instructions = () => {
 
     return(
-            <>
+        <>
             <div className="instructions">
             <h1 className="instruction-title">How to play</h1>
             <h2 className="instruction-title">Welcome to Educational Goals!</h2>
@@ -22,7 +21,7 @@ const Instructions = () => {
             <p className="instruction-paragraph">You can also create your own quizzes to play with your friends!</p>
             <Link id="instruction-home" to="/"><div id="nextQuestionText">Home</div></Link>
             </div>
-           </>
-           )
+        </>
+    )
 }
 export default Instructions;

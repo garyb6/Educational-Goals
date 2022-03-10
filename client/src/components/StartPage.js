@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./../css/StartPage.css"
 import logo from "../images/logo.jpg"
+
 const StartPage = () => {
     
     return (

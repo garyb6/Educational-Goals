@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
 import Request from '../helpers/request';
 import CreateOptions from './CreateOptions';
 import "./../css/Create.css"

@@ -121,13 +121,13 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                 !chosenAnswer ? null :
                 <div id="player2Instructions">
                     <div className="controls">
-                      <span>
+                    <span>
                         <h3>
                         <img className="directions" src={leftArrow}></img> J 
                         <img className="directions" src={upArrow}></img>K 
                         <img className="directions" src={rightArrow}></img>L
                         </h3>
-                      </span>
+                    </span>
                     </div>       
                     <h4> {playerTwo.name} {flag2}</h4>
                 

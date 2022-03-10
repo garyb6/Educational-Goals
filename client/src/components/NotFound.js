@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import gameMusic from '../sounds/MOTD.mp3'
 import "./../css/NotFound.css"
-import varSign from "../images/var.png"
+import gameMusic from '../sounds/MOTD.mp3'
 
 const NotFound = () => {
 

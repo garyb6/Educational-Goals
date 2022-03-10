@@ -1,17 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
+import { styles } from '../data/Styles'
+import "../css/Animation.css"
 import Crouch from "../images/Crouch.png"
 import Jump_left from "../images/Jump_left.png"
 import Jump_right from "../images/Jump_right.png"
 import Football from "../images/Football.png"
-import "../css/Animation.css"
-import useSound from 'use-sound';
-import Kick from '../sounds/Kick.wav'
-import { styles } from '../data/Styles'
 
 function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnimating, setIsAnimating, questionNumber}) {
 
-    const [playKick] = useSound(Kick)
     const currentPlayer = ((playerTwo.name === "Player 2" || playerTwo.name === "")) ? "one" : (questionNumber % 2 === 1) ? "one" : "two"
     const currentGoalie = ((playerTwo.name === "Player 2" || playerTwo.name === ""))? playerOne : (questionNumber % 2 === 0) ? playerOne : playerTwo
     
@@ -56,12 +53,10 @@ function Animation({playerOne, playerTwo, playerOneInput, playerTwoInput, isAnim
     const shootAnimations = [
         // Right
         <div className="ball-container">
-        {/* {playKick()} */}
         <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,x: isAnimating ? 220 : 0,rotate: isAnimating ? 360 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
         </div>,
         // Middle
         <div className="ball-container">
-        {/* {playKick()} */}
         <motion.img className="ball"src={Football}animate={{y: isAnimating ? 0 : 230,rotate: isAnimating ? 160 : 0,scale: isAnimating ? 0.15 : 0.25,}}transition={{type: "spring",stiffness: 40}}/>
         </div>,
         // Left

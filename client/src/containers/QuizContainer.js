@@ -4,7 +4,6 @@ import ScoreDisplay from '../components/ScoreDisplay';
 import { motion } from 'framer-motion'
 import "./../css/QuizContainer.css"
 import useSound from 'use-sound';
-import gameMusic from '../sounds/MOTD.mp3'
 import whistle from '../sounds/Whistle.wav'
 import Champions_league from '../sounds/Champions_league.mp3'
 import Draw from '../sounds/Draw.mp3'
