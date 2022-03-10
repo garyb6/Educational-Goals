@@ -102,37 +102,37 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
     return (
         <>
             <div id="gameContainer">
-                    <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
+                <ScoreDisplay playerOne={playerOne} playerTwo={playerTwo} questionNumber={questionNumber} />
                 <div id="game-directions">
                     {!chosenAnswer ? null :
                         <div id="player1Instructions">
-                        <div className="controls"><span>
-                            <h3>
-                                <img className="directions" src={leftArrow}></img>A
-                                <img className="directions" src={upArrow}></img>S
-                                <img className="directions" src={rightArrow}></img>D
-                            </h3>
-                        </span>
+                            <div className="controls"><span>
+                                <h3>
+                                    <img className="directions" src={leftArrow}></img>A
+                                    <img className="directions" src={upArrow}></img>S
+                                    <img className="directions" src={rightArrow}></img>D
+                                </h3>
+                            </span>
+                            </div>
+                            <h4>{playerOne.name} {flag1}</h4>
                         </div>
-                        <h4>{playerOne.name} {flag1}</h4>
-                    </div>
                     }
-                {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
-                !chosenAnswer ? null :
-                <div id="player2Instructions">
-                    <div className="controls">
-                      <span>
-                        <h3>
-                        <img className="directions" src={leftArrow}></img> J 
-                        <img className="directions" src={upArrow}></img>K 
-                        <img className="directions" src={rightArrow}></img>L
-                        </h3>
-                      </span>
-                    </div>       
-                    <h4> {playerTwo.name} {flag2}</h4>
-                
-                </div>
-                }
+                    {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
+                        !chosenAnswer ? null :
+                            <div id="player2Instructions">
+                                <div className="controls">
+                                    <span>
+                                        <h3>
+                                            <img className="directions" src={leftArrow}></img> J
+                                            <img className="directions" src={upArrow}></img>K
+                                            <img className="directions" src={rightArrow}></img>L
+                                        </h3>
+                                    </span>
+                                </div>
+                                <h4> {playerTwo.name} {flag2}</h4>
+
+                            </div>
+                    }
                 </div>
                 <Animation playerOne={playerOne} playerTwo={playerTwo} playerOneInput={playerOneInput} playerTwoInput={playerTwoInput} isAnimating={isAnimating} setIsAnimating={setIsAnimating} questionNumber={questionNumber} />
                 <div className="next-question">{isAnimating ? kick.play() && <Link onClick={handleClick} id="nextQuestion" to="/quiz"><div id="nextQuestionText">Next question</div></Link> : null}</div>
