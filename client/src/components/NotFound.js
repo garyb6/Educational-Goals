@@ -9,10 +9,12 @@ const NotFound = () => {
         <>
         <div id="wrongway">
         <i className="fas fa-map-signs fa-7x"/><br/>
+        <div id="pageText">
         <h4>There's nothing to see...</h4>
         <h4>Oh well, play some soothing music:</h4>
+        </div>
         <audio controls src={gameMusic} ></audio>
-        <Link to="/" className="help"><div id="helpText">Get me out of here!</div></Link>
+        <Link to="/" className="link"><div id="linkText">Get me out of here!</div></Link>
         </div>
         </>
     )
