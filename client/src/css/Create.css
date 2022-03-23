@@ -49,7 +49,18 @@
     text-decoration: none;
 }
 
-.createButton1{
+.createButton:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
+}
+
+.createButtonText{
+margin: 4 (25%);
+font-size: 35px;
+}
+
+.createOptions{
     width: 400px;
     height: 50px;
     display: flex;
@@ -71,6 +82,17 @@
     margin-top: 1%;
 }
 
+.createOptions:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
+}
+
+.createOptionsText{
+margin: 4 (25%);
+font-size: 35px;
+}
+
 #instructions{
     font-size: large;
     margin: 3%;
@@ -79,18 +101,6 @@
 #optionLabel{
     width:20vw;
     padding:1%;
-}
-
-
-.createButton:hover {
-    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-    outline: 0;
-    text-decoration: none;
-}
-
-.createButtonText{
-margin: 4 (25%);
-font-size: 35px;
 }
 
 .questionBox{

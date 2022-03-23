@@ -2,12 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10% 10% 10% 10%;
-    border: 0px solid white;
+    margin: 10% 0% 0% 0%;
     color: white;
 }
 
-.help{
+#pageText{
+    margin: 0% 1% 1% 0.5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +25,7 @@
     cursor: pointer;
     font-weight: 700;
     line-height: 1;
-    margin: 10px;
+    margin: 1%;
     border: 2px solid #0f7dcf;
     box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
     transition: all 150ms ease-in-out;
@@ -26,12 +33,12 @@
     text-decoration: none;
 }
 
-.help:hover{
+.link:hover{
     box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
     outline: 0;
     text-decoration: none;}
 
-#helpText{
+#linkText{
     color: #0f7dcf;
     text-decoration: none;
 }
