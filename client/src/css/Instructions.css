@@ -1,33 +1,4 @@
-#instruction-home{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    position: absolute;
-    z-index: 100;
-    width: 25vw; height: 3vw;
-    margin: 0.5em;
-    top: 75%;
-    color: white;
-    background-color: transparent;
-    border: 2px solid #0f7dcf;
-    border-radius: 0.6em;
-    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
-    transition: all 150ms ease-in-out;
-    font-size: 2vw;
-    text-decoration: none;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-#instruction-home:hover {
-    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
-    outline: 0;
-    text-decoration: none;
-}
-
-.instructions{
+.i-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,22 +6,28 @@
     padding-top: 1.2vw;
 }
 
-.instruction-title{
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.i-title{
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-bottom: 1.4vw;
 }
 
-.instruction-paragraph{
+.i-text{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 1% 5% 0% 5%;
     font-size: larger;
     text-align: center;
 }
 
-.instruction-button{
+.i-button{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -58,27 +35,43 @@
     padding-left: 1.8vw;
 }
 
-.player-title{
+.i-subtitle{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size: larger;
+    font-size:x-large;
     padding-top: 1.3vw;
 }
 
-.home-button{
-    display:flex;
-    flex-direction: row;
+.i-home{
+    display: inline-block;
     justify-content: center;
+    align-self: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 20vw; height: 2vh;
+    padding: 2%;
+    margin: 1%;
+    background-color: transparent;
+    border: 3px solid #0f7dcf;
+    border-radius: 0.6em;
+    box-shadow: 0 0 40px 40px #0f7dcf inset, 0 0 0 0 #0f7dcf;
+    transition: all 150ms ease-in-out;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: large;
+    cursor: pointer;
 }
 
-.go-home{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 10vw;
+.i-home:hover {
+    box-shadow: 0 0 10px 0 blueviolet inset, 0 0 10px 4px blueviolet;
+    outline: 0;
+    text-decoration: none;
 }
 
-#instruction-home{
-    top: 83%
+.i-home-text{
+margin: 4 (25%);
+color: white;
 }

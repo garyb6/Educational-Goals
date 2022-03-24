@@ -6,6 +6,10 @@
     color: white;
 }
 
+#header{
+    margin-bottom: 1%;
+}
+
 #logo{
     width: 25vw; height: auto;
     margin: 1%;

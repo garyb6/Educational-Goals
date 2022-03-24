@@ -111,7 +111,7 @@ const GameContainer = ({ playerOne, playerTwo, setPlayerOne, setPlayerTwo, quest
                             </h3>
                         </span>
                         </div>
-                      <h4> {playerOne.name} {flag1}</h4>
+                        <h4> {playerOne.name} {flag1}</h4>
                     </div>
                     }
                 {((playerTwo.name === "Player 2" || playerTwo.name === "")) ? null :
