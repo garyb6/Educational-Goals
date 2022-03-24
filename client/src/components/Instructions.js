@@ -22,7 +22,7 @@ const Instructions = () => {
                 <div className="i-text"> <b>Player One</b>: <b className="i-button">A = ⬅️</b> <b className="i-button">S = ⬆️</b> <b className="i-button">D = ➡️</b></div>
                 <div className="i-text"> <b>Player Two</b>: <b className="i-button">J = ⬅️</b> <b className="i-button">K = ⬆️</b> <b className="i-button">L = ➡️</b></div>
                 <p className="i-text">You can also create your own quizzes to play with your friends!</p>
-                <button><Link className="i-home" to="/"><div className="i-home-text">Back to home</div></Link></button>
+                <Link className="i-home" to="/"><div className="i-home-text">Back to home</div></Link>
             </div>
         </>
     )
