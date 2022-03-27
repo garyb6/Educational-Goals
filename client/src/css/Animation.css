@@ -1,4 +1,3 @@
-
 .bigger-background{
     justify-content: center;
 }
@@ -12,7 +11,6 @@
     border-radius: 25px;
     background-position: center;
 }
-
 
 .keeper-container{
     position: relative;
@@ -108,8 +106,8 @@
 }
 
 .winner-name{
-    padding-top: 21.5vw;
-    padding-left: 9.5vw;
+    padding-top: 22vw;
+    padding-left: 7.75vw;
     font-size: 2.2vw;
 }
 
