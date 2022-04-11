@@ -1,5 +1,6 @@
-MVP
-Build an app to be used by teachers in online lessons. 
+# MVP
+
+## Build an app to be used by teachers in online lessons. 
 
 The app is a game which is to be used on Zoom to revise material taught in the lesson. 
 It revolves around a competitive quiz element where a correct answer lets the player take a penalty. 
