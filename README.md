@@ -1,12 +1,12 @@
 <p align="center">
-<img src="/client/src/images/Logo-round.jpg" alt="logo" width="400px" height="400px"/>
+<img src="/client/src/images/Logo-round.jpg" alt="logo" width="300px" height="300px"/>
 </p>
 <br>
 
 # Educational Goals
 
 ### Our Goals:
-<br>
+
 <p>This app is designed as a teaching tool in the form of a penalty shoot out based game to be used either in small group settings and/or over Zoom to revise material taught in the lesson/session.
 </p>
 
