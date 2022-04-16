@@ -1,21 +1,35 @@
-# MVP
+![Educational Goals](/client/src/images/Logo-round.jpg)
 
-## Build an app to be used by teachers in online lessons. 
+## We proudly present:
+<br>
 
-The app is a game which is to be used on Zoom to revise material taught in the lesson. 
-It revolves around a competitive quiz element where a correct answer lets the player take a penalty. 
+# **Educational Goals**
 
-The user must be able to answer questions coming from a self-made API.
-The players must be able to control the striker and goalkeeper in the penalty.
-The score should be displayed throughout the game.
-The app must have a start screen with at least a name selector.
+### Our Own Goals
+<br>
+<p>This app is designed as a teaching tool in the form of a penalty shoot out based game to be used either in small group settings and/or over Zoom to revise material taught in the lesson/session.
+</p>
 
-Resources used
-React
-Spring
-Bootstrap
-Hibernate
-Framer
+<p>
+It revolves around a competitive quiz element where a correct answer lets the player take a penalty.
+</p>
+
+
+### Our MVP:
+
+* The user must be able to answer questions coming from a self-made API.
+* The players must be able to control the striker and goalkeeper in the penalty.
+* The score should be displayed throughout the game.
+* The app must have a start screen with at least a name selector.
+
+
+### Resources used:
+
+* React
+* Spring
+* Bootstrap
+* Hibernate
+* Framer
 
 From the command line:
 Complete an npm install and open the server package with your favoured IDE, run the application to load the database of questions/answers. 
