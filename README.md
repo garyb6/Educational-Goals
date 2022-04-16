@@ -104,10 +104,28 @@ ___
 
 ### Penalty Scored:
 \
-![questions](/imgReadMe/readMe7.jpg)
+![scored](/imgReadMe/readMe7.jpg)
 
 ___
 
 ### Penalty Missed: 
 \
-![questions](/imgReadMe/readMe8.jpg)
+![missed](/imgReadMe/readMe8.jpg)
+
+___
+
+### Create a Quiz Title: 
+\
+![title](/imgReadMe/readMe9.jpg)
+
+___
+
+### Create a Quiz Question: 
+\
+![question](/imgReadMe/readMe10.jpg)
+
+___
+
+### Create Question Answers: 
+\
+![answers](/imgReadMe/readMe11.jpg)
