@@ -1,4 +1,4 @@
-![Educational Goals](/client/src/images/Logo-round.jpg)
+![Educational Goals](/client/src/images/Logo-round.jpg = 250x250)
 
 ## We proudly present:
 <br>
