@@ -1,5 +1,6 @@
-<img align="center" src="/client/src/images/Logo-round.jpg" alt="logo" width="400px" height="400px"/>
-
+<p align="center">
+<img src="/client/src/images/Logo-round.jpg" alt="logo" width="400px" height="400px"/>
+</p>
 <br>
 
 # Educational Goals
