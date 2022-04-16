@@ -1,11 +1,10 @@
-![Educational Goals](/client/src/images/Logo-round.jpg = 250x250)
+<img src="/client/src/images/Logo-round.jpg" alt="logo" width="200px" height="100px"/>
 
-## We proudly present:
 <br>
 
-# **Educational Goals**
+# Educational Goals
 
-### Our Own Goals:
+### Our Goals:
 <br>
 <p>This app is designed as a teaching tool in the form of a penalty shoot out based game to be used either in small group settings and/or over Zoom to revise material taught in the lesson/session.
 </p>
@@ -14,7 +13,7 @@
 It revolves around a competitive quiz element where a correct answer lets the player take a penalty and ideally would be two players with a single player mode to be created after this is achieved. 
 </p>
 
-## Run Educational Goals
+## Run the **Educational Goals** app
 
 1. Fork the project by navigating to the top right hand corner of the page:
 
