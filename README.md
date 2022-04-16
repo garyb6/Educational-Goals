@@ -1,4 +1,4 @@
-<img src="/client/src/images/Logo-round.jpg" alt="logo" width="200px" height="100px"/>
+<img align="center" src="/client/src/images/Logo-round.jpg" alt="logo" width="400px" height="400px"/>
 
 <br>
 
